@@ -89,9 +89,9 @@
                             </div>
                         </div>
                         <div class="brief">
-                            某某网络作为全国首家规范市场价格的平台，打破网站制作暴利，明码标价，价格更透明， 没有差价！
+                           计算机协会是一个以技术为核心的学术型协会
                             <br />
-                            500多位技术团队，60%美工6年以上经验，80%程序5年以上经验，7X24专业服务，售后无忧
+                            
                             <br />
                             大部分只做本地区客户，外地客户不接。！
                             <br />
@@ -113,24 +113,24 @@
                     </div>
                     <div class="item number text-center absolute wow fadeInUp">
                         <div class="i fl">
-                            <div id="down-0" class="n" data-start="0" data-end="11" data-duration="1">
-                                11
+                            <div id="down-0" class="n" data-start="0" data-end="30" data-duration="1">
+                                30
                             </div>
-                            视觉设计经验
+                            理事人数
                         </div>
                         <div class="i fl">
-                            <div id="down-1" class="n" data-start="0" data-end="300" data-duration="1"
+                            <div id="down-1" class="n" data-start="0" data-end="150" data-duration="1"
                             data-suffix="+">
-                                300+
+                                150+
                             </div>
-                            上市集团推动力
+                            新入会员
                         </div>
                         <div class="i fl">
-                            <div id="down-2" class="n" data-start="0" data-end="10000" data-duration="1"
+                            <div id="down-2" class="n" data-start="0" data-end="1000" data-duration="1"
                             data-suffix="+">
-                                10000+
+                                1000+
                             </div>
-                            合作客户信心选择
+                            累计会员
                         </div>
                     </div>
                 </div>
@@ -138,11 +138,11 @@
             <div id="team" class="wrap">
                 <div class="about-title text-center">
                     <div class="title-0 wow fadeInUp">
-                        DEVELOPMENT TEAM
+                        OUR TEAM
                     </div>
                     <div class="title-1 wow fadeInUp">
                         <span>
-                            开发团队
+                            我们的团队
                         </span>
                     </div>
                 </div>

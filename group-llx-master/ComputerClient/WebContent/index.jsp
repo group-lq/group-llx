@@ -8,7 +8,7 @@
         />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>HTML5高端大气响应式网络科技公司网站模板</title>
+        <title>湖南工学院计算机协会</title>
         <meta name="keywords" content="HTML5高端大气响应式网络科技公司网站模板" />
         <meta name="description" content="HTML5高端大气响应式网络科技公司网站模板下载。" /> 
         <meta name="author" content="js代码" />
@@ -66,7 +66,7 @@
                         <img class="img-0 img trans-1s absolute" src="" alt=""/> <img class="img-1 img trans-1s absolute" src="" alt=""/> <img class="img-2 img trans-1s absolute" src="" alt=""/> </div>-->
                         <div class="item relative inline-block text-center fz0 over item-1">
                             <!--<a class="banner-button absolute text-center trans-1s"></a>-->
-                            <img src="picture/1-1f92z915060-l.jpg" alt="" class="max-w100">
+                            <img src="picture/1-1.png" alt="" class="max-w100">
                             <a class="absolute">
                             </a>
                         </div>
@@ -95,40 +95,34 @@
             </div>
             <div id="products" class="index">
                 <div class="index-title text-center wow fadeInUp">
-                    产品
+                    技术团队
                 </div>
                 <div class="index-brief text-center wow fadeInUp">
-                    20年建站经验 + 1000家企业客户 + 高端建站团队
+                    科技范  极客潮
                 </div>
                 <div class="category-list text-center fz0 hide992 wow fadeInUp">
                     <a href="#"​ class="item inline-block trans" cid="6"
                     rel="nofollow">
-                        企业集团
+                        硬件团队
                     </a>
                     <a href="#"​ class="item inline-block trans" cid="6"
                     rel="nofollow">
-                        服饰珠宝
+                       多媒体团队
                     </a>
                     <a href="#"​ class="item inline-block trans" cid="6"
                     rel="nofollow">
-                        家居房产
+         Web团队
                     </a>
                     <a href="#"​ class="item inline-block trans" cid="6"
                     rel="nofollow">
-                        婚纱摄影
+         office团队
                     </a>
                     <a href="#"​ class="item inline-block trans" cid="6"
                     rel="nofollow">
-                        餐饮美食
+         C语言团队
                     </a>
-                    <a href="#"​ class="item inline-block trans"
-                    cid="6" rel="nofollow">
-                        美容美妆
-                    </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        设计建筑
-                    </a>
+                   
+                   
                     <!-- <a href="#"​ class="item inline-block trans" cid="7" rel="nofollow">餐饮美食</a> 
                     <a href="#"​ class="item inline-block trans" cid="9" rel="nofollow">设计建筑</a>-->
                 </div>
@@ -136,46 +130,38 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                            全部产品
+                           技术团队
                             <span class="caret">
                             </span>
                         </button>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="#"​ cid="6" rel="nofollow">
-                                    企业集团
+                                    硬件团队
                                 </a>
                             </li>
                             <li>
                                 <a href="#"​ cid="6" rel="nofollow">
-                                    服饰珠宝
+                                    多媒体团队
                                 </a>
                             </li>
                             <li>
                                 <a href="#"​ cid="6" rel="nofollow">
-                                    家居房产
+             Web团队
                                 </a>
                             </li>
                             <li>
                                 <a href="#"​ cid="6" rel="nofollow">
-                                    婚纱摄影
+             office团队
                                 </a>
                             </li>
                             <li>
                                 <a href="#"​ cid="6" rel="nofollow">
-                                    餐饮美食
+             C语言团队
                                 </a>
                             </li>
-                            <li>
-                                <a href="#"​ cid="6" rel="nofollow">
-                                    美容美妆
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"​ cid="6" rel="nofollow">
-                                    设计建筑
-                                </a>
-                            </li>
+                            
+                            
                             <!--<li><a href="#"​ cid="7" rel="nofollow">餐饮美食</a></li>
                             <li><a href="#"​ cid="9" rel="nofollow">设计建筑</a></li>-->
                         </ul>
@@ -474,10 +460,10 @@
             </div>
             <div class="index-cooperation wrap">
                 <div class="index-title text-center wow fadeInUp">
-                    合作
+                    技术支持
                 </div>
                 <div class="index-brief text-center wow fadeInUp">
-                    服务了哪些客户很重要 用心 更重要！
+                    专业的指导老师
                 </div>
                 <div class="blank20">
                 </div>
@@ -657,7 +643,7 @@
                     新闻
                 </div>
                 <div class="index-brief text-center wow fadeInUp">
-                    智能建站、零基础建站
+                    最快的速度传递最新的消息
                 </div>
                 <div class="blank20">
                 </div>
@@ -693,7 +679,7 @@
                     <div class='item wow fadeInUp fl' class="item wow fadeInUp fl">
                         <div class="date fl">
                             <div class="year">
-                                2017
+                                2018
                             </div>
                             <div class="day">
                                 09-29
@@ -713,7 +699,7 @@
                     <div class='item wow fadeInUp fr' class="item wow fadeInUp fl">
                         <div class="date fl">
                             <div class="year">
-                                2017
+                                2018
                             </div>
                             <div class="day">
                                 09-29
@@ -733,7 +719,7 @@
                     <div class='item wow fadeInUp fl' class="item wow fadeInUp fl">
                         <div class="date fl">
                             <div class="year">
-                                2017
+                                2018
                             </div>
                             <div class="day">
                                 09-29
@@ -781,7 +767,7 @@
                     <div class="try-button-box wrap fz0">
                         <a href="#"​ target="_blank"
                         class="button inline-block text-center trans wow fadeInUp">
-                            我要私人定制
+                            联系我们
                         </a>
                     </div>
                 </div>
