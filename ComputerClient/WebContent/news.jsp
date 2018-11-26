@@ -89,6 +89,8 @@
                 </div>
                 <div class="wrap">
                     <div class="tutorial-list clean">
+                    
+                    
                         <div class='item wow fadeInUp fl'>
                             <div class="date fl">
                                 <div class="year">
@@ -109,6 +111,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class='item wow fadeInUp fr'>
                             <div class="date fl">
                                 <div class="year">
@@ -129,6 +132,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class='item wow fadeInUp fl'>
                             <div class="date fl">
                                 <div class="year">
