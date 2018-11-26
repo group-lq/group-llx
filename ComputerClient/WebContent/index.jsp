@@ -67,20 +67,17 @@
                         <div class="item relative inline-block text-center fz0 over item-1">
                             <!--<a class="banner-button absolute text-center trans-1s"></a>-->
                             <img src="picture/1-1f92z915060-l.jpg" alt="" class="max-w100">
-                            <a class="absolute">
-                            </a>
+                            <a class="absolute"></a>
                         </div>
                         <div class="item relative inline-block text-center fz0 over item-1">
                             <!--<a class="banner-button absolute text-center trans-1s"></a>-->
                             <img src="picture/1-1f92z915190-l.jpg" alt="" class="max-w100">
-                            <a class="absolute">
-                            </a>
+                            <a class="absolute"></a>
                         </div>
                         <div class="item relative inline-block text-center fz0 over item-1">
                             <!--<a class="banner-button absolute text-center trans-1s"></a>-->
                             <img src="picture/1-1f929111s30-l.jpg" alt="" class="max-w100">
-                            <a class="absolute">
-                            </a>
+                            <a class="absolute"></a>
                         </div>
                     </div>
                 </div>
@@ -101,34 +98,13 @@
                     20年建站经验 + 1000家企业客户 + 高端建站团队
                 </div>
                 <div class="category-list text-center fz0 hide992 wow fadeInUp">
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        企业集团
-                    </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        服饰珠宝
-                    </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        家居房产
-                    </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        婚纱摄影
-                    </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        餐饮美食
-                    </a>
-                    <a href="#"​ class="item inline-block trans"
-                    cid="6" rel="nofollow">
-                        美容美妆
-                    </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        设计建筑
-                    </a>
+                    <a href="#"​ class="item inline-block trans" cid="6" rel="nofollow"> 企业集团</a>
+                    <a href="#"​ class="item inline-block trans" cid="6" rel="nofollow"> 服饰珠宝</a>
+                    <a href="#"​ class="item inline-block trans" cid="6" rel="nofollow"> 家居房产</a>
+                    <a href="#"​ class="item inline-block trans" cid="6" rel="nofollow"> 婚纱摄影</a>
+                    <a href="#"​ class="item inline-block trans" cid="6" rel="nofollow"> 餐饮美食</a>
+                    <a href="#"​ class="item inline-block trans" cid="6" rel="nofollow"> 美容美妆</a>
+                    <a href="#"​ class="item inline-block trans" cid="6" rel="nofollow"> 设计建筑</a>
                     <!-- <a href="#"​ class="item inline-block trans" cid="7" rel="nofollow">餐饮美食</a> 
                     <a href="#"​ class="item inline-block trans" cid="9" rel="nofollow">设计建筑</a>-->
                 </div>
@@ -771,29 +747,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="blank20">
-                </div>
-                <div class="blank20">
-                </div>
-                <div class="blank25">
-                </div>
-                <div class="text-center">
-                    <div class="try-button-box wrap fz0">
-                        <a href="#"​ target="_blank"
-                        class="button inline-block text-center trans wow fadeInUp">
-                            我要私人定制
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="blank25">
-            </div>
-            <div class="blank25">
-            </div>
-            <div class="blank25">
-            </div>
-            <div class="blank25">
-            </div>
+                
             <jsp:include page="/public/botton.jsp"></jsp:include>
              <jsp:include page="/public/follow.jsp"></jsp:include>
         <script src="js/website.js">
