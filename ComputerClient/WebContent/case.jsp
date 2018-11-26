@@ -75,15 +75,13 @@
             <div class="bgf3">
                 <div id="instance" class="wrap clean">
                     <div class="instance-list clean">
-                   
-                  <!--   
-                   <table>
+                    <!--   <table>
                    	<tr>
                    		<td width="70">查询号:</td>
                    		<td><input type="text"></td>
                    		<td width="70"><img alt="" src="picture/s.png"></td>
                    	</tr>
-                   </table> -->
+                   </table>  -->
                     <form action="user.s">
 			        	<input type="hidden" name="op" value="query">
 			        	维修号:<input type="text" name="name" value="${param.name}">
@@ -126,13 +124,9 @@
               
                 
 		          </div>
-
 		          
-                    
-                    
-                    
-          
-                        
+		          
+        </div>
                     </div>
                     <div id="turn_page" class="wow fadeInUp" first last>
                         <span class="pageinfo">
@@ -178,8 +172,6 @@
             </div>
             <div class="blank25">
             </div>
-         <jsp:include page="/public/botton.jsp"></jsp:include>
-            <jsp:include page="/public/follow.jsp"></jsp:include>
             
             <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" >
   <div class="modal-dialog" role="document" style="max-width:450px;">
@@ -189,7 +181,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           
-          <h4 class="modal-title" >网络保修</h4>
+          <h4 class="modal-title" >增加用户</h4>
         </div>
         <div class="modal-body">
           <table class="table" style="margin-bottom:0px;">
@@ -198,24 +190,26 @@
             </thead>
             <tbody>
               <tr>
-                <td wdith="20%">用户名:</td>
+                <td wdith="20%">姓名:</td>
                 <td width="80%"><input type="text" value="${param.name}" class="form-control" name="name" maxlength="10" autocomplete="off" /></td>
               </tr>
              
               <tr>
-                <td wdith="20%">电话:</td>
+                <td wdith="20%">用户名:</td>
                 <td width="80%"><input type="text" value="${param.account}" class="form-control" name="account" maxlength="10" autocomplete="off" /></td>
               </tr>
               <tr>
-                <td wdith="20%">地点:</td>
+                <td wdith="20%">电话:</td>
                 <td width="80%"><input type="text" value="${param.tel}" class="form-control" name="tel" maxlength="13" autocomplete="off" /></td>
               </tr>
               <tr>
-                <td wdith="20%">保修故障描述:</td>
-                <td width="80%"><textarea name="description"  id="description"   value=""     description="保修故障描述:"  minlen=1   style="width:100%;height:120px;border:1px #D0D0D0 solid; font-size:14px" onpropertychange="if(this.scrollHeight<100){this.style.posHeight=120;}else{this.style.posHeight=this.scrollHeight}"    ></textarea>
-<!-- <input type="" class="form-control" name="pwd" maxlength="18" autocomplete="off" /> --></td>
+                <td wdith="20%">新密码:</td>
+                <td width="80%"><input type="password" class="form-control" name="pwd" maxlength="18" autocomplete="off" /></td>
               </tr>
-              
+              <tr>
+                <td wdith="20%">确认密码:</td>
+                <td width="80%"><input type="password" class="form-control" name="repwd" maxlength="18" autocomplete="off" /></td>
+              </tr>
             </tbody>
             <tfoot>
               <tr></tr>
@@ -229,7 +223,11 @@
       </div>
     </form>
   </div>
-</div>		          
+</div>
+            
+            
+         <jsp:include page="/public/botton.jsp"></jsp:include>
+            <jsp:include page="/public/follow.jsp"></jsp:include>
         <script src="js/website.js">
         </script>
     </body>

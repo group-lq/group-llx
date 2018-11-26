@@ -75,207 +75,58 @@
             <div class="bgf3">
                 <div id="instance" class="wrap clean">
                     <div class="instance-list clean">
-                        <div class='item border-box over wow fadeInUp fl'>
-                            <div class="relative clean">
-                                <div class="cover fl relative">
-                                    <img src="picture/notebook.png" alt="科纳网络" class="trans max-w100" ondragstart="return false;">
-                                    <div class="img absolute text-center fz0">
-                                        <img src="picture/1-1g0091606040-l.jpg" alt="科纳网络" class="trans" ondragstart="return false;">
-                                    </div>
-                                </div>
-                                <div class="info fl">
-                                    <div class="clean">
-                                        <div class="logo fl text-center over fz0">
-                                            <img src="picture/1-1g0091606040-l.jpg" alt="科纳网络" class="middle max-w100 inline-block">
-                                            <span class="middle-span">
-                                            </span>
-                                        </div>
-                                        <div class="title fl">
-                                            <div class="name">
-                                                科纳网络
-                                            </div>
-                                            <div class="date">
-                                                合作时间:2017/10/09
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="brief over">
-                                        Shenzhen West East Connect Internet Technology Co., Ltd. has been in business
-                                        since 2014 of China, with famous subordinate brand TechMe. And its products
-                                        cover storage, stationery and daily necessities....
-                                    </div>
-                                   <a href="caseshow.jsp"​ ​ class="view block text-center" rel="nofollow">
-                                        查看内容
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='item border-box over wow fadeInUp fr'>
-                            <div class="relative clean">
-                                <div class="cover fl relative">
-                                    <img src="picture/notebook.png" alt="威廉科技" class="trans max-w100" ondragstart="return false;">
-                                    <div class="img absolute text-center fz0">
-                                        <img src="picture/1-1g0091605330-l.jpg" alt="威廉科技" class="trans" ondragstart="return false;">
-                                    </div>
-                                </div>
-                                <div class="info fl">
-                                    <div class="clean">
-                                        <div class="logo fl text-center over fz0">
-                                            <img src="picture/1-1g0091605330-l.jpg" alt="威廉科技" class="middle max-w100 inline-block">
-                                            <span class="middle-span">
-                                            </span>
-                                        </div>
-                                        <div class="title fl">
-                                            <div class="name">
-                                                威廉科技
-                                            </div>
-                                            <div class="date">
-                                                合作时间:2017/10/09
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="brief over">
-                                        跃威科技是一家成立于2007年的高新技术企业，总部位于中国深圳。公司主要致力于数字影音产品的研发、生产、销售。在USB、视频延长等方面有特殊专长，
-                                        拥有多项国家发明专利。公司...
-                                    </div>
-                                   <a href="caseshow.jsp"​ ​ class="view block text-center" rel="nofollow">
-                                        查看内容
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='item border-box over wow fadeInUp fl'>
-                            <div class="relative clean">
-                                <div class="cover fl relative">
-                                    <img src="picture/notebook.png" alt="深圳环保" class="trans max-w100" ondragstart="return false;">
-                                    <div class="img absolute text-center fz0">
-                                        <img src="picture/1-1g0091605100-l.jpg" alt="深圳环保" class="trans" ondragstart="return false;">
-                                    </div>
-                                </div>
-                                <div class="info fl">
-                                    <div class="clean">
-                                        <div class="logo fl text-center over fz0">
-                                            <img src="picture/1-1g0091605100-l.jpg" alt="深圳环保" class="middle max-w100 inline-block">
-                                            <span class="middle-span">
-                                            </span>
-                                        </div>
-                                        <div class="title fl">
-                                            <div class="name">
-                                                深圳环保
-                                            </div>
-                                            <div class="date">
-                                                合作时间:2017/10/09
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="brief over">
-                                        深圳市能源环保有限公司（简称深能环保）成立于1997年，是由深圳能源集团股份有限公司控股的中国大型垃圾焚烧发电专业化公司。...
-                                    </div>
-                                   <a href="caseshow.jsp"​ ​ class="view block text-center" rel="nofollow">
-                                        查看内容
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='item border-box over wow fadeInUp fr'>
-                            <div class="relative clean">
-                                <div class="cover fl relative">
-                                    <img src="picture/notebook.png" alt="福特自行车" class="trans max-w100" ondragstart="return false;">
-                                    <div class="img absolute text-center fz0">
-                                        <img src="picture/1-1g0091604420-l.jpg" alt="福特自行车" class="trans" ondragstart="return false;">
-                                    </div>
-                                </div>
-                                <div class="info fl">
-                                    <div class="clean">
-                                        <div class="logo fl text-center over fz0">
-                                            <img src="picture/1-1g0091604420-l.jpg" alt="福特自行车" class="middle max-w100 inline-block">
-                                            <span class="middle-span">
-                                            </span>
-                                        </div>
-                                        <div class="title fl">
-                                            <div class="name">
-                                                福特自行车
-                                            </div>
-                                            <div class="date">
-                                                合作时间:2017/10/09
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="brief over">
-                                        福特（Ford）自行车是世界著名汽车品牌美国福特（Ford）汽车旗下的延伸产品，它的第一批产品于2014年1月研发成功，并开始投入生产，2014年5月正式在中国大陆全面上市。...
-                                    </div>
-                                   <a href="caseshow.jsp"​ ​ class="view block text-center" rel="nofollow">
-                                        查看内容
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='item border-box over wow fadeInUp fl'>
-                            <div class="relative clean">
-                                <div class="cover fl relative">
-                                    <img src="picture/notebook.png" alt="无人机" class="trans max-w100" ondragstart="return false;">
-                                    <div class="img absolute text-center fz0">
-                                        <img src="picture/1-1g0091604160-l.jpg" alt="无人机" class="trans" ondragstart="return false;">
-                                    </div>
-                                </div>
-                                <div class="info fl">
-                                    <div class="clean">
-                                        <div class="logo fl text-center over fz0">
-                                            <img src="picture/1-1g0091604160-l.jpg" alt="无人机" class="middle max-w100 inline-block">
-                                            <span class="middle-span">
-                                            </span>
-                                        </div>
-                                        <div class="title fl">
-                                            <div class="name">
-                                                无人机
-                                            </div>
-                                            <div class="date">
-                                                合作时间:2017/10/09
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="brief over">
-                                        深圳智航无人机有限公司，总部位于深圳南山科技园，是集专业研发，生产，销售为一体的全球领先无人机企业，是国际顶尖的无人机智能飞控系统，高端影视航拍云台，高清图传的开...
-                                    </div>
-                                   <a href="caseshow.jsp"​ ​ class="view block text-center" rel="nofollow">
-                                        查看内容
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='item border-box over wow fadeInUp fr'>
-                            <div class="relative clean">
-                                <div class="cover fl relative">
-                                    <img src="picture/notebook.png" alt="东莞电子" class="trans max-w100" ondragstart="return false;">
-                                    <div class="img absolute text-center fz0">
-                                        <img src="picture/1-1g0091603340-l.jpg" alt="东莞电子" class="trans" ondragstart="return false;">
-                                    </div>
-                                </div>
-                                <div class="info fl">
-                                    <div class="clean">
-                                        <div class="logo fl text-center over fz0">
-                                            <img src="picture/1-1g0091603340-l.jpg" alt="东莞电子" class="middle max-w100 inline-block">
-                                            <span class="middle-span">
-                                            </span>
-                                        </div>
-                                        <div class="title fl">
-                                            <div class="name">
-                                                东莞电子
-                                            </div>
-                                            <div class="date">
-                                                合作时间:2017/10/09
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="brief over">
-                                        深圳市南方精诚电子有限公司是一家高精密连接器的专业制造商。随着市场需求，公司致力于圆形快速推拉自锁精密的连接器研发设计、制造、销售和技术服务、技术支持。呈现出高技...
-                                    </div>
-                                   <a href="caseshow.jsp"​ ​ class="view block text-center" rel="nofollow">
-                                        查看内容
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <!--   <table>
+                   	<tr>
+                   		<td width="70">查询号:</td>
+                   		<td><input type="text"></td>
+                   		<td width="70"><img alt="" src="picture/s.png"></td>
+                   	</tr>
+                   </table>  -->
+                    <form action="user.s">
+			        	<input type="hidden" name="op" value="query">
+			        	维修号:<input type="text" name="name" value="${param.name}">
+			        	<input type="submit" value="搜索">
+        			</form>
+                    <table class="table table-striped table-hover">
+			            <thead>
+			              <tr>
+			                <th><span class="glyphicon glyphicon-th-large"></span> <span class="visible-lg">维修号</span></th>
+			                <th><span class="glyphicon glyphicon-user"></span> <span class="visible-lg">用户名</span></th>
+			                <th><span class="glyphicon glyphicon-bookmark"></span> <span class="visible-lg">电话</span></th>
+			                <th><span class="glyphicon glyphicon-pushpin"></span> <span class="visible-lg">地点</span></th>
+			                <th><span class="glyphicon glyphicon-time"></span> <span class="visible-lg">保修故障描述</span></th>
+			                <th><span class="glyphicon glyphicon-pencil"></span> <span class="visible-lg">处理人员</span></th>
+			                <th><span class="glyphicon glyphicon-pencil"></span> <span class="visible-lg">办理状态</span></th>
+			              </tr>
+			            </thead>
+            		<tbody>
+           
+		            </tbody>
+		          </table>
+		          <div>
+		          	<table width="673" height="287" cellpadding="0" cellspacing="0">
+                
+                  <tr class="tr_body">
+                    <td class="p_left10" colspan="5">
+					
+					</td>
+                  </tr>
+				   
+                  <tr class="tr_foot">
+                    <td  class="p_left10" colspan="5"><span>办事统计：</span> 累计共收件：<span>22499</span> 件；未处理：<span>101</span> 件；已处理：<span>21656</span> 件</td>
+                  </tr>
+                  
+                </table>
+                
+                 <ol class="breadcrumb">
+          		 	<li><a data-toggle="modal" data-target="#addUser" id="d1"><img alt="" src="picture/btn1.png"></a></li>
+       			 </ol>
+              
+                
+		          </div>
+		          
+		          
+        </div>
                     </div>
                     <div id="turn_page" class="wow fadeInUp" first last>
                         <span class="pageinfo">
@@ -321,6 +172,60 @@
             </div>
             <div class="blank25">
             </div>
+            
+            <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" >
+  <div class="modal-dialog" role="document" style="max-width:450px;">
+    <form action="user.s" method="post" autocomplete="off" draggable="false">
+    <input type="hidden" name="op" value="add">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          
+          <h4 class="modal-title" >增加用户</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table" style="margin-bottom:0px;">
+            <thead>
+              <tr> </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td wdith="20%">姓名:</td>
+                <td width="80%"><input type="text" value="${param.name}" class="form-control" name="name" maxlength="10" autocomplete="off" /></td>
+              </tr>
+             
+              <tr>
+                <td wdith="20%">用户名:</td>
+                <td width="80%"><input type="text" value="${param.account}" class="form-control" name="account" maxlength="10" autocomplete="off" /></td>
+              </tr>
+              <tr>
+                <td wdith="20%">电话:</td>
+                <td width="80%"><input type="text" value="${param.tel}" class="form-control" name="tel" maxlength="13" autocomplete="off" /></td>
+              </tr>
+              <tr>
+                <td wdith="20%">新密码:</td>
+                <td width="80%"><input type="password" class="form-control" name="pwd" maxlength="18" autocomplete="off" /></td>
+              </tr>
+              <tr>
+                <td wdith="20%">确认密码:</td>
+                <td width="80%"><input type="password" class="form-control" name="repwd" maxlength="18" autocomplete="off" /></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr></tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+            
+            
          <jsp:include page="/public/botton.jsp"></jsp:include>
             <jsp:include page="/public/follow.jsp"></jsp:include>
         <script src="js/website.js">
