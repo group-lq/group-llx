@@ -50,6 +50,8 @@
                 500);
             })
         </script>
+       
+        
     </head>
     
     <body>
@@ -93,42 +95,33 @@
             </div>
             <div class="blank25">
             </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             <div id="products" class="index">
                 <div class="index-title text-center wow fadeInUp">
-                    产品
+                   计协成员
                 </div>
-                <div class="index-brief text-center wow fadeInUp">
-                    20年建站经验 + 1000家企业客户 + 高端建站团队
-                </div>
-                <div class="category-list text-center fz0 hide992 wow fadeInUp">
+     
+                <div class="category-list text-center fz0 hide992 wow fadeInUp" style="float:left">
                     <a href="#"​ class="item inline-block trans" cid="6"
                     rel="nofollow">
-                        企业集团
-                    </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        服饰珠宝
+                    <span> 优秀理事</span>
+                       
                     </a>
                     <a href="#"​ class="item inline-block trans" cid="6"
                     rel="nofollow">
-                        家居房产
+                    <span> 优秀会员</span>
+                    
                     </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        婚纱摄影
-                    </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        餐饮美食
-                    </a>
-                    <a href="#"​ class="item inline-block trans"
-                    cid="6" rel="nofollow">
-                        美容美妆
-                    </a>
-                    <a href="#"​ class="item inline-block trans" cid="6"
-                    rel="nofollow">
-                        设计建筑
-                    </a>
+                 
                     <!-- <a href="#"​ class="item inline-block trans" cid="7" rel="nofollow">餐饮美食</a> 
                     <a href="#"​ class="item inline-block trans" cid="9" rel="nofollow">设计建筑</a>-->
                 </div>
@@ -456,25 +449,30 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="box-button text-center fz0 wow fadeInUp">
-                                <!--<a href="#"​ class="prev button inline-block trans" rel="nofollow"><i class="fa fa-chevron-left trans middle"></i></a>-->
-                                <a href="#"​ class="more-list inline-block trans">
-                                    <i class="trans middle relative">
-                                    </i>
-                                </a>
-                                <!--<a href="#"​ class="next button inline-block trans" rel="nofollow"><i class="fa fa-chevron-right trans middle"></i></a>-->
-                            </div>
+                             <div class="text-center">
+                    <div class="try-button-box wrap fz0">
+                        <a href="#"​ target="_blank"
+                        class="button inline-block text-center trans wow fadeInUp">
+                           了解更多
+                        </a>
+                    </div>
+                </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            
+            
+            
+            
             <div class="blank15">
             </div>
             <div class="blank15">
             </div>
             <div class="index-cooperation wrap">
                 <div class="index-title text-center wow fadeInUp">
-                    合作
+                    合作伙伴
                 </div>
                 <div class="index-brief text-center wow fadeInUp">
                     服务了哪些客户很重要 用心 更重要！
@@ -652,7 +650,9 @@
             </div>
             <div class="blank25">
             </div>
-            <div class="index-tutorial">
+            
+            
+             <div class="index-tutorial">
                 <div class="index-title text-center wow fadeInUp">
                     新闻
                 </div>
@@ -786,6 +786,7 @@
                     </div>
                 </div>
             </div>
+           
             <div class="blank25">
             </div>
             <div class="blank25">
@@ -794,6 +795,7 @@
             </div>
             <div class="blank25">
             </div>
+           
             <jsp:include page="/public/botton.jsp"></jsp:include>
              <jsp:include page="/public/follow.jsp"></jsp:include>
         <script src="js/website.js">

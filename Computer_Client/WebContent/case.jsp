@@ -50,6 +50,7 @@
                 500);
             })
         </script>
+       
     </head>
     
     <body>
@@ -87,16 +88,17 @@
 			        	维修号:<input type="text" name="name" value="${param.name}">
 			        	<input type="submit" value="搜索">
         			</form>
+        			<br/>
                     <table class="table table-striped table-hover">
 			            <thead>
 			              <tr>
-			                <th><span class="glyphicon glyphicon-th-large"></span> <span class="visible-lg">维修号</span></th>
-			                <th><span class="glyphicon glyphicon-user"></span> <span class="visible-lg">用户名</span></th>
-			                <th><span class="glyphicon glyphicon-bookmark"></span> <span class="visible-lg">电话</span></th>
-			                <th><span class="glyphicon glyphicon-pushpin"></span> <span class="visible-lg">地点</span></th>
-			                <th><span class="glyphicon glyphicon-time"></span> <span class="visible-lg">保修故障描述</span></th>
-			                <th><span class="glyphicon glyphicon-pencil"></span> <span class="visible-lg">处理人员</span></th>
-			                <th><span class="glyphicon glyphicon-pencil"></span> <span class="visible-lg">办理状态</span></th>
+			                <th> <span class="visible-lg">维修号</span></th>
+			                <th> <span class="visible-lg">用户名</span></th>
+			                <th> <span class="visible-lg">电话</span></th>
+			                <th> <span class="visible-lg">地点</span></th>
+			                <th> <span class="visible-lg">保修故障描述</span></th>
+			                <th> <span class="visible-lg">处理人员</span></th>
+			                <th><span class="visible-lg">办理状态</span></th>
 			              </tr>
 			            </thead>
             		<tbody>
@@ -181,7 +183,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           
-          <h4 class="modal-title" >增加用户</h4>
+          <h4 class="modal-title" >网络报修</h4>
         </div>
         <div class="modal-body">
           <table class="table" style="margin-bottom:0px;">
@@ -190,26 +192,28 @@
             </thead>
             <tbody>
               <tr>
-                <td wdith="20%">姓名:</td>
+                <td wdith="20%">用户名:</td>
                 <td width="80%"><input type="text" value="${param.name}" class="form-control" name="name" maxlength="10" autocomplete="off" /></td>
               </tr>
              
               <tr>
-                <td wdith="20%">用户名:</td>
+                <td wdith="20%">电话:</td>
                 <td width="80%"><input type="text" value="${param.account}" class="form-control" name="account" maxlength="10" autocomplete="off" /></td>
               </tr>
               <tr>
-                <td wdith="20%">电话:</td>
+                <td wdith="20%">地点:</td>
                 <td width="80%"><input type="text" value="${param.tel}" class="form-control" name="tel" maxlength="13" autocomplete="off" /></td>
               </tr>
               <tr>
-                <td wdith="20%">新密码:</td>
-                <td width="80%"><input type="password" class="form-control" name="pwd" maxlength="18" autocomplete="off" /></td>
+               <td  width="20%" ><br>
+               <span style="color:#ff5400">*</span><font class="index_text22"><br>保修<br>故障<br>描述<br>：</font></td>
+              
+                <!-- <td wdith="20%">保修故障描述:</td> -->
+                <td><textarea name="description"  id="description"   value=""     description="内容"  minlen=1   style="width:100%;height:120px;border:1px #D0D0D0 solid; font-size:14px" onpropertychange="if(this.scrollHeight<100){this.style.posHeight=120;}else{this.style.posHeight=this.scrollHeight}"    ></textarea>
+</td>
+                
               </tr>
-              <tr>
-                <td wdith="20%">确认密码:</td>
-                <td width="80%"><input type="password" class="form-control" name="repwd" maxlength="18" autocomplete="off" /></td>
-              </tr>
+             
             </tbody>
             <tfoot>
               <tr></tr>
