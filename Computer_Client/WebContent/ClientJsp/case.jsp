@@ -13,28 +13,28 @@
         </title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
+        <link href="${base}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
         />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/animate.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/global.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/lib.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/style.css" rel="stylesheet" type="text/css" />
-        <script src="${pageContext.servletContext.contextPath}/js/Client/jquery-1.9.1.min.js">
+        <link href="${base}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/animate.min.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/global.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/lib.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/style.css" rel="stylesheet" type="text/css" />
+        <script src="${base}/js/Client/jquery-1.9.1.min.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/global.js">
+        <script src="${base}/js/Client/global.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/cn.js">
+        <script src="${base}/js/Client/cn.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/checkform.js">
+        <script src="${base}/js/Client/checkform.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/wow.js">
+        <script src="${base}/js/Client/wow.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/imagesloaded.min.js">
+        <script src="${base}/js/Client/imagesloaded.min.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/countup.js">
+        <script src="${base}/js/Client/countup.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/bootstrap.min.js">
+        <script src="${base}/js/Client/bootstrap.min.js">
         </script>
         <script>
             jQuery(window).scrollTop(0);
@@ -62,7 +62,7 @@
                 <div class="bd over">
                     <div class="bar relative fz0 nowrap">
                         <div class="item relative inline-block text-center fz0 over item-0">
-                            <img src="${pageContext.servletContext.contextPath}/picture/44c5a1b00c.jpg" alt="" class="max-w100">
+                            <img src="${base}/picture/44c5a1b00c.jpg" alt="" class="max-w100">
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                    	<tr>
                    		<td width="70">查询号:</td>
                    		<td><input type="text"></td>
-                   		<td width="70"><img alt="" src="${pageContext.servletContext.contextPath}/picture/s.png"></td>
+                   		<td width="70"><img alt="" src="${base}/picture/s.png"></td>
                    	</tr>
                    </table>  -->
                     <form action="user.s">
@@ -114,15 +114,11 @@
 					</td>
                   </tr>
 				   
-                  <tr class="tr_foot">
-                    <td  class="p_left10" colspan="5"><span>办事统计：</span> 累计共收件：<span>22499</span> 件；未处理：<span>101</span> 件；已处理：<span>21656</span> 件</td>
-                  </tr>
+                 
                   
                 </table>
                 
-                 <ol class="breadcrumb">
-          		 	<li><a data-toggle="modal" data-target="#addUser" id="d1"><img alt="" src="${pageContext.servletContext.contextPath}/picture/btn1.png"></a></li>
-       			 </ol>
+                 
               
                 
 		          </div>
@@ -142,7 +138,21 @@
                             </strong>
                             条记录
                         </span>
+                        
+                  
                     </div>
+                    
+                    <!-- <hr class="tr_foot"> -->
+                    <hr  class="p_left10" colspan="5" style=""><span>办事统计：</span> 累计共收件：<span>22499</span> 件；未处理：<span>101</span> 件；已处理：<span>21656</span> 件</hr>
+                 <!--  </hr> -->
+                  <br>
+                  <br>
+                  
+                 <ol class="breadcrumb" style="float: right;margin-right: 5%">
+          		 	<li><a data-toggle="modal" data-target="#addUser" id="d1"><img alt="" src="${base}/picture/btn1.png"></a></li>
+       			 </ol>
+                    
+                    
                     <div class="blank20">
                     </div>
                     <div class="blank20">
@@ -232,7 +242,7 @@
             
          <jsp:include page="/public/Client/botton.jsp"></jsp:include>
             <jsp:include page="/public/Client/follow.jsp"></jsp:include>
-         <script src="${pageContext.servletContext.contextPath}/js/Client/website.js">
+         <script src="${base}/js/Client/website.js">
         </script>
     </body>
 

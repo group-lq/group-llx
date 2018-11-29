@@ -13,28 +13,28 @@
         </title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
-         <link href="${pageContext.servletContext.contextPath}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
+         <link href="${base}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
         />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/animate.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/global.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/lib.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/style.css" rel="stylesheet" type="text/css" />
-        <script src="${pageContext.servletContext.contextPath}/js/Client/jquery-1.9.1.min.js">
+        <link href="${base}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/animate.min.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/global.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/lib.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/style.css" rel="stylesheet" type="text/css" />
+        <script src="${base}/js/Client/jquery-1.9.1.min.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/global.js">
+        <script src="${base}/js/Client/global.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/cn.js">
+        <script src="${base}/js/Client/cn.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/checkform.js">
+        <script src="${base}/js/Client/checkform.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/wow.js">
+        <script src="${base}/js/Client/wow.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/imagesloaded.min.js">
+        <script src="${base}/js/Client/imagesloaded.min.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/countup.js">
+        <script src="${base}/js/Client/countup.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/bootstrap.min.js">
+        <script src="${base}/js/Client/bootstrap.min.js">
         </script>
         <script>
             jQuery(window).scrollTop(0);
@@ -61,7 +61,7 @@
                 <div class="bd over">
                     <div class="bar relative fz0 nowrap">
                         <div class="item relative inline-block text-center fz0 over item-0">
-                            <img src="${pageContext.servletContext.contextPath}/picture/efcc36677d.jpg" alt="" class="max-w100">
+                            <img src="${base}/picture/efcc36677d.jpg" alt="" class="max-w100">
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                 <div class="contact-info clean">
                     <div class="item fl text-center relative wow fadeInUp">
                         <div class="ico">
-                            <img src="${pageContext.servletContext.contextPath}/picture/ico-phone.png" alt="" class="middle">
+                            <img src="${base}/picture/ico-phone.png" alt="" class="middle">
                             <span class="middle-span">
                             </span>
                         </div>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="item fl text-center relative wow fadeInUp">
                         <div class="ico">
-                            <img src="${pageContext.servletContext.contextPath}/picture/ico-email.png" alt="" class="middle">
+                            <img src="${base}/picture/ico-email.png" alt="" class="middle">
                             <span class="middle-span">
                             </span>
                         </div>
@@ -105,7 +105,7 @@
                     </div>
                     <div class="item fl text-center relative wow fadeInUp">
                         <div class="ico">
-                            <img src="${pageContext.servletContext.contextPath}/picture/ico-fax.png" alt="" class="middle">
+                            <img src="${base}/picture/ico-fax.png" alt="" class="middle">
                             <span class="middle-span">
                             </span>
                         </div>
@@ -118,7 +118,7 @@
                     </div>
                     <div class="item fl text-center relative wow fadeInUp">
                         <div class="ico">
-                            <img src="${pageContext.servletContext.contextPath}/picture/ico-online.png" alt="" class="middle">
+                            <img src="${base}/picture/ico-online.png" alt="" class="middle">
                             <span class="middle-span">
                             </span>
                         </div>
@@ -143,7 +143,7 @@
                             <div class="clean relative">
                                 <div class="qrcode fl clean relative wow fadeInUp">
                                     <div class="img fl fz0">
-                                        <img src="${pageContext.servletContext.contextPath}/picture/erweima.png" alt="" class="max-w100">
+                                        <img src="${base}/picture/erweima.png" alt="" class="max-w100">
                                     </div>
                                     <div class="name fl nowrap">
                                         官方微信
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="qrcode fr clean relative wow fadeInUp">
                                     <div class="img fl fz0">
-                                        <img src="${pageContext.servletContext.contextPath}/picture/erweima.png" alt="" class="max-w100">
+                                        <img src="${base}/picture/erweima.png" alt="" class="max-w100">
                                     </div>
                                     <div class="name fl nowrap">
                                         官方微博
@@ -184,14 +184,14 @@
                             <input type="hidden" name="dede_fieldshash" value="6eef2ab94532badd3ceda1f6fd888674"
                             />
                             <div class="rows clean">
-                                <!--<div class="code-img fl wow fadeInUp"><a href='javascript:void(0);' onclick='this.blur(); obj=document.getElementById("2f8a6bf31f3bd67bd2d9720c58b19c9a"); obj.src=obj.src+Math.random(); return true;'><img src='${pageContext.servletContext.contextPath}/picture/verification_code.php' align='absmiddle' id='2f8a6bf31f3bd67bd2d9720c58b19c9a'></a></div>-->
+                                <!--<div class="code-img fl wow fadeInUp"><a href='javascript:void(0);' onclick='this.blur(); obj=document.getElementById("2f8a6bf31f3bd67bd2d9720c58b19c9a"); obj.src=obj.src+Math.random(); return true;'><img src='${base}/picture/verification_code.php' align='absmiddle' id='2f8a6bf31f3bd67bd2d9720c58b19c9a'></a></div>-->
                                 <input type="submit" name="submit" class="button wow fadeInUp fr" value="提交">
                             </div>
                         </form>
                     </div>
                     <div class="map fl fz0 over relative text-center wow fadeInUp">
-                        <img src="${pageContext.servletContext.contextPath}/picture/map.jpg" alt="" class="img-0">
-                        <img src="${pageContext.servletContext.contextPath}/picture/map.jpg" alt="" class="img-1 absolute">
+                        <img src="${base}/picture/map.jpg" alt="" class="img-0">
+                        <img src="${base}/picture/map.jpg" alt="" class="img-1 absolute">
                     </div>
                 </div>
             </div>
@@ -221,7 +221,7 @@
             </div>
        <jsp:include page="/public/Client/botton.jsp"></jsp:include>
          <jsp:include page="/public/Client/follow.jsp"></jsp:include>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/website.js">
+        <script src="${base}/js/Client/website.js">
         </script>
     </body>
 

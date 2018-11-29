@@ -14,28 +14,28 @@
         <meta name="keywords" content="无人机,深圳,智航,无人机,有限公司,总部," />
         <meta name="description" content="深圳智航无人机有限公司，总部位于深圳南山科技园，是集专业研发，生产，销售为一体的全球领先无人机企业，是国际顶尖的无人机智能飞控系统，高端影视航拍云台，高清图传的开"
         />
-         <link href="${pageContext.servletContext.contextPath}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
+         <link href="${base}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
         />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/animate.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/global.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/lib.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/style.css" rel="stylesheet" type="text/css" />
-        <script src="${pageContext.servletContext.contextPath}/js/Client/jquery-1.9.1.min.js">
+        <link href="${base}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/animate.min.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/global.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/lib.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/style.css" rel="stylesheet" type="text/css" />
+        <script src="${base}/js/Client/jquery-1.9.1.min.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/global.js">
+        <script src="${base}/js/Client/global.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/cn.js">
+        <script src="${base}/js/Client/cn.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/checkform.js">
+        <script src="${base}/js/Client/checkform.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/wow.js">
+        <script src="${base}/js/Client/wow.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/imagesloaded.min.js">
+        <script src="${base}/js/Client/imagesloaded.min.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/countup.js">
+        <script src="${base}/js/Client/countup.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/bootstrap.min.js">
+        <script src="${base}/js/Client/bootstrap.min.js">
         </script>
         <script>
             jQuery(window).scrollTop(0);
@@ -62,7 +62,7 @@
                 <div class="bd over">
                     <div class="bar relative fz0 nowrap">
                         <div class="item relative inline-block text-center fz0 over item-0">
-                            <img src="${pageContext.servletContext.contextPath}/picture/710472f909.jpg" alt="" class="max-w100">
+                            <img src="${base}/picture/710472f909.jpg" alt="" class="max-w100">
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
             </div>
             <jsp:include page="/public/Client/botton.jsp"></jsp:include>
            <jsp:include page="/public/Client/follow.jsp"></jsp:include>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/website.js">
+        <script src="${base}/js/Client/website.js">
         </script>
     </body>
 

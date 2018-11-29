@@ -87,7 +87,6 @@ public class UserServlet extends HttpServlet {
 		private void query(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException, IOException {
 			//request.setCharacterEncoding("utf-8");
-			
 			User user = BeanUtils.asBean(request, User.class);
 			System.out.println(user.getUsername());
 			System.out.println(request.getParameter("name"));
@@ -99,7 +98,6 @@ public class UserServlet extends HttpServlet {
 				throws ServletException, IOException{
 			String username = request.getParameter("username");
 			String userpwd = request.getParameter("userpwd");
-			
 			
 			User user = null;
 			try {

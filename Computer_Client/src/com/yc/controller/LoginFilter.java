@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
  * Servlet Filter implementation class LoginFilter
  */
 @WebFilter(urlPatterns={
-		/* "*.jsp","*.s" */
+		 "*.jsp","*.s" 
 })
 public class LoginFilter implements Filter {
 
@@ -27,6 +27,12 @@ public void destroy() {
 		
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		String path = httpRequest.getServletPath();
+		
+		//request.getContextPath()
+		
+		System.out.println("================="+httpRequest.getContextPath());
+		request.setAttribute("base", httpRequest.getContextPath());
+		
 		if(path.endsWith("user.s") || path.endsWith("login.jsp")){
 			chain.doFilter(request, response);
 			return;
@@ -35,13 +41,18 @@ public void destroy() {
 		if(httpRequest.getSession().getAttribute("LoginedUser") == null){
 			request.setAttribute("msg", "请先登录！");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
+			return;
 		}
 		//正常业务必须执行 过滤器链的doFilter
 		chain.doFilter(request, response);
+		
+		
+		
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
+		System.out.println("=====================999999999999");
 	}
 
 }

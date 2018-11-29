@@ -13,28 +13,28 @@
         <meta name="description" content="HTML5高端大气响应式网络科技公司网站模板下载。" /> 
         <meta name="author" content="js代码" />
         <meta name="copyright" content="js代码" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
+        <link href="${base}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
         />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/animate.min.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/global.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/lib.css" rel="stylesheet" type="text/css" />
-        <link href="${pageContext.servletContext.contextPath}/css/Client/style.css" rel="stylesheet" type="text/css" />
-        <script src="${pageContext.servletContext.contextPath}/js/Client/jquery-1.9.1.min.js">
+        <link href="${base}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/animate.min.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/global.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/lib.css" rel="stylesheet" type="text/css" />
+        <link href="${base}/css/Client/style.css" rel="stylesheet" type="text/css" />
+        <script src="${base}/js/Client/jquery-1.9.1.min.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/global.js">
+        <script src="${base}/js/Client/global.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/cn.js">
+        <script src="${base}/js/Client/cn.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/checkform.js">
+        <script src="${base}/js/Client/checkform.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/wow.js">
+        <script src="${base}/js/Client/wow.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/imagesloaded.min.js">
+        <script src="${base}/js/Client/imagesloaded.min.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/countup.js">
+        <script src="${base}/js/Client/countup.js">
         </script>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/bootstrap.min.js">
+        <script src="${base}/js/Client/bootstrap.min.js">
         </script>
         <script>
             jQuery(window).scrollTop(0);
@@ -68,19 +68,19 @@
                         <img class="img-0 img trans-1s absolute" src="" alt=""/> <img class="img-1 img trans-1s absolute" src="" alt=""/> <img class="img-2 img trans-1s absolute" src="" alt=""/> </div>-->
                         <div class="item relative inline-block text-center fz0 over item-1">
                             <!--<a class="banner-button absolute text-center trans-1s"></a>-->
-                            <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z915060-l.jpg" alt="" class="max-w100">
+                            <img src="${base}/picture/1-1f92z915060-l.jpg" alt="" class="max-w100">
                             <a class="absolute">
                             </a>
                         </div>
                         <div class="item relative inline-block text-center fz0 over item-1">
                             <!--<a class="banner-button absolute text-center trans-1s"></a>-->
-                            <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z915190-l.jpg" alt="" class="max-w100">
+                            <img src="${base}/picture/1-1f92z915190-l.jpg" alt="" class="max-w100">
                             <a class="absolute">
                             </a>
                         </div>
                         <div class="item relative inline-block text-center fz0 over item-1">
                             <!--<a class="banner-button absolute text-center trans-1s"></a>-->
-                            <img src="${pageContext.servletContext.contextPath}/picture/1-1f929111s30-l.jpg" alt="" class="max-w100">
+                            <img src="${base}/picture/1-1f929111s30-l.jpg" alt="" class="max-w100">
                             <a class="absolute">
                             </a>
                         </div>
@@ -181,9 +181,9 @@
                                 <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
                                     <div class="main trans">
                                         <div class="cover scale relative">
-                                            <img src="${pageContext.servletContext.contextPath}/picture/notebook.png" alt="财税代理公司注册" class="trans scale-img max-w100">
+                                            <img src="${base}/picture/notebook.png" alt="财税代理公司注册" class="trans scale-img max-w100">
                                             <div class="img absolute text-center fz0">
-                                                <img src="${pageContext.servletContext.contextPath}/picture/1-1g009143133218.jpg" alt="财税代理公司注册" class="trans scale-img">
+                                                <img src="${base}/picture/1-1g009143133218.jpg" alt="财税代理公司注册" class="trans scale-img">
                                             </div>
                                             <div class="opt absolute trans hide768">
                                                 <div class="button-bg border-box clean">
@@ -226,9 +226,9 @@
                                 <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
                                     <div class="main trans">
                                         <div class="cover scale relative">
-                                            <img src="${pageContext.servletContext.contextPath}/picture/notebook.png" alt="记忆枕头床上用品" class="trans scale-img max-w100">
+                                            <img src="${base}/picture/notebook.png" alt="记忆枕头床上用品" class="trans scale-img max-w100">
                                             <div class="img absolute text-center fz0">
-                                                <img src="${pageContext.servletContext.contextPath}/picture/1-1g009143a80-l.jpg" alt="记忆枕头床上用品" class="trans scale-img">
+                                                <img src="${base}/picture/1-1g009143a80-l.jpg" alt="记忆枕头床上用品" class="trans scale-img">
                                             </div>
                                             <div class="opt absolute trans hide768">
                                                 <div class="button-bg border-box clean">
@@ -271,9 +271,9 @@
                                 <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
                                     <div class="main trans">
                                         <div class="cover scale relative">
-                                            <img src="${pageContext.servletContext.contextPath}/picture/notebook.png" alt="门业木材铝合金门窗" class="trans scale-img max-w100">
+                                            <img src="${base}/picture/notebook.png" alt="门业木材铝合金门窗" class="trans scale-img max-w100">
                                             <div class="img absolute text-center fz0">
-                                                <img src="${pageContext.servletContext.contextPath}/picture/1-1g0091436390-l.jpg" alt="门业木材铝合金门窗" class="trans scale-img">
+                                                <img src="${base}/picture/1-1g0091436390-l.jpg" alt="门业木材铝合金门窗" class="trans scale-img">
                                             </div>
                                             <div class="opt absolute trans hide768">
                                                 <div class="button-bg border-box clean">
@@ -316,9 +316,9 @@
                                 <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
                                     <div class="main trans">
                                         <div class="cover scale relative">
-                                            <img src="${pageContext.servletContext.contextPath}/picture/notebook.png" alt="打印机印刷设备" class="trans scale-img max-w100">
+                                            <img src="${base}/picture/notebook.png" alt="打印机印刷设备" class="trans scale-img max-w100">
                                             <div class="img absolute text-center fz0">
-                                                <img src="${pageContext.servletContext.contextPath}/picture/1-1g0091436130-l.jpg" alt="打印机印刷设备" class="trans scale-img">
+                                                <img src="${base}/picture/1-1g0091436130-l.jpg" alt="打印机印刷设备" class="trans scale-img">
                                             </div>
                                             <div class="opt absolute trans hide768">
                                                 <div class="button-bg border-box clean">
@@ -361,9 +361,9 @@
                                 <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
                                     <div class="main trans">
                                         <div class="cover scale relative">
-                                            <img src="${pageContext.servletContext.contextPath}/picture/notebook.png" alt="淀粉原材料" class="trans scale-img max-w100">
+                                            <img src="${base}/picture/notebook.png" alt="淀粉原材料" class="trans scale-img max-w100">
                                             <div class="img absolute text-center fz0">
-                                                <img src="${pageContext.servletContext.contextPath}/picture/1-1g0091435480-l.jpg" alt="淀粉原材料" class="trans scale-img">
+                                                <img src="${base}/picture/1-1g0091435480-l.jpg" alt="淀粉原材料" class="trans scale-img">
                                             </div>
                                             <div class="opt absolute trans hide768">
                                                 <div class="button-bg border-box clean">
@@ -406,9 +406,9 @@
                                 <div class="item inline-block absolute wow fadeInUp" cid="0" status="on">
                                     <div class="main trans">
                                         <div class="cover scale relative">
-                                            <img src="${pageContext.servletContext.contextPath}/picture/notebook.png" alt="灯箱标识设计" class="trans scale-img max-w100">
+                                            <img src="${base}/picture/notebook.png" alt="灯箱标识设计" class="trans scale-img max-w100">
                                             <div class="img absolute text-center fz0">
-                                                <img src="${pageContext.servletContext.contextPath}/picture/1-1g0091435090-l.png" alt="灯箱标识设计" class="trans scale-img">
+                                                <img src="${base}/picture/1-1g0091435090-l.png" alt="灯箱标识设计" class="trans scale-img">
                                             </div>
                                             <div class="opt absolute trans hide768">
                                                 <div class="button-bg border-box clean">
@@ -485,7 +485,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="周大生"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z944060-l.jpg" alt="周大生" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z944060-l.jpg" alt="周大生" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -493,7 +493,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="环保"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z943130-l.jpg" alt="环保" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z943130-l.jpg" alt="环保" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -501,7 +501,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="tony"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942530-l.jpg" alt="tony" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z942530-l.jpg" alt="tony" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -509,7 +509,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="7度"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942410-l.jpg" alt="7度" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z942410-l.jpg" alt="7度" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -517,7 +517,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="平安"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942280-l.jpg" alt="平安" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z942280-l.jpg" alt="平安" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -525,7 +525,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="福特"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942160-l.jpg" alt="福特" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z942160-l.jpg" alt="福特" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -533,7 +533,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="北大"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942010-l.jpg" alt="北大" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z942010-l.jpg" alt="北大" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -541,7 +541,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="颜色"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z941470-l.jpg" alt="颜色" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z941470-l.jpg" alt="颜色" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -549,7 +549,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="激光"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z941330-l.jpg" alt="激光" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z941330-l.jpg" alt="激光" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -557,7 +557,7 @@
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0 grayscale" title="同学会"
                                 rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z941160-l.jpg" alt="同学会" class="max-w100 max-h100 middle grayscale-img trans">
+                                    <img src="${base}/picture/1-1f92z941160-l.jpg" alt="同学会" class="max-w100 max-h100 middle grayscale-img trans">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -572,70 +572,70 @@
                         <div class="bar trans relative fz0 nowrap">
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="周大生" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z944060-l.jpg" alt="周大生" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z944060-l.jpg" alt="周大生" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
                             </div>
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="环保" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z943130-l.jpg" alt="环保" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z943130-l.jpg" alt="环保" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
                             </div>
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="tony" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942530-l.jpg" alt="tony" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z942530-l.jpg" alt="tony" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
                             </div>
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="7度" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942410-l.jpg" alt="7度" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z942410-l.jpg" alt="7度" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
                             </div>
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="平安" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942280-l.jpg" alt="平安" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z942280-l.jpg" alt="平安" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
                             </div>
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="福特" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942160-l.jpg" alt="福特" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z942160-l.jpg" alt="福特" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
                             </div>
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="北大" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z942010-l.jpg" alt="北大" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z942010-l.jpg" alt="北大" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
                             </div>
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="颜色" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z941470-l.jpg" alt="颜色" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z941470-l.jpg" alt="颜色" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
                             </div>
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="激光" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z941330-l.jpg" alt="激光" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z941330-l.jpg" alt="激光" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
                             </div>
                             <div class="item inline-block border-box trans">
                                 <a class="text-center block border-box trans fz0" title="同学会" rel="nofollow">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/1-1f92z941160-l.jpg" alt="同学会" class="max-w100 max-h100 middle">
+                                    <img src="${base}/picture/1-1f92z941160-l.jpg" alt="同学会" class="max-w100 max-h100 middle">
                                     <span class="middle-span">
                                     </span>
                                 </a>
@@ -666,7 +666,7 @@
                 <div class="max-wrap clean relative wow fadeInUp">
                     <div class="img fl hide1300">
                         <a title="">
-                            <img src="${pageContext.servletContext.contextPath}/picture/3da6124a3d.jpg" alt="" class="max-w100 block">
+                            <img src="${base}/picture/3da6124a3d.jpg" alt="" class="max-w100 block">
                         </a>
                     </div>
                     <div class="tutorial-support absolute">
@@ -682,8 +682,8 @@
                                     <div class="line inline-block middle">
                                     </div>
                                     
-                                    <a href="#"​ class="file ico trans inline-block middle">
-                                        新闻
+                                    <a href="news.jsp"​ class="file ico trans inline-block middle">
+                                       更多>>
                                     </a>
                                 </div>
                             </div>
@@ -799,7 +799,7 @@
            
             <jsp:include page="/public/Client/botton.jsp"></jsp:include>
              <jsp:include page="/public/Client/follow.jsp"></jsp:include>
-        <script src="${pageContext.servletContext.contextPath}/js/Client/website.js">
+        <script src="${base}/js/Client/website.js">
         </script>
     </body>
     </script>

@@ -8,12 +8,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>异清轩博客管理系统</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/Server/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/Server/style.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/Server/login.css">
-<link rel="apple-touch-icon-precomposed" href="${pageContext.servletContext.contextPath}/images/Server/icon/icon.png">
-<link rel="shortcut icon" href="${pageContext.servletContext.contextPath}/images/Server/icon/favicon.ico">
-<script src="${pageContext.servletContext.contextPath}/js/Server/jquery-2.1.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="${base}/css/Server/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/Server/style.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/Server/login.css">
+<link rel="apple-touch-icon-precomposed" href="${base}/images/Server/icon/icon.png">
+<link rel="shortcut icon" href="${base}/images/Server/icon/favicon.ico">
+<script src="${base}/js/Server/jquery-2.1.4.min.js"></script>
 <!--[if gte IE 9]>
   <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
   <script src="js/html5shiv.min.js" type="text/javascript"></script>
@@ -27,7 +27,7 @@
 
 <body class="user-select">
 <div class="container">
-  <div class="siteIcon"><img src="${pageContext.servletContext.contextPath}/images/Server/icon/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用计协管理系统" draggable="false" /></div>
+  <div class="siteIcon"><img src="${base}/images/Server/icon/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用计协管理系统" draggable="false" /></div>
   <form action="index.html" method="post" autocomplete="off" class="form-signin">
     <h3 class="form-signin-heading">会员登录</h3>
     
@@ -38,10 +38,10 @@
     <a href="main.html"><button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button></a>
   </form>
   <div class="footer">
-    <p><a href="${pageContext.servletContext.contextPath}/ServerJsp/login.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">管理员登录 →</a></p>
+    <p><a href="${base}/ServerJsp/login.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">管理员登录 →</a></p>
   </div>
 </div>
-<script src="js/Server/bootstrap.min.js"></script> 
+<script src="${base}/js/Server/bootstrap.min.js"></script> 
 <script>
 $('[data-toggle="tooltip"]').tooltip();
 window.oncontextmenu = function(){
