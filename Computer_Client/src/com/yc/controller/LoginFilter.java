@@ -30,7 +30,7 @@ public void destroy() {
 		
 		//request.getContextPath()
 		
-		System.out.println("================="+httpRequest.getContextPath());
+		
 		request.setAttribute("base", httpRequest.getContextPath());
 		
 		if(path.endsWith("user.s") || path.endsWith("login.jsp")){
@@ -52,7 +52,7 @@ public void destroy() {
 
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
-		System.out.println("=====================999999999999");
+		
 	}
 
 }

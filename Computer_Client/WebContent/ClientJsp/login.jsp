@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -28,14 +29,15 @@
 <body class="user-select">
 <div class="container">
   <div class="siteIcon"><img src="${base}/images/Server/icon/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用计协管理系统" draggable="false" /></div>
-  <form action="index.html" method="post" autocomplete="off" class="form-signin">
+  <form action="${base}/cuser.s" method="post" autocomplete="off" class="form-signin">
+   <input type="hidden" name="op" value="Clogin">
     <h3 class="form-signin-heading">会员登录</h3>
-    
     <label for="userName" class="sr-only">用户名</label>
     <input type="text" id="userName" name="username" class="form-control" placeholder="请输入用户名" required autofocus autocomplete="off" maxlength="10">
     <label for="userPwd" class="sr-only">密码</label>
     <input type="password" id="userPwd" name="userpwd" class="form-control" placeholder="请输入密码" required autocomplete="off" maxlength="18">
-    <a href="main.html"><button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button></a>
+   <button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button>
+   <p style="margin-top : 5px"><a href="${base}/ClientJsp/login.jsp">还没有账号?马上注册</a></p>
   </form>
   <div class="footer">
     <p><a href="${base}/ServerJsp/login.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">管理员登录 →</a></p>
@@ -61,4 +63,9 @@ $('#signinSubmit').click(function(){
 });
 </script>
 </body>
+<c:if test="${ ! empty msg }">
+	<script type="text/javascript">
+		alert('${msg}');
+	</script>
+</c:if>
 </html>

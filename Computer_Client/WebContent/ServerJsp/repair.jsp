@@ -4,10 +4,11 @@
 	<%
 	request.setCharacterEncoding("utf-8");
 	response.setCharacterEncoding("utf-8");
-	//response.setContentType("HTML/text,charset=UTF-8");
-	response.setHeader("Content-type", "text/html;charset=UTF-8");
-		if(request.getAttribute("userList") == null){
-			request.getRequestDispatcher("../user.s?op=query").forward(request, response);
+	response.setHeader("Content-type", "text/html;charset=UTF-8");	
+		if(request.getAttribute("repairList") == null){
+			request.getRequestDispatcher("../repair.s?op=query").forward(request, response);
+		}else if(request.getAttribute("directorList") == null){
+			request.getRequestDispatcher("../user.s?op=query1").forward(request, response);
 		}
 	%>
 <!doctype html>
@@ -51,41 +52,46 @@
         </ol>
         <h1 class="page-header">管理 <span class="badge">2</span></h1>
         
-        <form action="user.s">
+        <form action="${base}/repair.s">
         	<input type="hidden" name="op" value="query">
-        	姓名<input type="text" name="name" value="${param.name}">
-        	专业班级<input type="text" name="account" value="${param.majorclass}">
-        	电话<input type="text" name="tel" value="${param.tel}">
+        	维修号:<input type="text" name="rid" value="${param.rid}">
+        	处理人员:<input type="text" name="staff" value="${param.staff}">
         	<input type="submit" value="搜索">
         </form>
         
         <div class="table-responsive">
-          <table class="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th> <span class="visible-lg">ID</span></th>
-                <th> <span class="visible-lg">姓名</span></th>
-                <th> <span class="visible-lg">电话</span></th>
-                <th> <span class="visible-lg">专业班级</span></th>
-                <th> <span class="visible-lg">进会时间</span></th>
-                <th> <span class="visible-lg">会员/理事</span></th>
-                <th> <span class="visible-lg">操作</span></th>
-              </tr>
-            </thead>
-             <tbody>
-            <c:forEach items="${userList}" var="temp">
-              <tr>
-                <td>${temp.id}</td>
-                <td>${temp.username}</td>
-                <td>${temp.tel}</td>
-                <td>${temp.majorclass}</td>
-                <td>${temp.entertime}</td>
-                <td>${temp.type}</td>
-                <td><a rel="${temp.id}" name="see">修改</a> <a rel="${temp.id}" name="delete">删除</a> <a href="/User/checked/id/1/action/n">禁用</a></td>
-              </tr>
-             </c:forEach>
-            </tbody>
-          </table>
+          <table class="table table-striped table-hover"  >
+			            <thead>
+			              <tr>
+			                <th> <span class="visible-lg">维修号</span></th>
+			                <th> <span class="visible-lg">报修故障描述</span></th>
+			                <th> <span class="visible-lg">时间</span></th>			                
+			                <th> <span class="visible-lg">地点</span></th>		                
+			                <th> <span class="visible-lg">处理人员</span></th>
+			                <th><span class="visible-lg">办理状态</span></th>
+			                <th><span class="visible-lg">操作</span></th>
+			              </tr>
+			            </thead>
+			            <tbody>
+			            	<c:forEach items="${repairList}" var="temp">
+			            		<tr>
+			            			<td>${temp.rid}</td>
+			            			<td>${temp.description}</td>
+			            			<td>${temp.time}</td>
+			            			<td>${temp.address}</td>
+			            			<td>${temp.staff}</td>
+			            			<td>${temp.status}</td>
+			            			<td>
+			            				<a rel="${temp.rid}" name="see" data-toggle="modal" data-target="#seeUser">处理</a>				            			
+				            			<a rel="${temp.rid}" name="delete">删除</a>
+			            			</td>
+			            		</tr>
+			            	</c:forEach>
+			            </tbody>
+            		<tbody>
+           
+		            </tbody>
+		          </table>
         </div>
     </div>
   </div>
@@ -147,11 +153,11 @@
 <!--用户信息模态框-->
 <div class="modal fade" id="seeUser" tabindex="-1" role="dialog" aria-labelledby="seeUserModalLabel">
   <div class="modal-dialog" role="document" style="max-width:450px;">
-    <form action="/User/update" method="post" autocomplete="off" draggable="false">
+    <form action="" method="post" autocomplete="off" draggable="false">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">修改用户</h4>
+          <h4 class="modal-title">处理人员</h4>
         </div>
         <div class="modal-body">
           <table class="table" style="margin-bottom:0px;">
@@ -160,17 +166,21 @@
             </thead>
             <tbody>
               <tr>
-                <td wdith="20%">姓名:</td>
-                <td width="80%"><input type="text" value="" class="form-control" id="truename" name="truename" maxlength="10" autocomplete="off" /></td>
+                <td wdith="20%">维修号:</td>
+                <td width="80%"><input type="text" value="" class="form-control" id="rid" name="rid" maxlength="10" autocomplete="off" disabled="disabled"/></td>
               </tr>
               <tr>
-                <td wdith="20%">电话:</td>
-                <td width="80%"><input type="text" value="" class="form-control" id="usertel" name="usertel" maxlength="13" autocomplete="off" /></td>
+                <td wdith="20%">处理人员:</td>
+               <%--  <input type="text" value="${param.staff}" class="form-control" id="tel" name="tel" maxlength="13" autocomplete="off" /> --%>
+                <td width="80%">
+	                <select>
+	                	<option>请选择</option>
+	                	<c:forEach items="${directorList}" var="temp">
+	                		<option value="${temp.username}">${temp.username}</option>
+	                	</c:forEach>
+	                </select></td>
               </tr>
-               <tr>
-	              <td><input type="radio" checked="checked" name="0">会员</td>
-	              <td><input type="radio" name="0">理事</td>
-              </tr>
+               
               
             </tbody>
             <tfoot>
@@ -179,9 +189,9 @@
           </table>
         </div>
         <div class="modal-footer">
-          <input type="hidden" name="userid" value="" />
+          <input type="hidden" id="userid" value="" />
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-          <button type="submit" class="btn btn-primary">提交</button>
+          <button type="button" class="btn btn-primary" onclick="save()">提交</button>
         </div>
       </div>
     </form>
@@ -189,6 +199,16 @@
 </div>
 
 <script>
+function save(){
+	var date = {};
+	date.rid = $("#rid").val();
+	date.staff = $("select").val();
+	
+	$.post("../repair.s?op=save",date,
+			function(date){
+		alert(date);
+	});
+}
 $(function () {
     $("#main table tbody tr td a").click(function () {
         var name = $(this);
@@ -196,15 +216,13 @@ $(function () {
         if (name.attr("name") === "see") {
             $.ajax({
                 type: "POST",
-                url: "/User/see",
+                url: "../repair.s?op=find",
                 data: "id=" + id,
                 cache: false, //不缓存此页面   
                 success: function (data) {
                     var data = JSON.parse(data);
-					$('#truename').val(data.truename);
-					$('#username').val(data.username);
-					$('#usertel').val(data.usertel);
-					$('#userid').val(data.userid);
+					$('#rid').val(data.rid);
+					$("select").val(data.staff);
                     $('#seeUser').modal('show');
                 }
             });
@@ -212,7 +230,7 @@ $(function () {
             if (window.confirm("此操作不可逆，是否确认？")) {
                 $.ajax({
                     type: "POST",
-                    url: "/User/delete",
+                    url: "../repair.s?op=delete",
                     data: "id=" + id,
                     cache: false, //不缓存此页面   
                     success: function (data) {
@@ -223,6 +241,7 @@ $(function () {
         };
     });
 });
+
 </script>
 </body>
 </html>

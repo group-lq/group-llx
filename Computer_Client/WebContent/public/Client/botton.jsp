@@ -20,7 +20,7 @@
                             </a>
                             &nbsp;
                             <a target="_blank" href="http://www.beian.gov.cn/" style="display:inline-block;">
-                                <img src="${pageContext.servletContext.contextPath}/picture/govbeian.png" align="absmiddle" />
+                                <img src="${base}/picture/govbeian.png" align="absmiddle" />
                                 &nbsp;公网安备XXXXXXXXXXXXXX号
                             </a>
                         </div>

@@ -26,9 +26,9 @@ public class UserServlet extends HttpServlet {
 				throws ServletException, IOException {
 		   request.setCharacterEncoding("utf-8");
 			response.setCharacterEncoding("utf-8");
-			String op = request.getParameter("op");
+			String op = request.getParameter("op");			
 			if("login".equals(op)){
-				login(request,response);
+				login(request,response,op);
 			}else if("query".equals(op)){
 				query(request,response);
 			}else if("add".equals(op)){
@@ -37,9 +37,20 @@ public class UserServlet extends HttpServlet {
 				find(request,response);
 			}else if("save".equals(op)){
 				save(request,response);
+			}else if("query1".equals(op)){
+				query1(request,response);
 			}
-			
 		}
+
+
+		private void query1(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException {
+			//request.setCharacterEncoding("utf-8");
+			User user = BeanUtils.asBean(request, User.class);
+			request.setAttribute("directorList", uBiz.findDirector(user));
+			request.getRequestDispatcher("ServerJsp"+"/repair.jsp").forward(request, response);
+		}
+
 
 		private void save(HttpServletRequest request, HttpServletResponse response) 
 				throws ServletException, IOException{
@@ -60,7 +71,6 @@ public class UserServlet extends HttpServlet {
 				throws ServletException, IOException{
 			
 			String id = request.getParameter("id");
-			
 			User user = uBiz.findByOne(id);
 			String userString = JSON.toJSONString(user);
 			response.getWriter().append(userString);
@@ -88,39 +98,32 @@ public class UserServlet extends HttpServlet {
 				throws ServletException, IOException {
 			//request.setCharacterEncoding("utf-8");
 			User user = BeanUtils.asBean(request, User.class);
-			System.out.println(user.getUsername());
-			System.out.println(request.getParameter("name"));
 			request.setAttribute("userList", uBiz.find(user));
-			request.getRequestDispatcher("manage-user.jsp").forward(request, response);;
+			request.getRequestDispatcher("ServerJsp"+"/manage-user.jsp").forward(request, response);
 		}
 
-		private void login(HttpServletRequest request, HttpServletResponse response)
+		private void login(HttpServletRequest request, HttpServletResponse response,String op)
 				throws ServletException, IOException{
 			String username = request.getParameter("username");
-			String userpwd = request.getParameter("userpwd");
-			
+			String userpwd = request.getParameter("userpwd");			
 			User user = null;
 			try {
 				user = uBiz.login(username, userpwd);
 			} catch (BizException e) {
 				e.printStackTrace();
 				request.setAttribute("msg", e.getMessage());
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.getRequestDispatcher("ServerJsp/"+"login.jsp").forward(request, response);
 				return;
 			}
-			
+			if("login".equals(op)){}
 			if(user == null ){
 				request.setAttribute("msg", "用户名或密码错误！");
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.getRequestDispatcher("ServerJsp/"+"login.jsp").forward(request, response);
 			}else{
-				request.getSession().setAttribute("LoginedUser",user);
-				System.out.println("login");
-				//System.out.println(this.getClass().getClassLoader().getResource("/").getPath() );
+				request.getSession().setAttribute("LoginedUser",user);				
 				response.sendRedirect("ServerJsp/"+"index.jsp");
-				/*recordLastTime(request,response,user);
-				recordCount(request,response,user);*/
 			}
-	}
+		}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

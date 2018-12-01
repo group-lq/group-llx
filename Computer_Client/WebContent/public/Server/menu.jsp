@@ -12,6 +12,7 @@
 			title="网站暂无留言功能">留言</a></li>
 	</ul>
 	<ul class="nav nav-sidebar">
+		<li><a href="repair.jsp">阳光服务</a></li>
 		<li><a href="category.jsp">栏目</a></li>
 		<li><a class="dropdown-toggle" id="otherMenu"
 			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">其他</a>

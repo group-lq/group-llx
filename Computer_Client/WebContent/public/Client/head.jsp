@@ -4,7 +4,7 @@
             <div class="wrap clean relative">
                 <div id="logo" class="fl relative trans">
                     <a href="index.jsp"​ class="relative trans">
-                        <img src="${pageContext.servletContext.contextPath}/picture/logo.png" alt="" class="max-w100 max-h100 trans">
+                        <img src="${base}/picture/logo.png" alt="" class="max-w100 max-h100 trans">
                     </a>
                 </div>
                 <nav class="absolute fz0 trans border-box stopP ">
@@ -26,7 +26,7 @@
                             <a href="product.jsp"​>协会通知</a>
                         </div>
                         <div class="nav-item fl text-center trans">
-                            <a href="case.jsp"​>网络保修</a>
+                            <a href="Crepair.jsp"​>网络保修</a>
                         </div>
                         <div class="nav-item fl text-center trans">
                             <a href="price.jsp"​>成绩查询</a>

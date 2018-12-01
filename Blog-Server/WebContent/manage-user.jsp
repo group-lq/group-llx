@@ -168,18 +168,7 @@
                 <td wdith="20%">电话:</td>
                 <td width="80%"><input type="text" value="" class="form-control" id="usertel" name="usertel" maxlength="13" autocomplete="off" /></td>
               </tr>
-              <tr>
-                <td wdith="20%">旧密码:</td>
-                <td width="80%"><input type="password" class="form-control" name="old_password" maxlength="18" autocomplete="off" /></td>
-              </tr>
-              <tr>
-                <td wdith="20%">新密码:</td>
-                <td width="80%"><input type="password" class="form-control" name="password" maxlength="18" autocomplete="off" /></td>
-              </tr>
-              <tr>
-                <td wdith="20%">确认密码:</td>
-                <td width="80%"><input type="password" class="form-control" name="new_password" maxlength="18" autocomplete="off" /></td>
-              </tr>
+            
             </tbody>
             <tfoot>
               <tr></tr>
@@ -199,10 +188,10 @@
 <script>
 function save(){
 	var date = {};
-	date.id = $("userid").val();
-	date.name = $("truename").val();
-	date.account = $("username").val();
-	date.tel = $("usertel").val();
+	date.id = $("#userid").val();
+	date.name = $("#truename").val();
+	date.account = $("#username").val();
+	date.tel = $("#usertel").val();
 	
 	$.post("user.s?op=save",date,
 			function(date){

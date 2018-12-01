@@ -26,12 +26,11 @@ DBHelper dbhelper = new DBHelper();
 	}
 	
 	public void add(User user,String repwd) throws BizException{
-		System.out.println("密码:"+user.getPwd()+"确认密码:"+repwd);
+		
 		if(user.getUsername().trim().length()<2 || user.getUsername().trim().length()>5){
 			throw new BizException("请输入真实姓名！");
 		}
-		
-		
+			
 		if(user.getTel().trim().isEmpty() || user.getTel() == null){
 			throw new BizException("电话为必填字段");
 			
@@ -63,8 +62,7 @@ DBHelper dbhelper = new DBHelper();
 		if(user.getUsername() != null && ! user.getUsername().trim().isEmpty()){
 			sql += " and name like ?";
 			params.add("%"+user.getUsername()+"%");
-		}
-		
+		}		
 		if(user.getTel() != null && ! user.getTel().trim().isEmpty()){
 			sql += " and tel like ?";
 			params.add("%"+user.getTel()+"%");
@@ -82,6 +80,12 @@ DBHelper dbhelper = new DBHelper();
 		}
 		DBHelper.update("update user set name =? ,account=? ,tel=? ,where id =?", 
 				user.getUsername(),user.getTel(),user.getId());
+	}
+
+	public Object findDirector(User user) {
+		String sql = "select * from user where type= ?";
+		user.setType("理事");
+		return DBHelper.select(sql,user.getType());
 	}
 
 }

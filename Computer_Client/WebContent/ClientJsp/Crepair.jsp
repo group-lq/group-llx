@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%
+	request.setCharacterEncoding("utf-8");
+	response.setCharacterEncoding("utf-8");
+	response.setHeader("Content-type", "text/html;charset=UTF-8");	
+		if(request.getAttribute("repairList") == null){
+			request.getRequestDispatcher("../crepair.s?op=query").forward(request, response);
+		}
+	%>
 <!DOCTYPE html>
 <html>
     
@@ -36,6 +45,7 @@
         </script>
         <script src="${base}/js/Client/bootstrap.min.js">
         </script>
+       
         <script>
             jQuery(window).scrollTop(0);
             jQuery('html,body').scrollTop(0);
@@ -49,6 +59,7 @@
                 },
                 500);
             })
+            
         </script>
        
     </head>
@@ -83,50 +94,48 @@
                    		<td width="70"><img alt="" src="${base}/picture/s.png"></td>
                    	</tr>
                    </table>  -->
-                    <form action="user.s">
+                    <form action="${base}/crepair.s">
 			        	<input type="hidden" name="op" value="query">
-			        	维修号:<input type="text" name="name" value="${param.name}">
-			        	<input type="submit" value="搜索">
+			        	维修号:<input type="text" name="rid" value="${param.rid}">			        	
+			        	<input type="submit" value="搜索">			        	
         			</form>
         			<br/>
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover"  >
 			            <thead>
 			              <tr>
 			                <th> <span class="visible-lg">维修号</span></th>
-			                <th> <span class="visible-lg">用户名</span></th>
-			                <th> <span class="visible-lg">电话</span></th>
-			                <th> <span class="visible-lg">地点</span></th>
-			                <th> <span class="visible-lg">保修故障描述</span></th>
+			                <th> <span class="visible-lg">报修故障描述</span></th>
+			                <th> <span class="visible-lg">时间</span></th>			                
+			                <th> <span class="visible-lg">地点</span></th>		                
 			                <th> <span class="visible-lg">处理人员</span></th>
 			                <th><span class="visible-lg">办理状态</span></th>
 			              </tr>
 			            </thead>
+			            <tbody>
+			            	<c:forEach items="${repairList}" var="temp">
+			            		<tr>
+			            			<td>${temp.rid}</td>
+			            			<td>${temp.description}</td>
+			            			<td>${temp.time}</td>
+			            			<td>${temp.address}</td>
+			            			<td>${temp.staff}</td>
+			            			<td>${temp.status}</td>
+			            		</tr>
+			            	</c:forEach>
+			            </tbody>
             		<tbody>
            
 		            </tbody>
 		          </table>
 		          <div>
-		          	<table width="673" height="287" cellpadding="0" cellspacing="0">
-                
-                  <tr class="tr_body">
-                    <td class="p_left10" colspan="5">
-					
-					</td>
-                  </tr>
-				   
-                 
-                  
-                </table>
-                
-                 
-              
-                
+		       
 		          </div>
 		          
 		          
         </div>
                     </div>
-                    <div id="turn_page" class="wow fadeInUp" first last>
+                    <!-- first last -->
+                    <div id="turn_page" class="wow fadeInUp" style="margin-top: 200px">
                         <span class="pageinfo">
                             共
                             <strong>
@@ -143,12 +152,14 @@
                     </div>
                     
                     <!-- <hr class="tr_foot"> -->
-                    <hr  class="p_left10" colspan="5" style=""><span>办事统计：</span> 累计共收件：<span>22499</span> 件；未处理：<span>101</span> 件；已处理：<span>21656</span> 件</hr>
+                    <div  class="p_left10" colspan="5" style="margin: 20px 0 0 5%"><span>办事统计：</span> 累计共收件：<span>22499</span> 件；未处理：<span>101</span> 件；已处理：<span>21656</span> 件</div>
                  <!--  </hr> -->
                   <br>
                   <br>
                   
                  <ol class="breadcrumb" style="float: right;margin-right: 5%">
+                 <!-- javascript:void(0) -->
+                 <!-- <li><a data-toggle="modal" href="javascript:void(0)"  id="d1"></a></li> -->
           		 	<li><a data-toggle="modal" data-target="#addUser" id="d1"><img alt="" src="${base}/picture/btn1.png"></a></li>
        			 </ol>
                     
@@ -184,11 +195,13 @@
             </div>
             <div class="blank25">
             </div>
+            <jsp:include page="/public/Client/botton.jsp"></jsp:include>
+         <jsp:include page="/public/Client/follow.jsp"></jsp:include>
             
-            <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" >
+<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" >
   <div class="modal-dialog" role="document" style="max-width:450px;">
-    <form action="user.s" method="post" autocomplete="off" draggable="false">
-    <input type="hidden" name="op" value="add">
+    <form action="repair.s" method="post" autocomplete="off" draggable="false">
+    <!-- <input type="hidden" name="op" value="add"> -->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -201,22 +214,14 @@
               <tr> </tr>
             </thead>
             <tbody>
-              <tr>
-                <td wdith="20%">用户名:</td>
-                <td width="80%"><input type="text" value="${param.name}" class="form-control" name="name" maxlength="10" autocomplete="off" /></td>
-              </tr>
              
               <tr>
-                <td wdith="20%">电话:</td>
-                <td width="80%"><input type="text" value="${param.account}" class="form-control" name="account" maxlength="10" autocomplete="off" /></td>
-              </tr>
-              <tr>
                 <td wdith="20%">地点:</td>
-                <td width="80%"><input type="text" value="${param.tel}" class="form-control" name="tel" maxlength="13" autocomplete="off" /></td>
+                <td width="80%"><input type="text" value="${param.address}" class="form-control" name="address" maxlength="13" autocomplete="off" id="address"/></td>
               </tr>
               <tr>
                <td  width="20%" ><br>
-               <span style="color:#ff5400">*</span><font class="index_text22"><br>保修<br>故障<br>描述<br>：</font></td>
+               <span style="color:#ff5400">*</span><font class="index_text22"><br>报修<br>故障<br>描述<br>：</font></td>
               
                 <!-- <td wdith="20%">保修故障描述:</td> -->
                 <td><textarea name="description"  id="description"   value=""     description="内容"  minlen=1   style="width:100%;height:120px;border:1px #D0D0D0 solid; font-size:14px" onpropertychange="if(this.scrollHeight<100){this.style.posHeight=120;}else{this.style.posHeight=this.scrollHeight}"    ></textarea>
@@ -232,18 +237,30 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-          <button type="submit" class="btn btn-primary">提交</button>
+          <button type="button" class="btn btn-primary" id="btn">提交</button>
         </div>
       </div>
     </form>
   </div>
 </div>
+ <script src="${base}/js/Client/website.js"></script>
+<script type="text/javascript">
+         $(function(){
+      		$("#btn").click(function(){
+      			var date = {};
+      			date.address = $("#address").val();
+      			date.description = $("#description").val();
+      			$.post("../repair.s?op=add",date,
+      					function(date){
+      				alert(date);
+      			});
+      		})
+      	});
+</script>            
             
-            
-         <jsp:include page="/public/Client/botton.jsp"></jsp:include>
-            <jsp:include page="/public/Client/follow.jsp"></jsp:include>
-         <script src="${base}/js/Client/website.js">
-        </script>
-    </body>
+         
+         
+         
+</body>
 
 </html>

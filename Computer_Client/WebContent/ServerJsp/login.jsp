@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	
 <!doctype html>
 <html lang="zh-CN">
@@ -9,7 +9,6 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<%System.out.println("------------------"+request.getAttribute("base")); %>
 <title>异清轩博客管理系统</title>
 <link rel="stylesheet" type="text/css" href="${base}/css/Server/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="${base}/css/Server/style.css">
@@ -36,13 +35,16 @@
     <h3 class="form-signin-heading">管理员登录</h3>
     <!-- <span class="form-signin-heading">管理员登录</span> -->
     <label for="userName" class="sr-only">用户名</label>
-    <input type="text" id="userName" name="username" class="form-control" placeholder="请输入用户名" required autofocus autocomplete="off" maxlength="10">
+    <input type="text" id="userName" name="username" class="form-control" placeholder="请输入用户名" 
+     autofocus autocomplete="off" maxlength="10" value="${param.username}">
     <label for="userPwd" class="sr-only">密码</label>
-    <input type="password" id="userPwd" name="userpwd" class="form-control" placeholder="请输入密码" required autocomplete="off" maxlength="18">
-    <a href="main.html"><button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button></a>
+    <input type="password" id="userPwd" name="userpwd" class="form-control" placeholder="请输入密码"  autocomplete="off" maxlength="18">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button>
+    <p style="margin-top : 5px"><a href="${base}/ClientJsp/login.jsp">还没有账号?马上注册</a></p>
   </form>
   <div class="footer">
-    <p><a href="${base}/ClientJsp/CLogin.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">会员登录 →</a></p>
+  	
+    <p><a href="${base}/ClientJsp/login.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">会员登录 →</a></p>
   </div>
 </div>
 <script src="${base}/js/Server/bootstrap.min.js"></script> 
@@ -65,4 +67,9 @@ $('#signinSubmit').click(function(){
 });
 </script>
 </body>
+<c:if test="${ ! empty msg }">
+	<script type="text/javascript">
+		alert('${msg}');
+	</script>
+</c:if>
 </html>
