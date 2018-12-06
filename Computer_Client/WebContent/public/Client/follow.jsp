@@ -69,7 +69,7 @@
                         </span>
                     </a>
                     <div id="wechat-qrcode">
-                        <img src="${pageContext.servletContext.contextPath}/picture/erweima.png" alt="" width="200" />
+                        <img src="${base}/picture/erweima.png" alt="" width="200" />
                     </div>
                 </div>
                 <div class="item relative">
@@ -80,4 +80,3 @@
                     </a>
                 </div>
             </div>
-        </div>

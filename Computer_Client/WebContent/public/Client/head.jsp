@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
- <header class="trans border-box  " ><!-- style="background-color: " -->
+ <header class="trans border-box  " >
             <div class="wrap clean relative">
                 <div id="logo" class="fl relative trans">
                     <a href="index.jsp"​ class="relative trans">
-                        <img src="${pageContext.servletContext.contextPath}/picture/logo.png" alt="" class="max-w100 max-h100 trans">
+                        <img src="${base}/picture/logo.png" alt="" class="max-w100 max-h100 trans">
                     </a>
                 </div>
                 <nav class="absolute fz0 trans border-box stopP ">

@@ -10,6 +10,7 @@
 		<li><a href="comment.jsp">评论</a></li>
 		<li><a data-toggle="tooltip" data-placement="bottom"
 			title="网站暂无留言功能">留言</a></li>
+		<li><a href="grade.jsp">成绩</a></li>
 	</ul>
 	<ul class="nav nav-sidebar">
 		<li><a href="category.jsp">栏目</a></li>

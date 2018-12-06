@@ -115,16 +115,13 @@ public class UserServlet extends HttpServlet {
 			}else{
 				request.getSession().setAttribute("LoginedUser",user);
 				System.out.println("login");
-				//System.out.println(this.getClass().getClassLoader().getResource("/").getPath() );
 				response.sendRedirect("ServerJsp/"+"index.jsp");
-				/*recordLastTime(request,response,user);
-				recordCount(request,response,user);*/
+				
 			}
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

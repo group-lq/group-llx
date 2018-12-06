@@ -9,7 +9,7 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<%System.out.println("------------------"+request.getAttribute("base")); %>
+
 <title>异清轩博客管理系统</title>
 <link rel="stylesheet" type="text/css" href="${base}/css/Server/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="${base}/css/Server/style.css">
@@ -17,15 +17,6 @@
 <link rel="apple-touch-icon-precomposed" href="${base}/images/Server/icon/icon.png">
 <link rel="shortcut icon" href="${base}/images/Server/icon/favicon.ico">
 <script src="${base}/js/Server/jquery-2.1.4.min.js"></script>
-<!--[if gte IE 9]>
-  <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
-  <script src="js/html5shiv.min.js" type="text/javascript"></script>
-  <script src="js/respond.min.js" type="text/javascript"></script>
-  <script src="js/selectivizr-min.js" type="text/javascript"></script>
-<![endif]-->
-<!--[if lt IE 9]>
-  <script>window.location.href='upgrade-browser.html';</script>
-<![endif]-->
 </head>
 
 <body class="user-select">
@@ -34,7 +25,6 @@
   <form action="${base}/user.s" method="post" autocomplete="off" class="form-signin">
   <input type="hidden" name="op" value="login">
     <h3 class="form-signin-heading">管理员登录</h3>
-    <!-- <span class="form-signin-heading">管理员登录</span> -->
     <label for="userName" class="sr-only">用户名</label>
     <input type="text" id="userName" name="username" class="form-control" placeholder="请输入用户名" required autofocus autocomplete="off" maxlength="10">
     <label for="userPwd" class="sr-only">密码</label>
@@ -42,7 +32,7 @@
     <a href="main.html"><button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button></a>
   </form>
   <div class="footer">
-    <p><a href="${base}/ClientJsp/CLogin.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">会员登录 →</a></p>
+    <p><a href="${base}/ClientJsp/login.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">会员登录 →</a></p>
   </div>
 </div>
 <script src="${base}/js/Server/bootstrap.min.js"></script> 

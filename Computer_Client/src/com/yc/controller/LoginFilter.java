@@ -24,7 +24,8 @@ public void destroy() {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		String path = httpRequest.getServletPath();
 		
@@ -33,25 +34,11 @@ public void destroy() {
 		System.out.println("================="+httpRequest.getContextPath());
 		request.setAttribute("base", httpRequest.getContextPath());
 		
-		if(path.endsWith("user.s") || path.endsWith("login.jsp")){
-			chain.doFilter(request, response);
-			return;
-		}
-		System.out.println("进来了吗？");
-		if(httpRequest.getSession().getAttribute("LoginedUser") == null){
-			request.setAttribute("msg", "请先登录！");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
-			return;
-		}
-		//正常业务必须执行 过滤器链的doFilter
 		chain.doFilter(request, response);
-		
-		
 		
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
 		System.out.println("=====================999999999999");
 	}
 

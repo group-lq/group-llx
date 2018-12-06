@@ -137,7 +137,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="WeChatModalLabel" style="cursor:default;">微信扫一扫</h4>
       </div>
-      <div class="modal-body" style="text-align:center"> <img src="${pageContext.servletContext.contextPath}/images/Server/weixin.jpg" alt="" style="cursor:pointer"/> </div>
+      <div class="modal-body" style="text-align:center"> <img src="${base}/images/Server/weixin.jpg" alt="" style="cursor:pointer"/> </div>
     </div>
   </div>
 </div>
@@ -149,7 +149,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="areDevelopingModalLabel" style="cursor:default;">该功能正在日以继夜的开发中…</h4>
       </div>
-      <div class="modal-body"> <img src="${pageContext.servletContext.contextPath}/images/Server/baoman/baoman_01.gif" alt="深思熟虑" />
+      <div class="modal-body"> <img src="${base}/images/Server/baoman/baoman_01.gif" alt="深思熟虑" />
         <p style="padding:15px 15px 15px 100px; position:absolute; top:15px; cursor:default;">很抱歉，程序猿正在日以继夜的开发此功能，本程序将会在以后的版本中持续完善！</p>
       </div>
       <div class="modal-footer">
@@ -168,5 +168,5 @@
     <li class="list-group-item"><span>浏览器：</span>Chrome47</li>
   </ul>
 </div>
-<script src="${pageContext.servletContext.contextPath}/js/Server/bootstrap.min.js"></script> 
-<script src="${pageContext.servletContext.contextPath}/js/Server/admin-scripts.js"></script> 
+<script src="${base}/js/Server/bootstrap.min.js"></script> 
+<script src="${base}/js/Server/admin-scripts.js"></script> 
