@@ -1,145 +1,429 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%-- <%
-		
-	System.out.print("=============="+session.getAttribute("LoginedUser"));
-	session.getAttribute("LoginedUser").
-	%> --%>
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>异清轩博客管理系统</title>
-<link rel="stylesheet" type="text/css" href="${base}/css/Server/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="${base}/css/Server/style.css">
-<link rel="stylesheet" type="text/css" href="${base}/css/Server/font-awesome.min.css">
-<link rel="apple-touch-icon-precomposed" href="${base}/images/Server/icon/icon.png">
-<link rel="shortcut icon" href="${base}/images/Server/icon/favicon.ico">
-<script src="${base}/js/Server/jquery-2.1.4.min.js"></script>
-<!--[if gte IE 9]>
-  <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
-  <script src="js/html5shiv.min.js" type="text/javascript"></script>
-  <script src="js/respond.min.js" type="text/javascript"></script>
-  <script src="js/selectivizr-min.js" type="text/javascript"></script>
-<![endif]-->
-<!--[if lt IE 9]>
-  <script>window.location.href='upgrade-browser.html';</script>
-<![endif]-->
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Bootstrap Core CSS -->
+<link href="${base}/css/Server/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="${base}/css/Server/style.css" rel='stylesheet' type='text/css' />
+<!-- font CSS -->
+<!-- font-awesome icons -->
+<link href="${base}/css/Server/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+ <!-- js-->
+<script src="${base}/js/Server/jquery-1.11.1.min.js"></script>
+<script src="${base}/js/Server/modernizr.custom.js"></script>
+<!--webfonts-->
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--//webfonts--> 
+<!--animate-->
+<link href="${base}/css/Server/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="${base}/js/Server/wow.min.js"></script>
+	<script>
+		 new WOW().init();
+	</script>
+<!--//end-animate-->
+<!-- chart -->
+<script src="${base}/js/Server/Chart.js"></script>
+<!-- //chart -->
+<!--Calender-->
+<link rel="stylesheet" href="${base}/css/Server/clndr.css" type="text/css" />
+<script src="${base}/js/Server/underscore-min.js" type="text/javascript"></script>
+<script src= "${base}/js/Server/moment-2.2.1.js" type="text/javascript"></script>
+<script src="${base}/js/Server/clndr.js" type="text/javascript"></script>
+<script src="${base}/js/Server/site.js" type="text/javascript"></script>
+<!--End Calender-->
+<!-- Metis Menu -->
+<script src="${base}/js/Server/metisMenu.min.js"></script>
+<script src="${base}/js/Server/custom.js"></script>
+<link href="${base}/css/Server/custom.css" rel="stylesheet">
+<!--//Metis Menu -->
+</head> 
+<body class="cbp-spmenu-push">
+	<jsp:include page="/public/Server/header.jsp"></jsp:include>
+		<!-- //header-ends -->
+		<!-- main content start-->
+		<div id="page-wrapper">
+			<div class="main-page">
+				<div class="row-one">
+					<div class="col-md-4 widget">
+						<div class="stats-left ">
+							<h5>Today</h5>
+							<h4>Sales</h4>
+						</div>
+						<div class="stats-right">
+							<label> 45</label>
+						</div>
+						<div class="clearfix"> </div>	
+					</div>
+					<div class="col-md-4 widget states-mdl">
+						<div class="stats-left">
+							<h5>Today</h5>
+							<h4>Visitors</h4>
+						</div>
+						<div class="stats-right">
+							<label> 80</label>
+						</div>
+						<div class="clearfix"> </div>	
+					</div>
+					<div class="col-md-4 widget states-last">
+						<div class="stats-left">
+							<h5>Today</h5>
+							<h4>Orders</h4>
+						</div>
+						<div class="stats-right">
+							<label>51</label>
+						</div>
+						<div class="clearfix"> </div>	
+					</div>
+					<div class="clearfix"> </div>	
+				</div>
+				<div class="charts">
+					<div class="col-md-4 charts-grids widget">
+						<h4 class="title">Bar Chart Example</h4>
+						<canvas id="bar" height="300" width="400"> </canvas>
+					</div>
+					<div class="col-md-4 charts-grids widget states-mdl">
+						<h4 class="title">Line Chart Example</h4>
+						<canvas id="line" height="300" width="400"> </canvas>
+					</div>
+					<div class="col-md-4 charts-grids widget">
+						<h4 class="title">Pie Chart Example</h4>
+						<canvas id="pie" height="300" width="400"> </canvas>
+					</div>
+					<div class="clearfix"> </div>
+							 <script>
+								var barChartData = {
+									labels : ["Jan","Feb","March","April","May","June","July"],
+									datasets : [
+										{
+											fillColor : "rgba(233, 78, 2, 0.9)",
+											strokeColor : "rgba(233, 78, 2, 0.9)",
+											highlightFill: "#e94e02",
+											highlightStroke: "#e94e02",
+											data : [65,59,90,81,56,55,40]
+										},
+										{
+											fillColor : "rgba(79, 82, 186, 0.9)",
+											strokeColor : "rgba(79, 82, 186, 0.9)",
+											highlightFill: "#4F52BA",
+											highlightStroke: "#4F52BA",
+											data : [40,70,55,20,45,70,60]
+										}
+									]
+									
+								};
+								var lineChartData = {
+									labels : ["Jan","Feb","March","April","May","June","July"],
+									datasets : [
+										{
+											fillColor : "rgba(242, 179, 63, 1)",
+											strokeColor : "#F2B33F",
+											pointColor : "rgba(242, 179, 63, 1)",
+											pointStrokeColor : "#fff",
+											data : [70,60,72,61,75,59,80]
 
-<body class="user-select">
-<section class="container-fluid">
-  
-  <!--引入头部文件  -->
-  <jsp:include page="/public/Server/head.jsp"></jsp:include>
-  
-  <div class="row">
-  	<!-- 引入菜单页面 -->
-    <jsp:include page="/public/Server/menu.jsp"></jsp:include>
-    
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-10 col-md-offset-2 main" id="main">
-      <h1 class="page-header">信息总览</h1>
-      <div class="row placeholders">
-        <div class="col-xs-6 col-sm-3 placeholder">
-          <h4>文章</h4>
-          <span class="text-muted">0 条</span> </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-          <h4>评论</h4>
-          <span class="text-muted">0 条</span> </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-          <h4>友链</h4>
-          <span class="text-muted">0 条</span> </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-          <h4>访问量</h4>
-          <span class="text-muted">0</span> </div>
-      </div>
-      <h1 class="page-header">状态</h1>
-      <div class="table-responsive">
-        <table class="table table-striped table-hover">
-          <tbody>
-            <tr>
-              <td>登录者: <span>admin</span>，这是您第 <span>13</span> 次登录</td>
-            </tr>
-            <tr>
-              <td>上次登录时间: 2016-01-08 15:50:28 , 上次登录IP: ::1:55570</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <h1 class="page-header">系统信息</h1>
-      <div class="table-responsive">
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr> </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>管理员个数:</td>
-              <td>2 人</td>
-              <td>服务器软件:</td>
-              <td>Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9</td>
-            </tr>
-            <tr>
-              <td>浏览器:</td>
-              <td>Chrome47</td>
-              <td>PHP版本:</td>
-              <td>5.6.1</td>
-            </tr>
-            <tr>
-              <td>操作系统:</td>
-              <td>Windows 10</td>
-              <td>PHP运行方式:</td>
-              <td>CGI-FCGI</td>
-            </tr>
-            <tr>
-              <td>登录者IP:</td>
-              <td>::1:55570</td>
-              <td>MYSQL版本:</td>
-              <td>5.5.40</td>
-            </tr>
-            <tr>
-              <td>程序版本:</td>
-              <td class="version">YlsatCMS 1.0 <font size="-6" color="#BBB">(20160108160215)</font></td>
-              <td>上传文件:</td>
-              <td>可以 <font size="-6" color="#BBB">(最大文件：2M ，表单：8M )</font></td>
-            </tr>
-            <tr>
-              <td>程序编码:</td>
-              <td>UTF-8</td>
-              <td>当前时间:</td>
-              <td>2016-01-08 15:50:30</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr></tr>
-          </tfoot>
-        </table>
-      </div>
-      
-      <footer>
-        <h1 class="page-header">程序信息</h1>
-        <div class="table-responsive">
-        <table class="table table-striped table-hover">
-          <tbody>
-            <tr>
-              <td><span style="display:inline-block; width:8em">版权所有</span> 
-              	www.hyycinfo.com</td>
-            </tr>
-            <tr>
-              <td><span style="display:inline-block;width:8em">页面加载时间</span>
-              	  1.0835s  </td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-      </footer>
-    </div>
-  </div>
-</section>
 
+										},
+										{
+											fillColor : "rgba(97, 100, 193, 1)",
+											strokeColor : "#6164C1",
+											pointColor : "rgba(97, 100, 193,1)",
+											pointStrokeColor : "#9358ac",
+											data : [50,65,51,67,52,64,50]
+
+										}
+									]
+									
+								};
+								var pieData = [
+										{
+											value: 90,
+											color:"rgba(233, 78, 2, 1)",
+											label: "Product 1"
+										},
+										{
+											value : 50,
+											color : "rgba(242, 179, 63, 1)",
+											label: "Product 2"
+										},
+										{
+											value : 60,
+											color : "rgba(88, 88, 88,1)",
+											label: "Product 3"
+										},
+										{
+											value : 40,
+											color : "rgba(79, 82, 186, 1)",
+											label: "Product 4"
+										}
+										
+									];
+								
+							new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
+							new Chart(document.getElementById("bar").getContext("2d")).Bar(barChartData);
+							new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
+							
+							</script>
+							
+				</div>
+				<div class="row">
+					<div class="col-md-4 stats-info widget">
+						<div class="stats-title">
+							<h4 class="title">Browser Stats</h4>
+						</div>
+						<div class="stats-body">
+							<ul class="list-unstyled">
+								<li>GoogleChrome <span class="pull-right">85%</span>  
+									<div class="progress progress-striped active progress-right">
+										<div class="bar green" style="width:85%;"></div> 
+									</div>
+								</li>
+								<li>Firefox <span class="pull-right">35%</span>  
+									<div class="progress progress-striped active progress-right">
+										<div class="bar yellow" style="width:35%;"></div>
+									</div>
+								</li>
+								<li>Internet Explorer <span class="pull-right">78%</span>  
+									<div class="progress progress-striped active progress-right">
+										<div class="bar red" style="width:78%;"></div>
+									</div>
+								</li>
+								<li>Safari <span class="pull-right">50%</span>  
+									<div class="progress progress-striped active progress-right">
+										<div class="bar blue" style="width:50%;"></div>
+									</div>
+								</li>
+								<li>Opera <span class="pull-right">80%</span>  
+									<div class="progress progress-striped active progress-right">
+										<div class="bar light-blue" style="width:80%;"></div>
+									</div>
+								</li>
+								<li class="last">Others <span class="pull-right">60%</span>  
+									<div class="progress progress-striped active progress-right">
+										<div class="bar orange" style="width:60%;"></div>
+									</div>
+								</li> 
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-8 stats-info stats-last widget-shadow">
+						<table class="table stats-table ">
+							<thead>
+								<tr>
+									<th>S.NO</th>
+									<th>PRODUCT</th>
+									<th>STATUS</th>
+									<th>PROGRESS</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Lorem ipsum</td>
+									<td><span class="label label-success">In progress</span></td>
+									<td><h5>85% <i class="fa fa-level-up"></i></h5></td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Aliquam</td>
+									<td><span class="label label-warning">New</span></td>
+									<td><h5>35% <i class="fa fa-level-up"></i></h5></td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Lorem ipsum</td>
+									<td><span class="label label-danger">Overdue</span></td>
+									<td><h5  class="down">40% <i class="fa fa-level-down"></i></h5></td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<td>Aliquam</td>
+									<td><span class="label label-info">Out of stock</span></td>
+									<td><h5>100% <i class="fa fa-level-up"></i></h5></td>
+								</tr>
+								<tr>
+									<th scope="row">5</th>
+									<td>Lorem ipsum</td>
+									<td><span class="label label-success">In progress</span></td>
+									<td><h5 class="down">10% <i class="fa fa-level-down"></i></h5></td>
+								</tr>
+								<tr>
+									<th scope="row">6</th>
+									<td>Aliquam</td>
+									<td><span class="label label-warning">New</span></td>
+									<td><h5>38% <i class="fa fa-level-up"></i></h5></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 map widget-shadow">
+						<h4 class="title">Visitors Map </h4>
+						<div class="map_container"><div id="vmap" style="width: 100%; height: 354px;"></div></div>
+						<!--map js-->
+						<link href="${base}/css/Server/jqvmap.css" rel='stylesheet' type='text/css' />
+						<script src="${base}/js/Server/jquery.vmap.js"></script>
+						<script src="${base}/js/Server/jquery.vmap.sampledata.js" type="text/javascript"></script>
+						<script src="${base}/js/Server/jquery.vmap.world.js" type="text/javascript"></script>
+						<script type="text/javascript">
+							jQuery(document).ready(function() {
+								jQuery('#vmap').vectorMap({
+									map: 'world_en',
+									backgroundColor: '#fff',
+									color: '#696565',
+									hoverOpacity: 0.8,
+									selectedColor: '#696565',
+									enableZoom: true,
+									showTooltip: true,
+									values: sample_data,
+									scaleColors: ['#585858', '#696565'],
+									normalizeFunction: 'polynomial'
+								});
+							});
+						</script>
+						<!-- //map js -->
+					</div>
+					<div class="col-md-4 social-media widget-shadow">
+						<div class="wid-social twitter">
+							<div class="social-icon">
+								<i class="fa fa-twitter text-light icon-xlg "></i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">3.1 K</h3>
+								<h4 class="counttype text-light">Tweets</h4>
+							</div>
+						</div>
+						<div class="wid-social google-plus">
+							<div class="social-icon">
+								<i class="fa fa-google-plus text-light icon-xlg "></i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">523</h3>
+								<h4 class="counttype text-light">Circles</h4>
+							</div>
+						</div>
+						<div class="wid-social facebook">
+							<div class="social-icon">
+								<i class="fa fa-facebook text-light icon-xlg "></i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">1.06K</h3>
+								<h4 class="counttype text-light">Likes</h4>
+							</div>
+						</div>
+						<div class="wid-social dribbble">
+							<div class="social-icon">
+								<i class="fa fa-dribbble text-light icon-xlg "></i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">1.6 K</h3>
+								<h4 class="counttype text-light">Subscribers</h4>
+							</div>
+						</div>
+						<div class="wid-social vimeo">
+							<div class="social-icon">
+								<i class="fa fa-vimeo-square text-light icon-xlg"> </i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">2.1 m</h3>
+								<h4 class="counttype text-light">Contacts</h4>
+							</div>
+						</div>
+						<div class="wid-social xing">
+							<div class="social-icon">
+								<i class="fa fa-xing text-light icon-xlg "></i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">2525</h3>
+								<h4 class="counttype text-light">Connections</h4>
+							</div>
+						</div>
+						<div class="wid-social flickr">
+							<div class="social-icon">
+								<i class="fa fa-android text-light icon-xlg"></i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">1221</h3>
+								<h4 class="counttype text-light">Media</h4>
+							</div>
+						</div>
+						<div class="wid-social yahoo">
+							<div class="social-icon">
+								<i class="fa fa-yahoo text-light icon-xlg"> Y!</i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">2525</h3>
+								<h4 class="counttype text-light">Connections</h4>
+							</div>
+						</div>
+						<div class="wid-social rss">
+							<div class="social-icon">
+								<i class="fa fa-rss text-light icon-xlg"></i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">1523</h3>
+								<h4 class="counttype text-light">Subscribers</h4>
+							</div>
+						</div>
+						<div class="wid-social youtube">
+							<div class="social-icon">
+								<i class="fa fa-youtube text-light icon-xlg"></i>
+							</div>
+							<div class="social-info">
+								<h3 class="number_counter bold count text-light start_timer counted">1523</h3>
+								<h4 class="counttype text-light">Subscribers</h4>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="row calender widget-shadow">
+					<h4 class="title">Calender</h4>
+					<div class="cal1">
+						
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<jsp:include page="/public/Server/footer.jsp"></jsp:include>
+	</div>
+	<!-- Classie -->
+		<script src="${base}/js/Server/classie.js"></script>
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+				
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeftPush' );
+			};
+			
+
+			function disableOther( button ) {
+				if( button !== 'showLeftPush' ) {
+					classie.toggle( showLeftPush, 'disabled' );
+				}
+			}
+		</script>
+	<!--scrolling js-->
+	<script src="${base}/js/Server/jquery.nicescroll.js"></script>
+	<script src="${base}/js/Server/scripts.js"></script>
+	<!--//scrolling js-->
+	<!-- Bootstrap Core JavaScript -->
+   <script src="${base}/js/Server/bootstrap.js"> </script>
 </body>
 </html>
-

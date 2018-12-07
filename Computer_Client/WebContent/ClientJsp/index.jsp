@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%
+	request.setCharacterEncoding("utf-8");
+	response.setCharacterEncoding("utf-8");
+	response.setHeader("Content-type", "text/html;charset=UTF-8");	
+		if(request.getAttribute("newsList") == null){
+			request.getRequestDispatcher("../cnews.s?op=newquery").forward(request, response);
+		}
+	%>
 <!DOCTYPE html>
 <html>
     
@@ -691,112 +700,38 @@
                     </div>
                 </div>
                 <div class="tutorial-list clean wrap">
-                    <div class='item wow fadeInUp fl' class="item wow fadeInUp fl">
-                        <div class="date fl">
-                            <div class="year">
-                                2017
+                        <c:forEach items="${newsList}" var="temp">
+                        <div class='item wow fadeInUp fl'>
+                            <div class="date fl">
+                                <div class="day">
+                                   ${temp.time}
+                                </div>
                             </div>
-                            <div class="day">
-                                09-29
+                            <div class="info fl">
+                                <div class="name text-over">
+                                    <a href="${base}/cnews.s?op=find&newsid=${temp.newsid}"​ class="trans">
+                                       ${temp.title}
+                                    </a>
+                                </div>
+                                <div class="brief over">
+                                    ${temp.decription}
+                                </div>
                             </div>
                         </div>
-                        <div class="info fl">
-                            <div class="name text-over">
-                                <a href="#"​ class="trans">
-                                    为什么企业要建多国语言
-                                </a>
-                            </div>
-                            <div class="brief over">
-                                互联网在不断发展壮大，已成为企业和个人寻求生意机会，对商品、服务和信息进行了解的首选方式。从站在增强一个企业竞争优势的角度看，建设一个多语言网站是不断增加客户数量...
-                            </div>
+                </c:forEach>
+                       
+                    </div>
+                   
                         </div>
                     </div>
-                    <div class='item wow fadeInUp fr' class="item wow fadeInUp fl">
-                        <div class="date fl">
-                            <div class="year">
-                                2017
-                            </div>
-                            <div class="day">
-                                09-29
-                            </div>
-                        </div>
-                        <div class="info fl">
-                            <div class="name text-over">
-                                <a href="#"​ class="trans">
-                                    什么是伪静态？伪静态有
-                                </a>
-                            </div>
-                            <div class="brief over">
-                                伪静态是相对真实静态来讲的，真实静态会生成一个html或htm后缀的文件，访客能够访问到真实存在的静态页面，而伪静态则没有生成实体静态页面文件，而仅仅是以.html一类的静态页面...
-                            </div>
-                        </div>
-                    </div>
-                    <div class='item wow fadeInUp fl' class="item wow fadeInUp fl">
-                        <div class="date fl">
-                            <div class="year">
-                                2017
-                            </div>
-                            <div class="day">
-                                09-29
-                            </div>
-                        </div>
-                        <div class="info fl">
-                            <div class="name text-over">
-                                <a href="#"​ class="trans">
-                                    企业建站选择主机和产品
-                                </a>
-                            </div>
-                            <div class="brief over">
-                                个人建站和企业建站是两个不同的，个人建站我们则是需要考虑成本的支出，比较大部分个人建站仅仅是用于兴趣爱好，对于空间和服务的要求可能不是很高的，而企业建站则是不同了...
-                            </div>
-                        </div>
-                    </div>
-                    <div class='item wow fadeInUp fr' class="item wow fadeInUp fl">
-                        <div class="date fl">
-                            <div class="year">
-                                2017
-                            </div>
-                            <div class="day">
-                                09-29
-                            </div>
-                        </div>
-                        <div class="info fl">
-                            <div class="name text-over">
-                                <a href="#"​ class="trans">
-                                    SEO网站的基本术语
-                                </a>
-                            </div>
-                            <div class="brief over">
-                                SEO SEO就是Search Engine Optimization的缩写,中文就是搜索引擎优化。 PR 值全称为PageRank(网页级别）,是Google用于用来标识网页的等级、重要性的一种方法，是Google用来衡量一个网站的好坏的重...
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="blank20">
                 </div>
                 <div class="blank20">
                 </div>
                 <div class="blank25">
                 </div>
-                <div class="text-center">
-                    <div class="try-button-box wrap fz0">
-                        <a href="#"​ target="_blank"
-                        class="button inline-block text-center trans wow fadeInUp">
-                            我要私人定制
-                        </a>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="blank25">
-            </div>
-            <div class="blank25">
-            </div>
-            <div class="blank25">
-            </div>
-            <div class="blank25">
-            </div>
-           
+         
             <jsp:include page="/public/Client/botton.jsp"></jsp:include>
              <jsp:include page="/public/Client/follow.jsp"></jsp:include>
         <script src="${base}/js/Client/website.js">

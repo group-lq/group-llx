@@ -1,17 +1,19 @@
 package com.yc.controller;
 
 import java.io.IOException;
-
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSON;
 import com.yc.dao.BeanUtils;
-
+import com.yc.dao.CookieUtil;
 import com.yc.bean.User;
 import com.yc.biz.BizException;
 import com.yc.biz.UserBiz;
@@ -21,13 +23,14 @@ import com.yc.biz.UserBiz;
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserBiz uBiz = new UserBiz();
+	private final static int cookieTime=60*60*24*7; //一周的cookie
 	
 	   protected void doGet(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException, IOException {
-		   request.setCharacterEncoding("utf-8");
+		   	request.setCharacterEncoding("utf-8");
 			response.setCharacterEncoding("utf-8");
 			String op = request.getParameter("op");			
-			if("login".equals(op)){
+			if("login".equals(op) || "Clogin".equals(op)){
 				login(request,response,op);
 			}else if("query".equals(op)){
 				query(request,response);
@@ -79,8 +82,6 @@ public class UserServlet extends HttpServlet {
 
 		private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-			System.out.println(request.getParameter("name"));
-			
 			//request.getContentType();
 			User user = BeanUtils.asBean(request, User.class);
 			String repwd = request.getParameter("repwd");
@@ -105,7 +106,8 @@ public class UserServlet extends HttpServlet {
 		private void login(HttpServletRequest request, HttpServletResponse response,String op)
 				throws ServletException, IOException{
 			String username = request.getParameter("username");
-			String userpwd = request.getParameter("userpwd");			
+			String userpwd = request.getParameter("userpwd");
+			String checkbox = request.getParameter("checkbox");
 			User user = null;
 			try {
 				user = uBiz.login(username, userpwd);
@@ -115,20 +117,38 @@ public class UserServlet extends HttpServlet {
 				request.getRequestDispatcher("ServerJsp/"+"login.jsp").forward(request, response);
 				return;
 			}
-			if("login".equals(op)){}
-			if(user == null ){
-				request.setAttribute("msg", "用户名或密码错误！");
-				request.getRequestDispatcher("ServerJsp/"+"login.jsp").forward(request, response);
+			if(user != null){
+				if(checkbox != null){
+					CookieUtil.saveCookie(response, user);
+				}
+				if("login".equals(op)){
+					request.getSession().setAttribute("LoginedUser",user);				
+					response.sendRedirect("ServerJsp/"+"index.jsp");
+				}else{
+					request.getSession().setAttribute("LoginedUser",user);				
+					response.sendRedirect("ClientJsp/"+"index.jsp");
+				}
 			}else{
-				request.getSession().setAttribute("LoginedUser",user);				
-				response.sendRedirect("ServerJsp/"+"index.jsp");
+				request.setAttribute("msg", "用户名或密码错误！");
+				request.getRequestDispatcher("Nlogin.jsp").forward(request, response);
+
+				/*request.getSession().setAttribute("LoginedUser",user);
+				System.out.println("login");
+				response.sendRedirect("ServerJsp/"+"index.jsp");*/
+				
+
 			}
+					
+			
 		}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
+
+	
+	
 
 }

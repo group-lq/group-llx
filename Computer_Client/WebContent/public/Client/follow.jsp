@@ -80,4 +80,4 @@
                     </a>
                 </div>
             </div>
-        </div>
+>>>>>>> branch 'master' of https://github.com/group-lq/group-llx.git

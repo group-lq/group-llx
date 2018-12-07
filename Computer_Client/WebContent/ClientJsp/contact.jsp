@@ -103,42 +103,15 @@
                             <br/>
                         </div>
                     </div>
-                    <div class="item fl text-center relative wow fadeInUp">
-                        <div class="ico">
-                            <img src="${base}/picture/ico-fax.png" alt="" class="middle">
-                            <span class="middle-span">
-                            </span>
-                        </div>
-                        <div class="title">
-                            传真
-                        </div>
-                        <div class="info">
-                            0755-88888888
-                        </div>
-                    </div>
-                    <div class="item fl text-center relative wow fadeInUp">
-                        <div class="ico">
-                            <img src="${base}/picture/ico-online.png" alt="" class="middle">
-                            <span class="middle-span">
-                            </span>
-                        </div>
-                        <div class="title">
-                            客服
-                        </div>
-                        <a href="#"​ onClick="popService(service2);"
-                        class="button block text-center">
-                            客服在线
-                        </a>
-                    </div>
                 </div>
                 <div class="clean">
                     <div class="contact-area fr clean">
                         <div class="contact-info2 clean">
                             <div class="title wow fadeInUp">
-                                互联网 · 最高端
+                                计算机与信息科学学院.计算机协会
                             </div>
                             <div class="address wow fadeInUp">
-                                地点：广东省深圳市前海经济开发区88号
+                                地点：湖南工学院信息楼
                             </div>
                             <div class="clean relative">
                                 <div class="qrcode fl clean relative wow fadeInUp">
@@ -189,10 +162,6 @@
                             </div>
                         </form>
                     </div>
-                    <div class="map fl fz0 over relative text-center wow fadeInUp">
-                        <img src="${base}/picture/map.jpg" alt="" class="img-0">
-                        <img src="${base}/picture/map.jpg" alt="" class="img-1 absolute">
-                    </div>
                 </div>
             </div>
             <div class="blank25">
@@ -204,12 +173,6 @@
             <div class="blank25">
             </div>
             <div class="text-center">
-                <div class="try-button-box wrap fz0">
-                    <a href="#"​ target="_blank"
-                    class="button inline-block text-center trans wow fadeInUp">
-                        我要私人定制
-                    </a>
-                </div>
             </div>
             <div class="blank25">
             </div>

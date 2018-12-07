@@ -48,7 +48,6 @@ public class CRepairServlet extends HttpServlet {
 	private void query(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Repair repair = BeanUtils.asBean(request, Repair.class);
-		System.out.println("rid==============:"+repair.getRid());
 		request.setAttribute("repairList", rBiz.find(repair));
 		request.getRequestDispatcher("ClientJsp/"+"Crepair.jsp").forward(request, response);		
 	}

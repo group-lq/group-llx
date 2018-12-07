@@ -175,7 +175,7 @@ public class DBHelper {
 		} finally {
 			close(con);
 		}
-		System.out.println("select rows " + list.size());
+		//System.out.println("select rows " + list.size());
 		return (C) list;
 	}
 

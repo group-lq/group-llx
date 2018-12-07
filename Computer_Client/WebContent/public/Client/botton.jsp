@@ -47,7 +47,7 @@
                                 </a>
                                 微信
                                 <div class="qrcode absolute trans">
-                                    <img src="${pageContext.servletContext.contextPath}/picture/erweima.png" alt="" width="200" />
+                                    <img src="${base}/picture/erweima.png" alt="" width="200" />
                                 </div>
                             </div>
                             <div class="item text-center inline-block wow fadeInUp">
@@ -78,4 +78,5 @@
                         </div>
                     </div>
                 </div>
+>>>>>>> branch 'master' of https://github.com/group-lq/group-llx.git
             </footer>
