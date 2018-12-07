@@ -131,6 +131,12 @@ public class UserServlet extends HttpServlet {
 			}else{
 				request.setAttribute("msg", "用户名或密码错误！");
 				request.getRequestDispatcher("Nlogin.jsp").forward(request, response);
+
+				/*request.getSession().setAttribute("LoginedUser",user);
+				System.out.println("login");
+				response.sendRedirect("ServerJsp/"+"index.jsp");*/
+				
+
 			}
 					
 			
@@ -138,7 +144,6 @@ public class UserServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 	

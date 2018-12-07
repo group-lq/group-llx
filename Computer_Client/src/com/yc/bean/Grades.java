@@ -6,68 +6,45 @@ public class Grades implements java.io.Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Long tId;
-	private Long sno;
-	private Long testNo;
-	private Long idenId;
-	private String pwd;
-	private String type;
-	private String term;
-	private String year;
-	public Long gettId() {
-		return tId;
+	private Long tid;
+	private String idenno;
+	private String subject;
+	private String name;
+	private String gresult;
+	public String getGresult() {
+		return gresult;
 	}
-	public void settId(Long tId) {
-		this.tId = tId;
+	public void setGresult(String gresult) {
+		this.gresult = gresult;
 	}
-	public Long getSno() {
-		return sno;
+	public Long getTid() {
+		return tid;
 	}
-	public void setSno(Long sno) {
-		this.sno = sno;
+	public void setTid(Long tid) {
+		this.tid = tid;
 	}
-	public Long getTestNo() {
-		return testNo;
+	
+	public String getIdenno() {
+		return idenno;
 	}
-	public void setTestNo(Long testNo) {
-		this.testNo = testNo;
+	public void setIdenno(String idenno) {
+		this.idenno = idenno;
 	}
-	public Long getIdenId() {
-		return idenId;
+	public String getSubject() {
+		return subject;
 	}
-	public void setIdenId(Long idenId) {
-		this.idenId = idenId;
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
-	public String getPwd() {
-		return pwd;
+	public String getName() {
+		return name;
 	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public String getTerm() {
-		return term;
-	}
-	public void setTerm(String term) {
-		this.term = term;
-	}
-	public String getYear() {
-		return year;
-	}
-	public void setYear(String year) {
-		this.year = year;
+	public void setName(String name) {
+		this.name = name;
 	}
 	@Override
 	public String toString() {
-		return "Grades [tId=" + tId + ", sno=" + sno + ", testNo=" + testNo + ", idenId=" + idenId + ", pwd=" + pwd
-				+ ", type=" + type + ", term=" + term + ", year=" + year + "]";
+		return "Grades [tid=" + tid + ", idenno=" + idenno + ", subject=" + subject + ", name=" + name + ", gresult="
+				+ gresult + "]";
 	}
-	
-	
-	
 }

@@ -129,6 +129,7 @@
 											pointStrokeColor : "#fff",
 											data : [70,60,72,61,75,59,80]
 
+
 										},
 										{
 											fillColor : "rgba(97, 100, 193, 1)",
