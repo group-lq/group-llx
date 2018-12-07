@@ -9,10 +9,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>
-            产品
+            通知
         </title>
         <meta name="keywords" content="" />
-        <meta name="description" content="20年建站经验 + 1000家企业客户 + 高端建站团队" />
+        <meta name="description" content="" />
         <link href="${base}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
         />
         <link href="${base}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -74,26 +74,18 @@
             <div id="products">
                 <div class="category-list text-center fz0 hide992 wow fadeInUp">
                     <a href="#"​ class="item inline-block trans ">
-                        企业集团
+                        组织部
                     </a>
                     <a href="#"​ class="item inline-block trans ">
-                        服饰珠宝
+                        档案部
                     </a>
                     <a href="#"​ class="item inline-block trans ">
-                        家居房产
+                        外联部
                     </a>
                     <a href="#"​ class="item inline-block trans ">
-                        婚纱摄影
+                        宣传部
                     </a>
-                    <a href="#"​ class="item inline-block trans ">
-                        餐饮美食
-                    </a>
-                    <a href="#"​ class="item inline-block trans ">
-                        美容美妆
-                    </a>
-                    <a href="#"​ class="item inline-block trans ">
-                        设计建筑
-                    </a>
+                   
                 </div>
                 <div class="category-list text-center show992 wow fadeInUp">
                     <div class="btn-group">
