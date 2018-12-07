@@ -11,9 +11,10 @@ public class News implements java.io.Serializable{
 	private String title;
 	private Timestamp time;
 	private String author;
-	private Timestamp deadTime;
 	private String content;
 	private String cfrom;
+	private String decription;
+	private Long ncount;
 	public Long getNewsid() {
 		return newsid;
 	}
@@ -38,12 +39,6 @@ public class News implements java.io.Serializable{
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public Timestamp getDeadTime() {
-		return deadTime;
-	}
-	public void setDeadTime(Timestamp deadTime) {
-		this.deadTime = deadTime;
-	}
 	public String getContent() {
 		return content;
 	}
@@ -56,11 +51,24 @@ public class News implements java.io.Serializable{
 	public void setCfrom(String cfrom) {
 		this.cfrom = cfrom;
 	}
+	public String getDecription() {
+		return decription;
+	}
+	public void setDecription(String decription) {
+		this.decription = decription;
+	}
+	public Long getNcount() {
+		return ncount;
+	}
+	public void setNcount(Long ncount) {
+		this.ncount = ncount;
+	}
 	@Override
 	public String toString() {
-		return "News [newsid=" + newsid + ", title=" + title + ", time=" + time + ", author=" + author + ", deadTime="
-				+ deadTime + ", content=" + content + ", cfrom=" + cfrom + "]";
+		return "News [newsid=" + newsid + ", title=" + title + ", time=" + time + ", author=" + author + ", content="
+				+ content + ", cfrom=" + cfrom + ", decription=" + decription + ", ncount=" + ncount + "]";
 	}
+	
 	
 	
 	

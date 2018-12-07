@@ -1,75 +1,101 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Login Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>异清轩博客管理系统</title>
-<link rel="stylesheet" type="text/css" href="${base}/css/Server/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="${base}/css/Server/style.css">
-<link rel="stylesheet" type="text/css" href="${base}/css/Server/login.css">
-<link rel="apple-touch-icon-precomposed" href="${base}/images/Server/icon/icon.png">
-<link rel="shortcut icon" href="${base}/images/Server/icon/favicon.ico">
-<script src="${base}/js/Server/jquery-2.1.4.min.js"></script>
-<!--[if gte IE 9]>
-  <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
-  <script src="js/html5shiv.min.js" type="text/javascript"></script>
-  <script src="js/respond.min.js" type="text/javascript"></script>
-  <script src="js/selectivizr-min.js" type="text/javascript"></script>
-<![endif]-->
-<!--[if lt IE 9]>
-  <script>window.location.href='upgrade-browser.html';</script>
-<![endif]-->
-</head>
-
-<body class="user-select">
-<div class="container">
-  <div class="siteIcon"><img src="${base}/images/Server/icon/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用计协管理系统" draggable="false" /></div>
-  <form action="${base}/user.s" method="post" autocomplete="off" class="form-signin">
-  <input type="hidden" name="op" value="login">
-    <h3 class="form-signin-heading">管理员登录</h3>
-    <!-- <span class="form-signin-heading">管理员登录</span> -->
-    <label for="userName" class="sr-only">用户名</label>
-    <input type="text" id="userName" name="username" class="form-control" placeholder="请输入用户名" 
-     autofocus autocomplete="off" maxlength="10" value="${param.username}">
-    <label for="userPwd" class="sr-only">密码</label>
-    <input type="password" id="userPwd" name="userpwd" class="form-control" placeholder="请输入密码"  autocomplete="off" maxlength="18">
-    <button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button>
-    <p style="margin-top : 5px"><a href="${base}/ClientJsp/login.jsp">还没有账号?马上注册</a></p>
-  </form>
-  <div class="footer">
-  	
-    <p><a href="${base}/ClientJsp/login.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">会员登录 →</a></p>
-  </div>
-</div>
-<script src="${base}/js/Server/bootstrap.min.js"></script> 
-<script>
-$('[data-toggle="tooltip"]').tooltip();
-window.oncontextmenu = function(){
-	//return false;
-};
-$('.siteIcon img').click(function(){
-	window.location.reload();
-});
-$('#signinSubmit').click(function(){
-	if($('#userName').val() === ''){
-		$(this).text('用户名不能为空');
-	}else if($('#userPwd').val() === ''){
-		$(this).text('密码不能为空');
-	}else{
-		$(this).text('请稍后...');
-	}
-});
-</script>
-</body>
-<c:if test="${ ! empty msg }">
-	<script type="text/javascript">
-		alert('${msg}');
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Bootstrap Core CSS -->
+<link href="${base}/css/Server/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="${base}/css/Server/style.css" rel='stylesheet' type='text/css' />
+<!-- font CSS -->
+<!-- font-awesome icons -->
+<link href="${base}/css/Server/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+ <!-- js-->
+<script src="${base}/js/Server/jquery-1.11.1.min.js"></script>
+<script src="${base}/js/Server/modernizr.custom.js"></script>
+<!--webfonts-->
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--//webfonts--> 
+<!--animate-->
+<link href="${base}/css/Server//animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="${base}/js/Server/wow.min.js"></script>
+	<script>
+		 new WOW().init();
 	</script>
-</c:if>
+<!--//end-animate-->
+<!-- Metis Menu -->
+<script src="${base}/js/Server/metisMenu.min.js"></script>
+<script src="${base}/js/Server/custom.js"></script>
+<link href="${base }css/Server/custom.css" rel="stylesheet">
+<!--//Metis Menu -->
+</head> 
+<body class="cbp-spmenu-push">
+	<jsp:include page="/public/Server/header.jsp"></jsp:include>
+		<!-- //header-ends -->
+		<!-- main content start-->
+		<div id="page-wrapper">
+			<div class="main-page login-page ">
+				<h3 class="title1">SignIn Page</h3>
+				<div class="widget-shadow">
+					<div class="login-top">
+						<h4>Welcome back to Novus AdminPanel ! <br> Not a Member? <a href="signup.html">  Sign Up »</a> </h4>
+					</div>
+					<div class="login-body">
+						<form>
+							<input type="text" class="user" name="email" placeholder="Enter your email" required="">
+							<input type="password" name="password" class="lock" placeholder="password">
+							<input type="submit" name="Sign In" value="Sign In">
+							<div class="forgot-grid">
+								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Remember me</label>
+								<div class="forgot">
+									<a href="#">forgot password?</a>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+				<div class="login-page-bottom">
+					<h5> - OR -</h5>
+					<div class="social-btn"><a href="#"><i class="fa fa-facebook"></i><i>Sign In with Facebook</i></a></div>
+					<div class="social-btn sb-two"><a href="#"><i class="fa fa-twitter"></i><i>Sign In with Twitter</i></a></div>
+				</div>
+			</div>
+		</div>
+		<jsp:include page="/public/Server/footer.jsp"></jsp:include>
+	</div>
+	<!-- Classie -->
+		<script src="${base}/js/Server/classie.js"></script>
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+				
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeftPush' );
+			};
+			
+			function disableOther( button ) {
+				if( button !== 'showLeftPush' ) {
+					classie.toggle( showLeftPush, 'disabled' );
+				}
+			}
+		</script>
+	<!--scrolling js-->
+	<script src="${base}/js/Server/jquery.nicescroll.js"></script>
+	<script src="${base}/js/Server/scripts.js"></script>
+	<!--//scrolling js-->
+	<!-- Bootstrap Core JavaScript -->
+   <script src="${base}/js/Server/bootstrap.js"> </script>
+</body>
 </html>

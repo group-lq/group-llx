@@ -14,6 +14,7 @@ public class Comment implements java.io.Serializable{
 	private Long userId;
 	private Long newsId;
 	private String content;
+	private Long count;
 	public Long getcId() {
 		return cId;
 	}
@@ -44,11 +45,18 @@ public class Comment implements java.io.Serializable{
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public Long getCount() {
+		return count;
+	}
+	public void setCount(Long count) {
+		this.count = count;
+	}
 	@Override
 	public String toString() {
 		return "Comment [cId=" + cId + ", cTime=" + cTime + ", userId=" + userId + ", newsId=" + newsId + ", content="
-				+ content + "]";
+				+ content + ", count=" + count + "]";
 	}
+	
 	
 	
 

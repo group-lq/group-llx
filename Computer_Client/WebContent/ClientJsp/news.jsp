@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%
+	request.setCharacterEncoding("utf-8");
+	response.setCharacterEncoding("utf-8");
+	response.setHeader("Content-type", "text/html;charset=UTF-8");	
+		if(request.getAttribute("newsList") == null){
+			request.getRequestDispatcher("../cnews.s?op=query").forward(request, response);
+		}
+	%>
 <!DOCTYPE html>
 <html>
     
@@ -72,12 +81,12 @@
             <div id="tutorial">
                 <div class="tutorial-support">
                     <div class="wrap clean">
-                        <form name="formsearch" class="support-search fl relative" action="#">
-                            <input type="hidden" name="kwtype" value="0" />
-                            <input type="text" class="text block border-box" name="q" value="" placeholder="在哪里设置网站关键词">
+                        <form action="${base}/cnews.s" class="support-search fl relative" >
+                        <input type="hidden" name="op" value="query">
+                            
+                            <input type="text" class="text block border-box" name="cmmtent" value="" placeholder="新闻标题搜索">
                             <input type="submit" class="hide" value="">
                         </form>
-                        <!--<a href="#"​ class="play ico trans fl middle wow fadeInUp">视频</a>-->
                         <div class="line fl middle">
                         </div>
                         <a href="#"​ class="file ico trans fl middle wow fadeInUp">
@@ -90,139 +99,47 @@
                 </div>
                 <div class="wrap">
                     <div class="tutorial-list clean">
+                <c:forEach items="${newsList}" var="temp">
                         <div class='item wow fadeInUp fl'>
                             <div class="date fl">
-                                <div class="year">
-                                    2017
-                                </div>
                                 <div class="day">
-                                    09-29
+                                   ${temp.time}
                                 </div>
                             </div>
                             <div class="info fl">
                                 <div class="name text-over">
-                                    <a href="newsshow.jsp"​ class="trans">
-                                        为什么企业要建多国语言网站？
+                                    <a href="${base}/cnews.s?op=find&newsid=${temp.newsid}"​ class="trans">
+                                       ${temp.title}
                                     </a>
                                 </div>
                                 <div class="brief over">
-                                    互联网在不断发展壮大，已成为企业和个人寻求生意机会，对商品、服务和信息进行了解的首选方式。从站在增强一个企业竞争优势的角度看，建设一个多语言网站是不断增加客户数量...
+                                    ${temp.decription}
                                 </div>
                             </div>
                         </div>
-                        <div class='item wow fadeInUp fr'>
-                            <div class="date fl">
-                                <div class="year">
-                                    2017
-                                </div>
-                                <div class="day">
-                                    09-29
-                                </div>
-                            </div>
-                            <div class="info fl">
-                                <div class="name text-over">
-                                    <a href="newsshow.jsp"​ class="trans">
-                                        什么是伪静态？伪静态有何作用?
-                                    </a>
-                                </div>
-                                <div class="brief over">
-                                    伪静态是相对真实静态来讲的，真实静态会生成一个html或htm后缀的文件，访客能够访问到真实存在的静态页面，而伪静态则没有生成实体静态页面文件，而仅仅是以.html一类的静态页面...
-                                </div>
-                            </div>
-                        </div>
-                        <div class='item wow fadeInUp fl'>
-                            <div class="date fl">
-                                <div class="year">
-                                    2017
-                                </div>
-                                <div class="day">
-                                    09-29
-                                </div>
-                            </div>
-                            <div class="info fl">
-                                <div class="name text-over">
-                                    <a href="newsshow.jsp"​ class="trans">
-                                        企业建站选择主机和产品服务遇到的问题
-                                    </a>
-                                </div>
-                                <div class="brief over">
-                                    个人建站和企业建站是两个不同的，个人建站我们则是需要考虑成本的支出，比较大部分个人建站仅仅是用于兴趣爱好，对于空间和服务的要求可能不是很高的，而企业建站则是不同了...
-                                </div>
-                            </div>
-                        </div>
-                        <div class='item wow fadeInUp fr'>
-                            <div class="date fl">
-                                <div class="year">
-                                    2017
-                                </div>
-                                <div class="day">
-                                    09-29
-                                </div>
-                            </div>
-                            <div class="info fl">
-                                <div class="name text-over">
-                                    <a href="newsshow.jsp"​ class="trans">
-                                        SEO网站的基本术语
-                                    </a>
-                                </div>
-                                <div class="brief over">
-                                    SEO SEO就是Search Engine Optimization的缩写,中文就是搜索引擎优化。 PR 值全称为PageRank(网页级别）,是Google用于用来标识网页的等级、重要性的一种方法，是Google用来衡量一个网站的好坏的重...
-                                </div>
-                            </div>
-                        </div>
-                        <div class='item wow fadeInUp fl'>
-                            <div class="date fl">
-                                <div class="year">
-                                    2017
-                                </div>
-                                <div class="day">
-                                    09-29
-                                </div>
-                            </div>
-                            <div class="info fl">
-                                <div class="name text-over">
-                                    <a href="newsshow.jsp"​ class="trans">
-                                        SEO快速排名算法
-                                    </a>
-                                </div>
-                                <div class="brief over">
-                                    一、IP环境 地区相关性限制，非本地区的IP点击不计分(PS：部分行业有此限制，比如地区旅游行业网站，如上海旅行社必须需要上海本地的IP点击，否则不加分，多次使用外地IP点击不仅...
-                                </div>
-                            </div>
-                        </div>
-                        <div class='item wow fadeInUp fr'>
-                            <div class="date fl">
-                                <div class="year">
-                                    2017
-                                </div>
-                                <div class="day">
-                                    09-29
-                                </div>
-                            </div>
-                            <div class="info fl">
-                                <div class="name text-over">
-                                    <a href="newsshow.jsp"​ class="trans">
-                                        SEO怎么加快文章的收录速度
-                                    </a>
-                                </div>
-                                <div class="brief over">
-                                    不论做网站还是在各大网站发文章大家都比较关心网站的页面收录情况，每天有规律的更新，每天在各大平台发那么多内容，但是网站和文章的收录情况并不乐观，查下网站的整体收录...
-                                </div>
-                            </div>
-                        </div>
+                </c:forEach>
+                    </div>
                     </div>
                     <!-- ?????? -->
-                    <div id="turn_page" class="wow fadeInUp" first last>
+                    <div id="turn_page" class="wow fadeInUp" >
+                   <!--  <div>
+						<span><a href="news.jsp?nowPage=1">首页</a></span>
+						<span><a href="news.jsp?nowPage=beforePage">上一页</a></span>
+						<span><a href="news.jsp?nowPage=afterPage">下一页</a></span>
+						<span><a href="news.jsp?nowPage=totlePage">末页</a></span>
+					</div> -->
                         <font class="page_item_current">
-                            1
+                            <span><a href="news.jsp?nowPage=1">首页</a></span>
                         </font>
-                        <a class="page_item" href='list_12_2.html'>
-                            2
-                        </a>
-                        <a class="page_button" href='list_12_2.html'>
-                            <i class="fa fa-chevron-right trans middle">
-                            </i>
-                        </a>
+                        <font class="page_item_current">
+                           <span><a href="news.jsp?nowPage=beforePage">上一页</a></span>
+                        </font>
+                        <font class="page_item_current">
+                           <span><a href="news.jsp?nowPage=afterPage">下一页</a></span>
+                        </font>
+                        <font class="page_item_current">
+                           <span><a href="news.jsp?nowPage=totlePage">末页</a></span>
+                        </font>
                     </div>
                 </div>
                 <div class="blank20">
@@ -233,11 +150,7 @@
                 </div>
                 <div class="blank20">
                 </div>
-            </div>
-            
-            
-            
-          <jsp:include page="/public/Client/botton.jsp"></jsp:include>
+         <jsp:include page="/public/Client/botton.jsp"></jsp:include>
            <jsp:include page="/public/Client/follow.jsp"></jsp:include>
        <script src="${base}/js/Client/website.js">
         </script>
