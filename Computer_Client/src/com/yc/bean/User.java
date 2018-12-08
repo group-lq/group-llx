@@ -16,6 +16,7 @@ public class User implements java.io.Serializable{
 	private Timestamp enterTime;
 	private String type;
 	private String pic;
+	private String email;
 	public Long getId() {
 		return id;
 	}
@@ -64,11 +65,19 @@ public class User implements java.io.Serializable{
 	public void setPic(String pic) {
 		this.pic = pic;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", pwd=" + pwd + ", tel=" + tel + ", majorClass="
-				+ majorClass + ", enterTime=" + enterTime + ", type=" + type + ", pic=" + pic + "]";
+				+ majorClass + ", enterTime=" + enterTime + ", type=" + type + ", pic=" + pic + ", email=" + email
+				+ "]";
 	}
+	
 	
 	
 	

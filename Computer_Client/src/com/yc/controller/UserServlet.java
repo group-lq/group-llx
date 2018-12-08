@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.alibaba.fastjson.JSON;
 import com.yc.dao.BeanUtils;
 import com.yc.dao.CookieUtil;
+import com.yc.dao.RegexUtils;
 import com.yc.bean.User;
 import com.yc.biz.BizException;
 import com.yc.biz.UserBiz;
@@ -42,7 +43,41 @@ public class UserServlet extends HttpServlet {
 				save(request,response);
 			}else if("query1".equals(op)){
 				query1(request,response);
+			}else if("pic".equals(op)){
+				show(request,response);
 			}
+		}
+
+
+		private void show(HttpServletRequest request, HttpServletResponse response) 
+				throws ServletException, IOException {
+			String account = request.getParameter("username");
+			User user = null ;
+			if(RegexUtils.checkEmail(account)){
+				request.setAttribute("loginMsg", "邮箱格式错误!");
+				user = uBiz.findByEmail(account);
+				
+				/*String userString = JSON.toJSONString(user.getPic());
+				response.getWriter().append(userString);*/
+			}else if(RegexUtils.checkMobileNumber(account)){
+				request.setAttribute("loginMsg", "手机格式错误!");
+				user = uBiz.findByTel(account);
+				
+				/*String userString = JSON.toJSONString(user.getPic());
+				response.getWriter().append(userString);*/
+			}else{
+				user = uBiz.findByName(account);
+				
+				
+			}
+			/*RegexUtils.checkEmail(account)
+			RegexUtils.checkMobileNumber(account)*/
+			String userString = JSON.toJSONString(user);
+			response.getWriter().append(userString);
+			
+			
+			
+			
 		}
 
 

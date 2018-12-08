@@ -88,4 +88,19 @@ DBHelper dbhelper = new DBHelper();
 		return DBHelper.select(sql,user.getType());
 	}
 
+	public User findByName(String account) {
+		String sql = "select pic from user where username =?";
+		return DBHelper.unique(sql, User.class, account);
+	}
+
+	public User findByEmail(String account) {
+		String sql = "select pic from user where email =?";
+		return DBHelper.unique(sql, User.class, account);
+	}
+
+	public User findByTel(String account) {
+		String sql = "select pic from user where tel =?";
+		return DBHelper.unique(sql, User.class, account);
+	}
+
 }

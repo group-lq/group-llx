@@ -80,7 +80,9 @@
 						</li>
 						<li>
 							<a href="charts.jsp" class="chart-nav"><i class="fa fa-bar-chart nav_icon"></i>图表 <span class="nav-badge-btm pull-right">new</span></a>
+							<p></p>
 						</li>
+						
 					</ul>
 					<div class="clearfix"> </div>
 					<!-- //sidebar-collapse -->
