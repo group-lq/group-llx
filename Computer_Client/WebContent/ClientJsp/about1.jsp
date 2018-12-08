@@ -72,66 +72,8 @@
                 </div>
             </div>
             <div id="about" class="wrap">
-                <div class="clean">
-                    <div class="item fr fz0 text-center wow fadeInUp">
-                        <img src="${base}/picture/db39253b5d.jpg" alt="" class="max-w100">
-                    </div>
-                    <div class="item about-brief fl border-box text-center wow fadeInUp">
-                        <div class="about-title text-center">
-                            <div class="title-0">
-                                WHO ARE WE
-                            </div>
-                            <div class="title-1">
-                                <span>
-                                    我们是谁
-                                </span>
-                            </div>
-                        </div>
-                        <div class="brief">
-                           	 湖南工学院计算机协会是一个学术科技类协会，是一个以技术为核心的协会。
-                            <br />
-                            	 协会分为五个团队，硬件团队，多媒体团队，Web团队，office团队，C语言团队
-                            <br />
-                            	 硬件团队：解决各种计算机故障，负责协会义务维修活动。
-                            <br />
-                           	多媒体团队：研究图片视频处理技术，负责制作宣传海报视频。
-                            <br />
-                            office团队：致力于用Office进行文字排版、表格技巧、幻灯片的教学。
-                            <br />
-                           C语言团队：进行C语言的入门教学，解决C语言的技术问题。
-                            <br />
-                           Web团队：学习网页制作，负责维护协会网页。
-           
-                        </div>
-                    </div>
-                </div>
-                <div class="clean relative">
-                    <div class="item fl fz0 text-center wow fadeInUp">
-                        <img src="${base}/picture/18beffa957.jpg" alt="" class="max-w100">
-                    </div>
-                    <div class="item number text-center absolute wow fadeInUp">
-                        <div class="i fl">
-                            <div id="down-0" class="n" data-start="0" data-end="30" data-duration="1">
-                                30
-                            </div>
-                            协会理事
-                        </div>
-                        <div class="i fl">
-                            <div id="down-1" class="n" data-start="0" data-end="100" data-duration="2"
-                            data-suffix="+">
-                                100+
-                            </div>
-                            新入会员
-                        </div>
-                        <div class="i fl">
-                            <div id="down-2" class="n" data-start="0" data-end="1000" data-duration="3"
-                            data-suffix="+">
-                                1000+
-                            </div>
-                            累计会员
-                        </div>
-                    </div>
-                </div>
+                
+                
             </div>
             <div id="team" class="wrap">
                 <div class="about-title text-center">

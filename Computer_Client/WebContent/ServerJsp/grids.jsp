@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Grids</title>
+<title>添加文章</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -41,56 +41,30 @@
 		<!-- main content start-->
 		<div id="page-wrapper">
 			<div class="main-page">
-				<h3 class="title1">Grid system</h3>
+				<h3 class="title1">添加文章</h3>
 				<div class="grids widget-shadow">
 					<div class="form-group">
-						<div class="">
+						<div class="row">
 							<div class="col-md-12">
-								<input type="text" class="form-control1" placeholder=".col-md-12">
+								<input type="text" class="form-control1" placeholder="标题">
 							</div>
+							<div class="clearfix"> </div>
 							<div class="clearfix"> </div>
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<div class="row">
-							<div class="col-md-2 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-2">
-							</div>
-							<div class="col-md-10">
-								<input type="text" class="form-control1" placeholder=".col-md-10">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-3 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-3">
-							</div>
-							<div class="col-md-9">
-								<input type="text" class="form-control1" placeholder=".col-md-9">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-4 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-4">
-							</div>
-							<div class="col-md-8">
-								<input type="text" class="form-control1" placeholder=".col-md-8">
+							<div class="col-md-12">
+								<input type="text" class="form-control1" placeholder="作者">
 							</div>
 							<div class="clearfix"> </div>
 						</div>
 					</div>	
 					<div class="form-group">
 						<div class="row">
-							<div class="col-md-5 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-5">
-							</div>
-							<div class="col-md-7">
-								<input type="text" class="form-control1" placeholder=".col-md-7">
+							<div class="col-md-12">
+								<input type="text" class="form-control1" placeholder="正文">
 							</div>
 							<div class="clearfix"> </div>
 						</div>

@@ -8,13 +8,13 @@
                 <div class="wrap clean">
                     <div class="left fl">
                         <div class="title wow fadeInUp">
-                            互联网 · 最高端 模板一样可以很精致
+                            计算机协会
                         </div>
                         <div class="hotline wow fadeInUp">
-                            0755-88888888 400-8888-888
+                            电话
                         </div>
                         <div class="address wow fadeInUp">
-                            XX前海经济开发区XX号&nbsp;&nbsp;&nbsp;
+                            湖南省衡阳市珠晖区湖南工学院&nbsp;&nbsp;&nbsp;
                             <a href="#"​ target="_blank">
                                 ICP备XXXXXXXX号
                             </a>
@@ -38,7 +38,10 @@
                                     <i class="fa fa-qq middle trans" onClick="popService(service2);">
                                     </i>
                                 </a>
-                                QQ
+             QQ
+             					<div class="qrcode absolute trans">
+                                    <img src="${base}/picture/erweima.png" alt="" width="200" />
+                                </div>
                             </div>
                             <div class="item text-center inline-block wow fadeInUp relative">
                                 <a href="#"​ class="ico block trans wechat" rel="nofollow">
@@ -69,12 +72,12 @@
                     <div class="wrap clean">
                         <div class="links fl">
                             友情链接 :
-                            <a href='http://www.17sucai.com/' target='_blank'>
-                                网站模板
+                            <a href='http://www.hnit.edu.cn/' target='_blank'>
+                                湖南工学院
                             </a>
                         </div>
                         <div class="copyright fr">
-                            Copyright &copy; 2002-2017 某某网络建站有限公司 版权所有 ICP备XXXXXXXX号
+                            Copyright &copy; 2019 湖南工学院计算机协会 
                         </div>
                     </div>
                 </div>

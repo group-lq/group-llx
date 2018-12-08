@@ -30,6 +30,7 @@
 <body class="user-select">
 <div class="container">
   <div class="siteIcon"><img src="${base}/images/Server/icon/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用计协管理系统" draggable="false" /></div>
+  
   <form action="${base}/cuser.s" method="post" autocomplete="off" class="form-signin">
    <input type="hidden" name="op" value="Clogin">
     <h3 class="form-signin-heading">会员登录</h3>
@@ -40,6 +41,7 @@
    <button class="btn btn-lg btn-primary btn-block" type="submit" id="signinSubmit">登录</button>
    <p style="margin-top : 5px"><a href="${base}/ClientJsp/login.jsp">还没有账号?马上注册</a></p>
   </form>
+  
   <div class="footer">
     <p><a href="${base}/ServerJsp/login.jsp" data-toggle="tooltip" data-placement="left" title="不知道自己在哪?">管理员登录 →</a></p>
   </div>
