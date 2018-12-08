@@ -10,31 +10,34 @@
 							<a href="index.jsp"><i class="fa fa-home nav_icon"></i>仪表板</a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-cogs nav_icon"></i>组件 <span class="nav-badge">12</span> <span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-cogs nav_icon"></i>文章管理<span class="nav-badge">12</span> <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="grids.jsp">网络系统</a>
+									<a href="grids.jsp">添加文章</a>
 								</li>
 								<li>
-									<a href="media.jsp">媒体对象</a>
+									<a href="media.jsp">修改文章</a>
+								</li>
+								<li>
+									<a href="media.jsp">删除文章</a>
 								</li>
 							</ul>
 							<!-- /nav-second-level -->
 						</li>
 						<li class="">
-							<a href="#"><i class="fa fa-book nav_icon"></i>UI 元素 <span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-book nav_icon"></i>评论管理<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="general.jsp">将军<span class="nav-badge-btm">08</span></a>
+									<a href="general.jsp">热门评论<span class="nav-badge-btm">08</span></a>
 								</li>
 								<li>
-									<a href="typography.jsp">活版印刷</a>
+									<a href="typography.jsp">关键字</a>
 								</li>
 							</ul>
 							<!-- /nav-second-level -->
 						</li>
 						<li>
-							<a href="widgets.jsp"><i class="fa fa-th-large nav_icon"></i>小部件 <span class="nav-badge-btm">08</span></a>
+							<a href="widgets.jsp"><i class="fa fa-th-large nav_icon"></i>通知 <span class="nav-badge-btm">08</span></a>
 						</li>
 						<li>
 							<a href="#"><i class="fa fa-envelope nav_icon"></i>邮件<span class="fa arrow"></span></a>
@@ -49,13 +52,13 @@
 							<!-- //nav-second-level -->
 						</li>
 						<li>
-							<a href="tables.jsp"><i class="fa fa-table nav_icon"></i>表 <span class="nav-badge">05</span></a>
+							<a href="tables.jsp"><i class="fa fa-table nav_icon"></i>网络报修<span class="nav-badge">05</span></a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-check-square-o nav_icon"></i>形式<span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-check-square-o nav_icon"></i>用户管理<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="forms.jsp">基本表 <span class="nav-badge-btm">07</span></a>
+									<a href="forms.jsp">添加用户 <span class="nav-badge-btm">07</span></a>
 								</li>
 								<li>
 									<a href="validation.jsp">验证</a>
@@ -97,7 +100,7 @@
 				<!--logo -->
 				<div class="logo">
 					<a href="index.jsp">
-						<h1>计协</h1>
+						<h1>计算机协会</h1>
 						<span>后台管理</span>
 					</a>
 				</div>
