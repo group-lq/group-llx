@@ -69,87 +69,9 @@
 							<div class="clearfix"> </div>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-6 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-6">
-							</div>
-							<div class="col-md-6">
-								<input type="text" class="form-control1" placeholder=".col-md-6">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>	
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-4 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-4">
-							</div>
-							<div class="col-md-4 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-4">
-							</div>
-							<div class="col-md-4">
-								<input type="text" class="form-control1" placeholder=".col-md-4">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>	
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-2 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-2">
-							</div>
-							<div class="col-md-8 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-8">
-							</div>
-							<div class="col-md-2">
-								<input type="text" class="form-control1" placeholder=".col-md-2">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>	
-					<div class="form-group">
-						<div class="row">
-							<div class="col-md-3 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-3">
-							</div>
-							<div class="col-md-3 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-3">
-							</div>
-							<div class="col-md-3 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-3">
-							</div>
-							<div class="col-md-3">
-								<input type="text" class="form-control1" placeholder=".col-md-3">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>	
-					<div class="form-group mb-n">
-						<div class="row">
-							<div class="col-md-2 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-2">
-							</div>
-							<div class="col-md-2 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-2">
-							</div>
-							<div class="col-md-2 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-2">
-							</div>
-							<div class="col-md-2 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-2">
-							</div>
-							<div class="col-md-2 grid_box1">
-								<input type="text" class="form-control1" placeholder=".col-md-2">
-							</div>
-							<div class="col-md-2">
-								<input type="text" class="form-control1" placeholder=".col-md-2">
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>	
+					
 				</div>
-				<h3 class="title1">Bootstrap Grid Details</h3>
+				<h3 class="title1">引导网格细节</h3>
 				<div class="grid-bottom widget-shadow">
 					<table class="table table-bordered table-striped no-margin grd_tble">
 						<thead>

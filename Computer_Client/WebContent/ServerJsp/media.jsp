@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Media</title>
+<title>修改文章</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -42,7 +42,7 @@
 		<div id="page-wrapper">
 			<div class="main-page">
 				<div class="media">
-					<h3 class="title1">Media Objects</h3>
+					<h3 class="title1">修改文章</h3>
 					<div class="bs-example5 widget-shadow" data-example-id="default-media">
 						<div class="media">
 							<div class="media-left">
