@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Tables</title>
+<title>网络报修</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -42,43 +42,66 @@
 		<div id="page-wrapper">
 			<div class="main-page">
 				<div class="tables">
-					<h3 class="title1">Tables</h3>
+					<h3 class="title1">网络报修</h3>
+					
+					
 					<div class="panel-body widget-shadow">
-						<h4>Basic Table:</h4>
+						<h4>报修表:</h4>
+						
+						<div id="addrepair">
+					<input type="text" class="form-control" placeholder="故障描述" name="info" autocomplete="off">
+					<input type="text" class="form-control" placeholder="手机号码" name="phonenumber" autocomplete="off">
+					<input type="text" class="form-control" placeholder="时间" name="time" autocomplete="off">
+					<input type="text" class="form-control" placeholder="地点" name="place" autocomplete="off">
+					
+					</div>
+						
+					</div>
+					<div class="bs-example widget-shadow" data-example-id="bordered-table"> 
+						<h4>维修状态表:</h4>
 						<table class="table">
 							<thead>
-								<tr>
-								  <th>#</th>
-								  <th>First Name</th>
-								  <th>Last Name</th>
-								  <th>Username</th>
-								</tr>
-							</thead>
+			              <tr>
+			                <th> <span class="visible-lg">维修号</span></th>
+			                <th> <span class="visible-lg">报修故障描述</span></th>
+			                <th> <span class="visible-lg">时间</span></th>			                
+			                <th> <span class="visible-lg">地点</span></th>		                
+			                <th> <span class="visible-lg">处理人员</span></th>
+			                <th><span class="visible-lg">办理状态</span></th>
+			                <th><span class="visible-lg">操作</span></th>
+			              </tr>
+			            </thead>
 							<tbody>
 								<tr>
 								  <th scope="row">1</th>
-								  <td>Mark</td>
-								  <td>Otto</td>
-								  <td>@mdo</td>
+								  <td>系统重装</td>
+								  <td>2018-11-3</td>
+								  <td>活动室</td>
+								  <td>娄宇</td>
+								  <td>已完成</td>
+								  <td><a href="table_update.jsp">修改</a> <a rel="6">删除</a></td>
 								</tr>
 								<tr>
 								  <th scope="row">2</th>
-								  <td>Jacob</td>
-								  <td>Thornton</td>
-								  <td>@fat</td>
+								  <td>系统重装</td>
+								  <td>2018-11-3</td>
+								  <td>活动室</td>
+								  <td>娄宇</td>
+								  <td>已完成</td>
+								  <td><a href="table_update.jsp">修改</a> <a rel="6">删除</a></td>
 								</tr>
 								<tr>
 								  <th scope="row">3</th>
-								  <td>Larry</td>
-								  <td>the Bird</td>
-								  <td>@twitter</td>
+								  <td>系统重装</td>
+								  <td>2018-11-3</td>
+								  <td>活动室</td>
+								  <td>娄宇</td>
+								  <td>已完成</td>
+								  <td><a href="table_update.jsp">修改</a> <a rel="6">删除</a></td>
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div class="bs-example widget-shadow" data-example-id="bordered-table"> 
-						<h4>Bordered Basic Table:</h4>
-						<table class="table table-bordered"> <thead> <tr> <th>#</th> <th>First Name</th> <th>Last Name</th> <th>Username</th> </tr> </thead> <tbody> <tr> <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope="row">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope="row">3</th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> </table>
+					
 					</div>
 					<div class="bs-example widget-shadow" data-example-id="hoverable-table"> 
 						<h4>Hover Rows Table:</h4>
