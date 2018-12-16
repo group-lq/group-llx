@@ -110,11 +110,11 @@ public class SArticleServlet extends HttpServlet {
 		News news = BeanUtils.asBean(request, News.class);
 		try {
 			snBiz.addArticle(news,content);
-			response.sendRedirect("/ServerJsp/grids.jsp");
+			response.sendRedirect("ServerJsp/grids.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("msg", e.getMessage());
-			response.sendRedirect("/ServerJsp/grids.jsp");
+			response.sendRedirect("ServerJsp/grids.jsp");
 			System.out.println("dadada");
 		}
 	}

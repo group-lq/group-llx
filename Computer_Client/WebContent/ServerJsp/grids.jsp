@@ -46,6 +46,7 @@
 			<div class="main-page">
 				<h3 class="title1">添加文章</h3>
 				<div class="grids widget-shadow">
+
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-12">
@@ -55,6 +56,7 @@
 							<div class="clearfix"> </div>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-12">
