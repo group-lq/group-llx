@@ -47,8 +47,6 @@ public class UserServlet extends HttpServlet {
 				show(request,response);
 			}
 		}
-
-
 		private void show(HttpServletRequest request, HttpServletResponse response) 
 				throws ServletException, IOException {
 			String account = request.getParameter("username");
@@ -56,28 +54,19 @@ public class UserServlet extends HttpServlet {
 			if(RegexUtils.checkEmail(account)){
 				request.setAttribute("loginMsg", "邮箱格式错误!");
 				user = uBiz.findByEmail(account);
-				
 				/*String userString = JSON.toJSONString(user.getPic());
 				response.getWriter().append(userString);*/
 			}else if(RegexUtils.checkMobileNumber(account)){
 				request.setAttribute("loginMsg", "手机格式错误!");
 				user = uBiz.findByTel(account);
-				
 				/*String userString = JSON.toJSONString(user.getPic());
 				response.getWriter().append(userString);*/
 			}else{
 				user = uBiz.findByName(account);
-				
-				
 			}
-			/*RegexUtils.checkEmail(account)
-			RegexUtils.checkMobileNumber(account)*/
+			
 			String userString = JSON.toJSONString(user);
 			response.getWriter().append(userString);
-			
-			
-			
-			
 		}
 
 
@@ -117,7 +106,6 @@ public class UserServlet extends HttpServlet {
 
 		private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-			//request.getContentType();
 			User user = BeanUtils.asBean(request, User.class);
 			String repwd = request.getParameter("repwd");
 			try {
@@ -170,14 +158,8 @@ public class UserServlet extends HttpServlet {
 				/*request.getSession().setAttribute("LoginedUser",user);
 				System.out.println("login");
 				response.sendRedirect("ServerJsp/"+"index.jsp");*/
-				
-
 			}
-					
-			
 		}
-
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

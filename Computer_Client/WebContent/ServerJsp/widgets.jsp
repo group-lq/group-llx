@@ -49,16 +49,11 @@
 		<div id="page-wrapper">
 			<div class="main-page">
 				<div class="elements">
-					
-					
 						<div id="editor"> <p>欢迎使用通知管理</p> </div> <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！--> 
-							
-						   
-					
-					
-					
-					
-					
+						<div class="clearfix"> </div>	
+						<div class="col-md-12">
+								<input type="submit" name="submit" value="提交" style="margin-left: 400px;" > 
+						</div> 
 					
 					<div class="clearfix"> </div>
 				</div>
@@ -106,6 +101,7 @@
 						    }, false)       
 	</script>
 	</div>
+							
 	
 </body>
 </html>
