@@ -43,31 +43,16 @@
 			<div class="main-page">
 				<h3 class="title1">添加文章</h3>
 				<div class="grids widget-shadow">
-					 <div class="col-md-9">
-            
-            <div class="form-group">
-              <label for="article-title" class="sr-only">标题</label>
-              <input type="text" id="article-title" name="title" class="form-control" placeholder="在此处输入标题" required autofocus autocomplete="off">
-            </div>
-            <div class="form-group">
-              <label for="article-content" class="sr-only">内容</label>
-              <script id="article-content" name="content" type="text/plain"></script>
-            </div>
-            <div class="add-article-box">
-              <h2 class="add-article-box-title"><span>关键字</span></h2>
-              <div class="add-article-box-content">
-              	<input type="text" class="form-control" placeholder="请输入关键字" name="keywords" autocomplete="off">
-                <span class="prompt-text">多个标签请用英文逗号,隔开。</span>
-              </div>
-            </div>
-            <div class="add-article-box">
-              <h2 class="add-article-box-title"><span>描述</span></h2>
-              <div class="add-article-box-content">
-              	<textarea class="form-control" name="describe" autocomplete="off"></textarea>
-                <span class="prompt-text">描述是可选的手工创建的内容总结，并可以在网页描述中使用</span>
-              </div>
-            </div>
-          </div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-12">
+								<input type="text" class="form-control1" placeholder="标题" name="title">
+							</div>
+							<div class="clearfix"> </div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-12">
