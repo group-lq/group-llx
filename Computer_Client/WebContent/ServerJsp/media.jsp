@@ -1,5 +1,16 @@
+<%@page import="com.yc.bean.News"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
+<%@page import="com.yc.dao.DBHelper"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%
+		if(request.getAttribute("newsList") == null){
+			request.getRequestDispatcher("../SArticleAdd.s?op=query").forward(request, response);
+		}
+	%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -39,261 +50,150 @@
 	<jsp:include page="/public/Server/header.jsp"></jsp:include>
 		<!-- //header-ends -->
 		<!-- main content start-->
-		<div id="page-wrapper">
+		<div id="page-wrapper" class="main">
 			<div class="main-page">
 				<div class="media">
 					<h3 class="title1">修改文章</h3>
 					<div class="bs-example5 widget-shadow" data-example-id="default-media">
-						<div class="media">
-							<div class="media-left">
-								<a href="#">
-								  <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNiM2U3NSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2IzZTc1Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">Media heading</h4>
-								Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="media">
-							<div class="media-left">
-								<a href="#">
-								  <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNiM2ZhNyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2IzZmE3Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">Media heading</h4>
-								Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-								<div class="media">
-									<div class="media-left">
-										<a href="#">
-										  <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNiMzIxNSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2IzMjE1Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-										</a>
-									</div>
-									<div class="media-body">
-										<h4 class="media-heading">Nested media heading</h4>
-										Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="media">
-							<div class="media-body">
-								<h4 class="media-heading">Media heading</h4>
-								Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-							</div>
-							<div class="media-right">
-								<a href="#">
-									<img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNiMTE4OSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2IxMTg5Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-								</a>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="media">
-							<div class="media-left">
-								<a href="#">
-									<img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNiNDY0ZCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2I0NjRkIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading">Media heading</h4>
-								Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-							</div>
-							<div class="media-right">
-								<a href="#">
-								  <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNhZGIwMSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2FkYjAxIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-								</a>
-							</div>
-						</div>
+						<!-- <form action="../SArticleAdd.s" class="move" method="get"> -->
+						<form action="/Computer_Client/SArticleAdd.s" class="move" method="get">
+							<input type="hidden" name="op" value="query">
+							序列号：<input type="text" name="newsid">
+       						标题：<input type="text" name="title" >
+  	 						 作者：<input type="text" name="author" >
+ 	  	  					<input type="submit" value="查询">
+        				</form>
+		        <div class="table-responsive">
+		          <table class="table table-striped table-hover">
+		            <thead>
+		              <tr class="span">
+		             	<th><span>序列号</span></th>
+		                <th><span>标题</span></th>
+		                <th><span>作者</span></th>
+		                <th><span>日期</span></th>
+		                <th><span>操作</span></th>
+		              </tr>
+		            </thead>
+		             <tbody>
+		            	<c:forEach items="${newsList}" var="u">
+			              <tr>
+			              	<td class="newsid">${u.newsid}</td>
+			                <td>${u.title}</td>
+			                <td>${u.author}</td>
+			                <td>${u.time}</td>
+			                <td><a rel="${u.newsid}" name="update">修改</a> <a rel="${u.newsid}" name="delete">删除</a></td>
+			              </tr>
+              		   </c:forEach>
+		            </tbody>
+		          </table>
+		           <div style="margin-top: 200px; margin-right: 600px;">
+						<span><a href="media.jsp?nowPage=1">首页</a></span>
+						<span><a href="media.jsp?nowPage=beforePage">上一页</a></span>
+						<span><a href="media.jsp?nowPage=afterPage">下一页</a></span>
+						<span><a href="media.jsp?nowPage=totalPage">末页</a></span>
 					</div>
-					<div class="bs-example5 example_6 widget-shadow" data-example-id="media-list">
-						<ul class="media-list">
-							<li class="media">
-								<div class="media-left">
-									<a href="#">
-										<img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNiMzg3YyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2IzODdjIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-									</a>
-								</div>
-								<div class="media-body">
-									<h4 class="media-heading">Media heading</h4>
-									<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
-									<!-- Nested media object -->
-									<div class="media">
-										<div class="media-left">
-											<a href="#">
-												<img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNiM2EzNCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2IzYTM0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-											</a>
-										</div>
-										<div class="media-body">
-											<h4 class="media-heading">Nested media heading</h4>
-												Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-											<!-- Nested media object -->
-											<div class="media">
-												<div class="media-left">
-													<a href="#">
-														<img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNiMmYzMCB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2IyZjMwIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-													</a>
-												</div>
-												<div class="media-body">
-													<h4 class="media-heading">Nested media heading</h4>
-													Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Nested media object -->
-									<div class="media">
-										<div class="media-left">
-											<a href="#">
-												<img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGUwMDNhZWVmMyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZTAwM2FlZWYzIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNC41IiB5PSIzNi41Ij42NHg2NDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="width: 64px; height: 64px;">
-											</a>
-										</div>
-										<div class="media-body">
-											<h4 class="media-heading">Nested media heading</h4>
-											Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-										</div>
-									</div>
-								</div>
-							</li>
-						</ul>
+		        </div>
 					</div>
-					<div class="media_1">
-						<div class="col-md-6 media_1-left widget-shadow">
-							<div class="panel_2">
-								<h3 class="title1">Padding</h3>
-								<p>All size: 0,5,10,15,20,25,30,35,40,45,50px</p>
-								<table class="table table-hover">
-									<thead>
-									  <tr>
-										<td class="head">Class</td>
-										<td class="head">Preview</td>
-										<td class="head">Description</td>
-									  </tr>
-									</thead>
-									<tbody>
-									  <tr>
-										<td><code>.padding-5</code></td>
-										<td>
-										  <div class="demolayout padding-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>padding: 5px</td>
-									  </tr>
-									  <tr>
-										<td><code>.padding-l-5</code></td>
-										<td>
-										  <div class="demolayout padding-l-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>padding-left: 5px</td>
-									  </tr>
-									  <tr>
-										<td><code>.padding-r-5</code></td>
-										<td>
-										  <div class="demolayout padding-r-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>padding-right: 5px</td>
-									  </tr>
-									  <tr>
-										<td><code>.padding-t-5</code></td>
-										<td>
-										  <div class="demolayout padding-t-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>padding-top: 5px</td>
-									  </tr>
-									  <tr>
-										<td><code>.padding-b-5</code></td>
-										<td>
-										  <div class="demolayout padding-b-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>padding-bottom: 5px</td>
-									  </tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="col-md-6 media_1-right widget-shadow">
-							<div class="panel_2 panel_3">
-								<h3 class="title1">Margin</h3>
-								<p>All size: 0,5,10,15,20,25,30,35,40,45,50px</p>
-								<table class="table table-hover">
-									<thead>
-									  <tr>
-										<td class="head">Class</td>
-										<td class="head">Preview</td>
-										<td class="head">Description</td>
-									  </tr>
-									</thead>
-									<tbody>
-									  <tr>
-										<td><code>.margin-5</code></td>
-										<td>
-										  <div class="demolayout padding-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>margin: 5px</td>
-									  </tr>
-									  <tr>
-										<td><code>.margin-l-5</code></td>
-										<td>
-										  <div class="demolayout padding-l-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>margin-left: 5px</td>
-									  </tr>
-									  <tr>
-										<td><code>.margin-r-5</code></td>
-										<td>
-										  <div class="demolayout padding-r-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>margin-right: 5px</td>
-									  </tr>
-									  <tr>
-										<td><code>.margin-t-5</code></td>
-										<td>
-										  <div class="demolayout padding-t-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>margin-top: 5px</td>
-									  </tr>
-									  <tr>
-										<td><code>.margin-b-5</code></td>
-										<td>
-										  <div class="demolayout padding-b-5">
-											<div class="demobox">Demo</div>
-										  </div>
-										</td>
-										<td>margin-bottom: 5px</td>
-									  </tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div> 
 				</div>
 			</div>
 		</div>
+		
+		<!-- 修改文章 -->
+		<div id="updateArticle" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="seeUserModalLabel">
+			<div class="modal-dialog" role="document" style="max-width:450px;">
+			<form action="../SArticleAdd.s" method="post" autocomplete="off" draggable="false">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		          <h4 class="modal-title">修改文章</h4>
+		        </div>
+		        <div class="modal-body">
+		          <table class="table" style="margin-bottom:0px;">
+		            <thead>
+		              <tr> </tr>
+		            </thead>
+		            <tbody>
+		              <tr>
+		                <td width="20%">标题:</td>
+		                <td width="80%"><input type="text" value="" class="form-control" id="title" name="title" maxlength="10" autocomplete="off" /></td>
+		              </tr>
+		              <tr>
+		                <td width="20%">作者:</td>
+		                <td width="80%"><input type="text" value="" class="form-control" id="author" name="author" maxlength="10" autocomplete="off" /></td>
+		              </tr>
+		              <tr>
+		                <td width="20%">正文:</td>
+		                <td width="80%"><textarea style="width: 330px;height: 100px" id="content" name="content"></textarea></td>
+		              </tr>
+		            </tbody>
+		            <tfoot>
+		              <tr></tr>
+		            </tfoot>
+		          </table>
+		        </div>
+	        <div class="modal-footer">
+	          <input type="hidden" id="newsid" value="">
+	          <input type="button" class="btn btn-default" data-dismiss="modal" value="取消">
+	          <input type="button" class="btn btn-primary" onclick="save()" value="提交">
+	        </div>
+	      </div>
+    </form>
+		</div>
+		</div>
 		<jsp:include page="/public/Server/footer.jsp"></jsp:include>
-	</div>
-	<!-- Classie -->
 		<script src="${base}/js/Server/classie.js"></script>
 		<script>
-			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+		/* 修改用户 */
+		function save() {
+			var data = {};
+			data.newsid =$("#newsid").val();
+			data.title = $('#title').val();
+			data.author = $('#author').val();
+			data.content= $('#content').val();
+			data.newsid =$("#newsid").val();
+			 $.post("../SArticleAdd.s?op=save",data,
+					function(data){
+				alert(data);
+				window.parent.location.reload();
+				parent.layer.closeAll();
+				
+			}); 
+		}
+		$(function () {
+		    $(".main table tbody tr td a").click(function () {
+		        var name = $(this);
+		        var newsid = name.attr("rel"); //对应id  	  
+		        if (name.attr("name") === "update") {
+		            $.ajax({
+		                type: "POST",
+		                url: "../SArticleAdd.s?op=update",
+		                data: "newsid=" + newsid,
+		                cache: false, //不缓存此页面   
+		                success: function (data) {
+		                    var data = JSON.parse(data);
+							$('#title').val(data.title);
+							$('#author').val(data.author);
+							$('#content').val(data.content);
+							$('#newsid').val(data.newsid);
+		                    $('#updateArticle').modal('show');
+		                }
+		            });
+		        } else if (name.attr("name") === "delete") {
+		            if (window.confirm("此操作不可逆，是否确认？")) {
+		                $.ajax({
+		                    type: "POST",
+		                    url: "../SArticleAdd.s?op=delete",
+		                    data: "newsid=" + newsid,
+		                    cache: false, //不缓存此页面   
+		                    success: function (data) {
+		                        window.location.reload();
+		                    }
+		                });
+		            };
+		        };
+		    });
+		});
+			/* var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
 				showLeftPush = document.getElementById( 'showLeftPush' ),
 				body = document.body;
 				
@@ -302,8 +202,7 @@
 				classie.toggle( body, 'cbp-spmenu-push-toright' );
 				classie.toggle( menuLeft, 'cbp-spmenu-open' );
 				disableOther( 'showLeftPush' );
-			};
-			
+			}; */
 			function disableOther( button ) {
 				if( button !== 'showLeftPush' ) {
 					classie.toggle( showLeftPush, 'disabled' );

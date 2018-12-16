@@ -120,14 +120,7 @@
                 </c:forEach>
                     </div>
                     </div>
-                    <!-- ?????? -->
                     <div id="turn_page" class="wow fadeInUp" >
-                   <!--  <div>
-						<span><a href="news.jsp?nowPage=1">首页</a></span>
-						<span><a href="news.jsp?nowPage=beforePage">上一页</a></span>
-						<span><a href="news.jsp?nowPage=afterPage">下一页</a></span>
-						<span><a href="news.jsp?nowPage=totlePage">末页</a></span>
-					</div> -->
                         <font class="page_item_current">
                             <span><a href="news.jsp?nowPage=1">首页</a></span>
                         </font>
@@ -138,7 +131,7 @@
                            <span><a href="news.jsp?nowPage=afterPage">下一页</a></span>
                         </font>
                         <font class="page_item_current">
-                           <span><a href="news.jsp?nowPage=totlePage">末页</a></span>
+                           <span><a href="news.jsp?nowPage=totalPage">末页</a></span>
                         </font>
                     </div>
                 </div>

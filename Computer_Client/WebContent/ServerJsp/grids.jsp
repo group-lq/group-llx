@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -40,23 +41,24 @@
 		<!-- //header-ends -->
 		<!-- main content start-->
 		<div id="page-wrapper">
+		<form action="../SArticleAdd.s" method="post">
+		<input type="hidden" name="op" value="AddArticle">
 			<div class="main-page">
 				<h3 class="title1">添加文章</h3>
 				<div class="grids widget-shadow">
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-12">
-								<input type="text" class="form-control1" placeholder="标题">
+								<input type="text" class="form-control1" placeholder="标题" name="title">
 							</div>
 							<div class="clearfix"> </div>
 							<div class="clearfix"> </div>
 						</div>
 					</div>
-					
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-12">
-								<input type="text" class="form-control1" placeholder="作者">
+								<input type="text" class="form-control1" placeholder="作者" name="author">
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -64,12 +66,19 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-12">
-								<input type="text" class="form-control1" placeholder="正文">
+								<textarea style="width: 795px;height: 200px" placeholder="正文" name="content"></textarea>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
 					</div>
-					
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-12">
+								<input type="submit" name="submit" value="提交" style="margin-left: 400px;" > 
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
 				</div>
 				<h3 class="title1">引导网格细节</h3>
 				<div class="grid-bottom widget-shadow">
@@ -118,6 +127,8 @@
 					</table>
 				</div>
 			</div>
+		</form>
+			
 		</div>
 		<jsp:include page="/public/Server/footer.jsp"></jsp:include>
 	</div>
@@ -148,4 +159,9 @@
 	<!-- Bootstrap Core JavaScript -->
    <script src="${base}/js/Server/bootstrap.js"> </script>
 </body>
+<c:if test="${ !empty msg }">
+	<script type="text/javascript">
+		alert('${msg}');
+	</script>
+</c:if>
 </html>

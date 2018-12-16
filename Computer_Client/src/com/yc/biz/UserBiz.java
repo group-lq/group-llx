@@ -18,10 +18,7 @@ DBHelper dbhelper = new DBHelper();
 		if(userpwd == null || userpwd.trim().isEmpty()){
 			throw new BizException("请填写密码");
 		}
-		
 		String sql = "select * from user where username=? and pwd =?";
-		
-		
 		return DBHelper.unique(sql, User.class, username,userpwd);
 	}
 	

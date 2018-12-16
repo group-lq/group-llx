@@ -13,13 +13,13 @@
 							<a href="#"><i class="fa fa-cogs nav_icon"></i>文章管理<span class="nav-badge">12</span> <span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="grids.jsp">添加文章</a>
+									<a href="${base}/ServerJsp/grids.jsp">添加文章</a>
 								</li>
 								<li>
-									<a href="media.jsp">修改文章</a>
+									<a href="${base}/ServerJsp/media.jsp">修改文章</a>
 								</li>
 								<li>
-									<a href="media.jsp">删除文章</a>
+									<a href="${base}/ServerJsp/media.jsp">删除文章</a>
 								</li>
 							</ul>
 							<!-- /nav-second-level -->
