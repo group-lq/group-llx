@@ -37,7 +37,7 @@
 			console.log($("#hid").val());
 		}
 		function pic(){
-			var name = $("#username").val();
+			var name = $("#usernam").val();
   			$.ajax({
 				url:'user.s?op=pic',
 				type:'get',
@@ -47,14 +47,12 @@
 				success: function(data){
 					var data = JSON.parse(data);
 					if(data != null){
-						$('#img').attr('src', 'images/Server/'+data);
+						$('#img').attr('src', 'images/Server/'+data.pic);
 					}else{
 						$('#img').attr('src', 'images/Server/1.png');
 					}
 				}
-			}
-				
-			);
+			});
 		}	
 	</script>
 	<style type="text/css">
@@ -82,7 +80,7 @@
 			</h2>
 			<div class="form-style-agile">
 				<label><i class="fas fa-user"></i>用户名</label>
-				<input placeholder="用户名/邮箱/手机号" name="username" id="username" type="text" value="${param.username}" required="" onblur="pic()"><span id="msg"></span>
+				<input placeholder="用户名/邮箱/手机号" name="username" id="usernam" type="text" value="${param.username}" required="" onblur="pic()"><span id="msg"></span>
 			</div>
 			<div class="form-style-agile">
 				<label><i class="fas fa-unlock-alt"></i>密码</label>
@@ -97,7 +95,7 @@
 						</label>
 					</li>
 					<li>
-						<a href="forgetPwd.jsp">忘记密码?</a> 还没有账号?<a href="${base}/ClientJsp/login.jsp">马上注册</a>
+						<a href="forgetMyPwdTel.jsp">忘记密码?</a> 还没有账号?<a href="register.jsp">马上注册</a>
 					</li>
 				</ul>
 			</div>
@@ -120,7 +118,7 @@
 		}
 	</script> -->
 </body>
-<c:if test="${ ! empty msg }">
+<c:if test="${ ! empty loginmsg }">
 	<script type="text/javascript">
 		alert('${msg}');
 	</script>

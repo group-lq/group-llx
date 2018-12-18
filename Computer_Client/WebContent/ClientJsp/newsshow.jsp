@@ -104,6 +104,7 @@
                 <div class="blank25">
                 </div>
                ${news.content}
+               
             </div>
             </div>
             <div class="blank25">
@@ -141,8 +142,6 @@
 								<textarea class="form-control" placeholder="您的评论或留言（必填）" name="comment-textarea"
 									id="comment-textarea" cols="100%" rows="3" tabindex="3" style="width: 50%"></textarea>
 									<input type="submit" class = "comment-submit"name = "comment" value="评论" style="width: 55px;height: 30px ;background-color: white">
-									
-								
 							
 							</form>
 							

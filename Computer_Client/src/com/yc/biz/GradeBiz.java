@@ -13,7 +13,7 @@ public class GradeBiz {
 			throw new BizException("请填写姓名");
 		}
 		String sql = "select * from grades where idenno = ? and  name = ? and subject = ? ";
-		return DBHelper.unique(sql,Grades.class,idenno,name,subject);
+		return DBHelper.uniqueObject(sql,Grades.class,idenno,name,subject);
 	}
 
 }

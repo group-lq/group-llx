@@ -91,7 +91,7 @@ public class UserBiz {
 		if(user.getAccount() == null || user.getAccount().trim().isEmpty()){
 			throw new BizException("请填写用户名!");
 		}
-		DBHelper.update("update user set name =? ,account=? ,tel=? ,where id =?", 
+		DBHelper.update("update user set name =? ,account=? ,tel=? where id =?", 
 				user.getName(),user.getAccount(),user.getTel(),user.getId());
 	}
 	
