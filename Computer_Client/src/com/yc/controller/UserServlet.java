@@ -59,6 +59,24 @@ public class UserServlet extends HttpServlet {
 				 modify(request,response,op);
 			}
 		}
+<<<<<<< HEAD
+		private void show(HttpServletRequest request, HttpServletResponse response) 
+				throws ServletException, IOException {
+			String account = request.getParameter("username");
+			User user = null ;
+			if(RegexUtils.checkEmail(account)){
+				request.setAttribute("loginMsg", "邮箱格式错误!");
+				user = uBiz.findByEmail(account);
+				/*String userString = JSON.toJSONString(user.getPic());
+				response.getWriter().append(userString);*/
+			}else if(RegexUtils.checkMobileNumber(account)){
+				request.setAttribute("loginMsg", "手机格式错误!");
+				user = uBiz.findByTel(account);
+				/*String userString = JSON.toJSONString(user.getPic());
+				response.getWriter().append(userString);*/
+			}else{
+				user = uBiz.findByName(account);
+=======
 
 		private void modify(HttpServletRequest request, HttpServletResponse response, String op) 
 				throws ServletException, IOException{
@@ -76,8 +94,11 @@ public class UserServlet extends HttpServlet {
 				e.printStackTrace();
 				request.setAttribute("modify", e.getMessage());
 				request.getRequestDispatcher("forgetMyPwd2.jsp").forward(request, response);
+>>>>>>> branch 'master' of https://github.com/group-lq/group-llx.git
 			}
 			
+<<<<<<< HEAD
+=======
 		}
 
 
@@ -170,6 +191,7 @@ public class UserServlet extends HttpServlet {
 			}else{
 				user = uBiz.findByName(user);	
 			}
+>>>>>>> branch 'master' of https://github.com/group-lq/group-llx.git
 			String userString = JSON.toJSONString(user);
 			response.getWriter().append(userString);
 		}
@@ -211,7 +233,6 @@ public class UserServlet extends HttpServlet {
 
 		private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-			//request.getContentType();
 			User user = BeanUtils.asBean(request, User.class);
 			String repwd = request.getParameter("repwd");
 			try {
@@ -264,14 +285,8 @@ public class UserServlet extends HttpServlet {
 				/*request.getSession().setAttribute("LoginedUser",user);
 				System.out.println("login");
 				response.sendRedirect("ServerJsp/"+"index.jsp");*/
-				
-
 			}
-					
-			
 		}
-
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

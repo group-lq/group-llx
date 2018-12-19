@@ -8,7 +8,7 @@ public class Comment implements java.io.Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+	//请求的参数
 	private Long cId;
 	private Timestamp cTime;
 	private Long userId;

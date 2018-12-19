@@ -19,11 +19,14 @@ DBHelper dbhelper = new DBHelper();
 		if(userpwd == null || userpwd.trim().isEmpty()){
 			throw new BizException("请填写密码");
 		}
-		
 		String sql = "select * from user where username=? and pwd =?";
+<<<<<<< HEAD
+		return DBHelper.unique(sql, User.class, username,userpwd);
+=======
 		
 		
 		return DBHelper.uniqueObject(sql, User.class, username,userpwd);
+>>>>>>> branch 'master' of https://github.com/group-lq/group-llx.git
 	}
 	
 	public void add(User user,String repwd) throws BizException{
