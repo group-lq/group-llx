@@ -59,24 +59,27 @@ public class UserServlet extends HttpServlet {
 				 modify(request,response,op);
 			}
 		}
-<<<<<<< HEAD
-		private void show(HttpServletRequest request, HttpServletResponse response) 
+	   
+		/*private void show(HttpServletRequest request, HttpServletResponse response) 
 				throws ServletException, IOException {
 			String account = request.getParameter("username");
 			User user = null ;
-			if(RegexUtils.checkEmail(account)){
+			if(RegexUtils.checkEmail(user)){
 				request.setAttribute("loginMsg", "邮箱格式错误!");
-				user = uBiz.findByEmail(account);
-				/*String userString = JSON.toJSONString(user.getPic());
-				response.getWriter().append(userString);*/
-			}else if(RegexUtils.checkMobileNumber(account)){
+				user = uBiz.findByEmail(user);
+				String userString = JSON.toJSONString(user.getPic());
+				response.getWriter().append(userString);
+			}else if(RegexUtils.checkMobileNumber(user)){
 				request.setAttribute("loginMsg", "手机格式错误!");
-				user = uBiz.findByTel(account);
-				/*String userString = JSON.toJSONString(user.getPic());
-				response.getWriter().append(userString);*/
+				user = uBiz.findByTel(user);
+				String userString = JSON.toJSONString(user.getPic());
+				response.getWriter().append(userString);
 			}else{
-				user = uBiz.findByName(account);
-=======
+				user = uBiz.findByName(user);
+			}
+			String checkMsg = JSON.toJSONString(map);
+			response.getWriter().append(checkMsg);
+		}*/
 
 		private void modify(HttpServletRequest request, HttpServletResponse response, String op) 
 				throws ServletException, IOException{
@@ -94,11 +97,9 @@ public class UserServlet extends HttpServlet {
 				e.printStackTrace();
 				request.setAttribute("modify", e.getMessage());
 				request.getRequestDispatcher("forgetMyPwd2.jsp").forward(request, response);
->>>>>>> branch 'master' of https://github.com/group-lq/group-llx.git
 			}
 			
-<<<<<<< HEAD
-=======
+
 		}
 
 
@@ -191,7 +192,6 @@ public class UserServlet extends HttpServlet {
 			}else{
 				user = uBiz.findByName(user);	
 			}
->>>>>>> branch 'master' of https://github.com/group-lq/group-llx.git
 			String userString = JSON.toJSONString(user);
 			response.getWriter().append(userString);
 		}
