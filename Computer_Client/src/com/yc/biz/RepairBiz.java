@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import com.yc.bean.Page;
+import com.yc.bean.PageData;
 import com.yc.bean.Repair;
 import com.yc.bean.User;
 import com.yc.dao.DBHelper;
@@ -30,22 +32,35 @@ public class RepairBiz {
 				repair.getDescription(),repair.getStatus(),repair.getTime());		
 	}
 
-	public Object find(Repair repair) {
+	public Object find(Repair repair,Page page) {
+		int start =(page.getPage()-1)*page.getRows() ;
+		int end =page.getRows() ;
 		String sql = "select * from repair where 1=1";
-		ArrayList<Object> params = new ArrayList<Object>(); 
+		ArrayList<Object> params = new ArrayList<Object>();
+		if(repair.getRid() == null && repair.getStaff() == null) {
+			sql = "select * from repair limit ?,?";
+			System.out.println(DBHelper.select(sql,start,end));
+			PageData pageData = new PageData();
+			pageData.setRows(DBHelper.select(sql,start,end));
+			sql = "select count(1) cnt from repair";
+			return DBHelper.uniqueValue(sql, "cnt");
+		}
 		if(repair.getRid() != null && ! repair.getRid().trim().isEmpty()){
-			sql += " and rid like ?";
+			sql += " and rid like ? limit "+start+","+end+" ";
 			params.add("%"+repair.getRid()+"%");
 		}
 		if(repair.getStaff() != null && ! repair.getStaff().trim().isEmpty()){
-			sql += " and staff like ?";
+			sql += " and staff like ? limit "+start+","+end+" ";
 			params.add("%"+repair.getStaff()+"%");
 		}
-		return DBHelper.select(sql, params);
+		PageData pageData = new PageData();
+		pageData.setRows(DBHelper.select(sql));
+		sql = "select count(1) cnt from repair";
+		return DBHelper.uniqueValue(sql, "cnt");
 	}
 
 	public Repair findByOne(String id) {
-		return DBHelper.unique("select * from repair where rid = ?", Repair.class,id);
+		return DBHelper.uniqueObject("select * from repair where rid = ?", Repair.class,id);
 	}
 
 	public void save(Repair repair) throws BizException {
@@ -54,6 +69,18 @@ public class RepairBiz {
 		}
 		DBHelper.update("update repair set staff = ? where rid =?", 
 				repair.getStaff(),repair.getRid());
+	}
+
+	public PageData findAll(Page page) {
+		int start =(page.getPage()-1)*page.getRows() ;
+		int end =page.getRows() ;
+		String sql = "select * from repair limit ?,?";
+		System.out.println(DBHelper.select(sql,start,end));
+		PageData pageData = new PageData();
+		pageData.setRows(DBHelper.select(sql,start,end));
+		sql = "select count(1) cnt from repair";
+		pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
+		return pageData;
 	}
 
 }

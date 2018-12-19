@@ -176,7 +176,7 @@
           </table>
         </div>
         <div class="modal-footer">
-          <input type="hidden" name="userid" value="" />
+          <input type="hidden" id="userid" value="" />
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
           <button type="button" class="btn btn-primary" onclick="save()">提交</button>
         </div>
@@ -189,6 +189,7 @@
 function save(){
 	var date = {};
 	date.id = $("#userid").val();
+	alert(date.id);
 	date.name = $("#truename").val();
 	date.account = $("#username").val();
 	date.tel = $("#usertel").val();
@@ -196,7 +197,7 @@ function save(){
 	$.post("user.s?op=save",date,
 			function(date){
 		alert(date);
-	});
+	}); 
 }
 $(function () {
     $("#main table tbody tr td a").click(function () {

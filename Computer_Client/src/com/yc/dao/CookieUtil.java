@@ -31,17 +31,7 @@ public class CookieUtil {
 		cook.setMaxAge(cookieTime);
 		response.addCookie(cook);
 	}
-	public static String getMD5(String value){
-		String re="";
-		try{
-			MessageDigest md= MessageDigest.getInstance("MD5");
-			md.update(value.getBytes());
-			re=md.digest().toString();
-		} catch(NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
-			return re;
-}
+	
 	public static void readCookie(ServletRequest request,ServletResponse response,FilterChain chain) 
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
@@ -84,5 +74,16 @@ public class CookieUtil {
 	
 	}
 	//用MD5进行加密  返回加密后的字符串
+	public static String getMD5(String value){
+		String re="";
+		try{
+			MessageDigest md= MessageDigest.getInstance("MD5");
+			md.update(value.getBytes());
+			re=md.digest().toString();
+		} catch(NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+			return re;
+	}
 	
 }

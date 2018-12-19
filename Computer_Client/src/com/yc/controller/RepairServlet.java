@@ -74,10 +74,10 @@ public class RepairServlet extends HttpServlet {
 	}
 	private void query(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Repair repair = BeanUtils.asBean(request, Repair.class);
+		/*Repair repair = BeanUtils.asBean(request, Repair.class);
 		System.out.println("rid==============:"+repair.getRid());
 		request.setAttribute("repairList", rBiz.find(repair));
-		request.getRequestDispatcher("ServerJsp/"+"repair.jsp").forward(request, response);		
+		request.getRequestDispatcher("ServerJsp/"+"repair.jsp").forward(request, response);	*/	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

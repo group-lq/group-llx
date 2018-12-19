@@ -540,7 +540,7 @@ public class DBHelper {
 	 * @param params
 	 * @return
 	 */
-	public static <T> T unique(String sql, Class<T> cls, Object... params) {
+	public static <T> T uniqueObject(String sql, Class<T> cls, Object... params) {
 		List<T> data = DBHelper.select(sql, cls, params);
 		if (data == null || data.isEmpty()) {
 			return null;
@@ -559,7 +559,7 @@ public class DBHelper {
 	 * @param params
 	 * @return
 	 */
-	public static Object unique(String sql, String column, Object... params) {
+	public static Object uniqueValue(String sql, String column, Object... params) {
 		List<Map<String, Object>> data = DBHelper.select(sql, params);
 		if (data == null || data.isEmpty()) {
 			return null;

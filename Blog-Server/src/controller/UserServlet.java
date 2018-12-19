@@ -47,6 +47,7 @@ public class UserServlet extends HttpServlet {
 	private void save(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
 		response.setCharacterEncoding("utf-8");
+		System.out.println("=====================================");
 		User user = BeanUtils.asBean(request, User.class);
 		String msg;
 		try {

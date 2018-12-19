@@ -68,7 +68,7 @@ public class NewsBiz {
 	}
 	
 	public News findByOne(String id) {
-		return DBHelper.unique("select * from news where newsid =?", News.class, id);
+		return DBHelper.uniqueObject("select * from news where newsid =?", News.class, id);
 	}
 	
 	public Object findNew(News news) {
