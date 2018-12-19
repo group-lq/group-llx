@@ -54,6 +54,8 @@
 					<input type="text" class="form-control" placeholder="时间" name="time" autocomplete="off">
 					<input type="text" class="form-control" placeholder="地点" name="place" autocomplete="off">
 					
+					<input type="submit" name="submit" value="提交" style="margin-left: 400px;" > 
+						
 					</div>
 						
 					</div>

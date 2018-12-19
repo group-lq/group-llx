@@ -17,9 +17,9 @@
         />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>HTML5高端大气响应式网络科技公司网站模板</title>
-        <meta name="keywords" content="HTML5高端大气响应式网络科技公司网站模板" />
-        <meta name="description" content="HTML5高端大气响应式网络科技公司网站模板下载。" /> 
+        <title>湖南工学院计算机协会</title>
+        <meta name="keywords" content="湖南工学院计算机协会" />
+        <meta name="description" content="湖南工学院计算机协会" /> 
         <meta name="author" content="js代码" />
         <meta name="copyright" content="js代码" />
         <link href="${base}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
