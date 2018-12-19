@@ -29,7 +29,7 @@
                             <a href="case.jsp"​>网络保修</a>
                         </div>
                         <div class="nav-item fl text-center trans">
-                            <a href="price.jsp"​>成绩查询</a>
+                            <a href="grade.jsp"​>成绩查询</a>
                         </div>
                        
                         <div class="nav-item fl text-center trans">
