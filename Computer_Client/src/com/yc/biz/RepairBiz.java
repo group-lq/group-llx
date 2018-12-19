@@ -32,7 +32,7 @@ public class RepairBiz {
 				repair.getDescription(),repair.getStatus(),repair.getTime());		
 	}
 
-	public Object find(Repair repair,Page page) {
+	public PageData find(Repair repair,Page page) {
 		int start =(page.getPage()-1)*page.getRows() ;
 		int end =page.getRows() ;
 		String sql = "select * from repair where 1=1";
@@ -43,7 +43,8 @@ public class RepairBiz {
 			PageData pageData = new PageData();
 			pageData.setRows(DBHelper.select(sql,start,end));
 			sql = "select count(1) cnt from repair";
-			return DBHelper.uniqueValue(sql, "cnt");
+			pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
+			return pageData;
 		}
 		if(repair.getRid() != null && ! repair.getRid().trim().isEmpty()){
 			sql += " and rid like ? limit "+start+","+end+" ";
@@ -54,9 +55,10 @@ public class RepairBiz {
 			params.add("%"+repair.getStaff()+"%");
 		}
 		PageData pageData = new PageData();
-		pageData.setRows(DBHelper.select(sql));
+		pageData.setRows(DBHelper.select(sql,params));
 		sql = "select count(1) cnt from repair";
-		return DBHelper.uniqueValue(sql, "cnt");
+		pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
+		return pageData;
 	}
 
 	public Repair findByOne(String id) {

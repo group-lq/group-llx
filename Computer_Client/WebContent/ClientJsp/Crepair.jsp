@@ -66,19 +66,19 @@
                 },
                 500);
             })
-            function query(value,name){
+            function doSearch(value,name){
             	var date = {};
             	if(name == 'rid'){
             		date.rid = value;
             		$('#rep').datagrid('load',{
-            			url:'crepair.s?op=query',
-            			code: value,
-            			name: 'rid'
+            			rid: value
             		});
+            		
+            		
             	}else{
             		date.staff = value;
             		$.ajax({
-     					url:'crepair.s?op=query',
+     					url:'../crepair.s?op=query',
      					type:'get',
      					processDate:false,
      					contentType:false,
@@ -90,10 +90,7 @@
      				});
             	}
             	 
-            	/* $.post("url=crepair.s?op=query",date,function(data){
-            		
-            	}); 
-            	alert(date.rid+":"+name); */
+            	
             }
             
         </script>
@@ -126,20 +123,26 @@
                     
                     <form action=""><!-- ${base}/crepair.s -->
 			        	<input type="hidden" name="op" value="query">
-			        	<input type="text" name="rid" class = "easyui-searchbox" value="${param.rid}"
-			        	data-options="searcher:query,prompt:'维修ID/维修人员',menu:'#mm' ,width:250 ">
-			        	<div id="mm" style="width:100px">
-							<div data-options="name:'rid',selected:true">维修ID</div>
-							<div data-options="name:'staff'">维修人员</div>
-						</div>			        	
+			        	<div id="tb" style="margin-left:40px">
+			        		<input type="text" name="rid"  class = "easyui-searchbox" value="${param.rid}"
+				        	data-options="searcher:doSearch,prompt:'维修ID/维修人员',menu:'#mm' ,width:250 ">
+				        	<div id="mm" style="width:100px">
+								<div id="rid" data-options="name:'rid',selected:true">维修ID</div>
+								<div data-options="name:'staff'">维修人员</div>
+							</div>	
+			        	</div>
+			        			        	
 			        	<!-- <input type="submit" class="easyui-linkbutton"  value="搜索"> -->			        	
         			</form>
         			<br/>
-                    <table class="easyui-datagrid" id="rep"
+                    <table class="easyui-datagrid" id="rep" toolbar="#tb"
                     data-options="pagination:true,
-                    url:'../crepair.s?op=show',
+                    title:'阳光服务',
+                    url:'../crepair.s?op=query',
                     singleSelect: true,
+                    method: 'get',
                     rownumbers:true
+                    
                     " >
 			            <thead>
 			              <tr>
@@ -153,6 +156,7 @@
 			            </thead>
 			            
 		          </table>
+		          
 		          <div>
 		       
 		          </div>
