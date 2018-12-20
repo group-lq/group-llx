@@ -202,7 +202,7 @@ public class UserServlet extends HttpServlet {
 			//request.setCharacterEncoding("utf-8");
 			User user = BeanUtils.asBean(request, User.class);
 			request.setAttribute("directorList", uBiz.findDirector(user));
-			request.getRequestDispatcher("ServerJsp"+"/repair.jsp").forward(request, response);
+			request.getRequestDispatcher("ServerJsp"+"/Srepair.jsp").forward(request, response);
 		}
 
 

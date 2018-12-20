@@ -23,7 +23,7 @@ public class RepairBiz {
 		String sql = "insert into repair(rid,userid,address,description,status,time) values(?,?,?,?,?,?)";
 		UUID uuid = UUID.randomUUID();
 		Timestamp time = new Timestamp(System.currentTimeMillis());
-		
+		System.out.println(repair.getRid()+":"+user.getId());
 		String rid = uuid.toString().replaceAll("-", "");
 		repair.setRid(rid);
 		repair.setTime(time);
@@ -67,7 +67,7 @@ public class RepairBiz {
 
 	public void save(Repair repair) throws BizException {
 		if(repair.getStaff() == null || repair.getStaff().trim().isEmpty()){
-			throw new BizException("请填写用户名!");
+			throw new BizException("请选择处理人员!");
 		}
 		DBHelper.update("update repair set staff = ? where rid =?", 
 				repair.getStaff(),repair.getRid());

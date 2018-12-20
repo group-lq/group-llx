@@ -41,7 +41,7 @@ public class RepairServlet extends HttpServlet {
 		String msg;
 		try {
 			rBiz.save(repair);
-			msg = "用户信息保存成功!";
+			msg = "已成功安排人员!";
 		} catch (BizException e) {
 			e.printStackTrace();
 			msg = e.getMessage();
@@ -77,7 +77,7 @@ public class RepairServlet extends HttpServlet {
 		/*Repair repair = BeanUtils.asBean(request, Repair.class);
 		System.out.println("rid==============:"+repair.getRid());
 		request.setAttribute("repairList", rBiz.find(repair));
-		request.getRequestDispatcher("ServerJsp/"+"repair.jsp").forward(request, response);	*/	
+		request.getRequestDispatcher("ServerJsp/"+"repair.jsp").forward(request, response);		*/
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

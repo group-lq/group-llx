@@ -47,15 +47,17 @@ public class CRepairServlet extends HttpServlet {
 			throws ServletException, IOException {
 		User user = (User)request.getSession().getAttribute("LoginedUser");
 		Repair repair = BeanUtils.asBean(request, Repair.class);
-		//System.out.println("===================="+user.getUsername());
-		//System.out.println("===================="+repair.getAddress());
+		String msg = null;
 		try {
 			rBiz.add(repair,user);
+			msg = "您的情况已上报,请耐心等待..";
 		} catch (BizException e) {
 			e.printStackTrace();
-			request.setAttribute("rmsg", e.getMessage());
+			msg = e.getMessage();
 		}finally{
-			query(request,response);
+			//show(request,response);
+			String res = JSON.toJSONString(msg);
+			response.getWriter().append(res);
 		}		
 	}
 	private void query(HttpServletRequest request, HttpServletResponse response)
@@ -63,7 +65,7 @@ public class CRepairServlet extends HttpServlet {
 		System.out.println("===================================");
 		Page page = BeanUtils.asBean(request, Page.class);
 		Repair repair = BeanUtils.asBean(request, Repair.class);
-		System.out.println(repair.getRid());
+		System.out.println(page.getPage()+":"+page.getRows());
 		String res = JSON.toJSONString(rBiz.find(repair,page));
 		response.getWriter().append(res);
 		//request.setAttribute("repairList", rBiz.find(repair));

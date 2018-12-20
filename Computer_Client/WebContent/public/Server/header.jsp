@@ -52,7 +52,7 @@
 							<!-- //nav-second-level -->
 						</li>
 						<li>
-							<a href="tables.jsp"><i class="fa fa-table nav_icon"></i>网络报修<span class="nav-badge">05</span></a>
+							<a href="Srepair.jsp"><i class="fa fa-table nav_icon"></i>网络报修<span class="nav-badge">05</span></a>
 						</li>
 						<li>
 							<a href="#"><i class="fa fa-check-square-o nav_icon"></i>用户管理<span class="fa arrow"></span></a>

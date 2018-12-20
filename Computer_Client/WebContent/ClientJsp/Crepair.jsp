@@ -32,9 +32,7 @@
         
         <link rel="stylesheet" type="text/css" href="${base}/easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="${base}/easyui/themes/icon.css">
-	<script type="text/javascript" src="${base}/easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="${base}/easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="${base}/easyui/locale/easyui-lang-zh_CN.js"></script>
+	
 	
         <script src="${base}/js/Client/jquery-1.9.1.min.js">
         </script>
@@ -52,48 +50,11 @@
         </script>
         <script src="${base}/js/Client/bootstrap.min.js">
         </script>
-       
-        <script>
-            jQuery(window).scrollTop(0);
-            jQuery('html,body').scrollTop(0);
-            new WOW().init({
-                mobile: false
-            });
-
-            $(function() {
-                setTimeout(function() {
-                    $('#body').show();
-                },
-                500);
-            })
-            function doSearch(value,name){
-            	var date = {};
-            	if(name == 'rid'){
-            		date.rid = value;
-            		$('#rep').datagrid('load',{
-            			rid: value
-            		});
-            		
-            		
-            	}else{
-            		date.staff = value;
-            		$.ajax({
-     					url:'../crepair.s?op=query',
-     					type:'get',
-     					processDate:false,
-     					contentType:false,
-     					data:"staff="+date,
-     					success: function(data){
-     						var data = JSON.parse(data);
-     						
-     					}
-     				});
-            	}
-            	 
-            	
-            }
-            
-        </script>
+        
+        
+        <script type="text/javascript" src="${base}/easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="${base}/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="${base}/easyui/locale/easyui-lang-zh_CN.js"></script>
        
     </head>
     
@@ -117,12 +78,10 @@
                     </div>
                 </div>
             </div>
-            <div class="bgf3">
+            <div class="bgf3">					<!-- 加个背景 -->
                 <div id="instance" class="wrap clean">
                     <div class="instance-list clean">
                     
-                    <form action=""><!-- ${base}/crepair.s -->
-			        	<input type="hidden" name="op" value="query">
 			        	<div id="tb" style="margin-left:40px">
 			        		<input type="text" name="rid"  class = "easyui-searchbox" value="${param.rid}"
 				        	data-options="searcher:doSearch,prompt:'维修ID/维修人员',menu:'#mm' ,width:250 ">
@@ -131,44 +90,37 @@
 								<div data-options="name:'staff'">维修人员</div>
 							</div>	
 			        	</div>
-			        			        	
-			        	<!-- <input type="submit" class="easyui-linkbutton"  value="搜索"> -->			        	
-        			</form>
-        			<br/>
-                    <table class="easyui-datagrid" id="rep" toolbar="#tb"
+                    <table id="rep" toolbar="#tb"  class="easyui-datagrid"
                     data-options="pagination:true,
                     title:'阳光服务',
                     url:'../crepair.s?op=query',
                     singleSelect: true,
-                    method: 'get',
-                    rownumbers:true
-                    
-                    " >
-			            <thead>
+                    fitColumns:true,
+                    rownumbers:true"
+                     >
+                     <thead>
 			              <tr>
-			                <th data-options="field:'rid'">维修号 </th>
-			                <th data-options="field:'description',width: 300" >报修故障描述 </th>
-			                <th data-options="field:'time',width: 200" >上报时间</th>			                
-			                <th data-options="field:'address',width: 400" >地点</th>		                
-			                <th data-options="field:'staff',width: 100">处理人员</th>
-			                <th data-options="field:'status',width: 100" >办理状态</th>
+			                <th data-options="field:'rid',width: 260,align:'center'">维修号 </th>
+			                <th data-options="field:'description',width: 250,align:'center'" >报修故障描述 </th>
+			                <th data-options="field:'time',width: 180,align:'center'" >上报时间</th>			                
+			                <th data-options="field:'address',width: 360,align:'center'" >地点</th>		                
+			                <th data-options="field:'staff',width: 80,align:'center'">处理人员</th>
+			                <th data-options="field:'status',width: 80,align:'center'" >办理状态</th>
 			              </tr>
 			            </thead>
+                     </table> 
+                    
 			            
-		          </table>
+			            
 		          
 		          <div>
-		       
 		          </div>
-		          
         </div>
                     </div>
-                   
              <div class="blank25">
             </div>
             <div class="blank25">
             </div>
-                  
                  <ol class="breadcrumb" style="float: right;margin-right: 5%">
                  <!-- javascript:void(0) -->
                  <!-- <li><a data-toggle="modal" href="javascript:void(0)"  id="d1"></a></li> -->
@@ -181,7 +133,7 @@
                             </span>
                         </div>
                         <div class="title">
-                            电话
+                            联系我们
                         </div>
                         <div class="info">
                             0755-88888888
@@ -195,13 +147,7 @@
             </div>
             <div class="blank25">
             </div>
-            
             <div class="text-center">
-               <!--  <div class="try-button-box wrap fz0">
-                    <a href="#" ​ target="_blank" class="button inline-block text-center trans wow fadeInUp">
-                        我要私人定制
-                    </a>
-                </div> -->
             </div>
             <div class="blank25">
             </div>
@@ -239,7 +185,6 @@
                 <!-- <td wdith="20%">保修故障描述:</td> -->
                 <td><textarea name="description"  id="description"   value=""     description="内容"  minlen=1   style="width:100%;height:120px;border:1px #D0D0D0 solid; font-size:14px" onpropertychange="if(this.scrollHeight<100){this.style.posHeight=120;}else{this.style.posHeight=this.scrollHeight}"    ></textarea>
 </td>
-                
               </tr>
              
             </tbody>
@@ -256,20 +201,47 @@
     </form>
   </div>
 </div>
- <script src="${base}/js/Client/website.js"></script>
+   <%-- <script src="${base}/js/Client/website.js">
+        </script> --%>
+ 
 <script type="text/javascript">
+
+jQuery(window).scrollTop(0);
+jQuery('html,body').scrollTop(0);
+new WOW().init({
+    mobile: false
+});
          $(function(){
-      		$("#btn").click(function(){
-      			var date = {};
-      			date.address = $("#address").val();
-      			date.description = $("#description").val();
-      			$.post("../repair.s?op=add",date,
-      					function(date){
-      				alert(date);
-      			});
-      		})
+      		 setTimeout(function() {
+                 $('#body').show();
+             },
+             500);
       	});
-</script>            
+         $("#btn").click(function(){
+   			var date = {};
+   			date.address = $("#address").val();
+   			date.description = $("#description").val();
+   			//date.rows=$("#rep").datagrid('getPager').data("pagination").options.pageSize;
+   			//date.page=$("#rep").datagrid('getPager').data("pagination").options.pageNumber;
+   			
+   			$.post("../crepair.s?op=add",date,
+   					function(date){
+   				alert(date);
+   			});
+   		});      
+         function doSearch(value,name){
+        	 	if(name == 'rid'){
+        	 		$('#rep').datagrid({
+        	 			queryParams:{rid:''+value+''}
+        	 		});
+        	 	}else{
+        	 		$('#rep').datagrid({
+        	 			queryParams:{staff:''+value+''}
+        	 		});
+        	 	}  
+         }
+         
+     </script>           
             
          
          

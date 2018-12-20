@@ -13,24 +13,25 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>
-            为什么企业要建多国语言网站？
+            新闻
         </title>
         <meta name="keywords" content="为什么,企业,要,建,多国,语言,网站,互联网,在," />
         <meta name="description" content="互联网在不断发展壮大，已成为企业和个人寻求生意机会，对商品、服务和信息进行了解的首选方式。从站在增强一个企业竞争优势的角度看，建设一个多语言网站是不断增加客户数量"
         />
-        <link href="${base}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"
-        />
+        <link href="${base}/css/Client/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         
         <link href="${base}/css/Client/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="${base}/css/Client/animate.min.css" rel="stylesheet" type="text/css" />
         <link href="${base}/css/Client/global.css" rel="stylesheet" type="text/css" />
         <link href="${base}/css/Client/lib.css" rel="stylesheet" type="text/css" />
         <link href="${base}/css/Client/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="${base}/css/Client/stylee.css">
+        <link rel="stylesheet" href="${base}/css/Client/comment.css">
         <style type="text/css">
         	.li{
         			font-size: 15px;
         	}
-        
+
         </style>
         <script src="${base}/js/Client/jquery-1.9.1.min.js">
         </script>
@@ -64,8 +65,7 @@
                 500);
             })
         </script>
-    </head>
-    
+    </head> 
     <body>
       <jsp:include page="/public/Client/head.jsp"></jsp:include>
         <div id="header-blank" class="show992">
@@ -104,7 +104,6 @@
                 <div class="blank25">
                 </div>
                ${news.content}
-               
             </div>
             </div>
             <div class="blank25">
@@ -127,40 +126,75 @@
 					</ul>
 				</div>
             <hr/>
-                   <span style="font-size: 20px;font-family: 微软雅黑;margin-left: 4% ">评论一下</span>
-					<div class="comment" style="margin-left: 5%">
-						<br>
-						<form id="comment-form" action="${base}/comment.s" method="POST" >
-						<input type="hidden" name="op" value="">
-							<input name="" id="" class="form-control" size="22"
-								placeholder="您的昵称（必填）" maxlength="15" autocomplete="off"
-								tabindex="1" type="text" style="width: 50%">
-								<br>
-							<input name="" id="" class="form-control" size="22" placeholder="您的网址或邮箱（非必填）"
-								maxlength="58" autocomplete="off" tabindex="2" type="text" style="width: 50%">
-							<br>
-								<textarea class="form-control" placeholder="您的评论或留言（必填）" name="comment-textarea"
-									id="comment-textarea" cols="100%" rows="3" tabindex="3" style="width: 50%"></textarea>
-									<input type="submit" class = "comment-submit"name = "comment" value="评论" style="width: 55px;height: 30px ;background-color: white">
-							
-							</form>
-							
-							</div>
-					<hr>	
-						
-					
-					
-				
-				
-            
-            
-            
-            	<jsp:include page="/public/Client/botton.jsp"></jsp:include>
-            	<jsp:include page="/public/Client/follow.jsp"></jsp:include>
-           
-            
-        <script src="${base}/js/Client/website.js">
-        </script>
-    </body>
+					<hr>
+<span style="font-size: 20px;margin-left: 280px;">请留下你想说的话吧</span>
+<div class="commentAll">
+	<div>
+		<textarea style="width:450px;height:50px" name="content" id="comment"></textarea>
+		<input type="button" value="评论" style="font-family: fantasy; width: 50px;height: 20px" onclick="comment()" >
+	</div>
+</div>
 
+        <jsp:include page="/public/Client/botton.jsp"></jsp:include>
+        <jsp:include page="/public/Client/follow.jsp"></jsp:include>
+        <script src="${base}/js/Client/website.js"></script>
+        
+ <script type="text/javascript">
+ function parseUrl(){
+     var url=location.href;
+     var i=url.indexOf('?');
+     if(i==-1)return;
+     var querystr=url.substr(i+1);
+     
+     var arr1=querystr.split('&');
+     var arr2=new Object();
+     var ta =new Object();
+     for  (i in arr1){
+         ta=arr1[i].split('=');
+         arr2[ta[0]]=ta[1];
+     }
+     return arr2[ta[0]];
+ }
+var v = parseUrl();//解析所有参数
+//alert(v);
+
+ 	function comment() {
+ 		alert("*******************");
+ 		String username = (String)session.getAttribute("username");
+ 		if (username == null){
+ 			alert("您还未登陆，请先登陆"); 
+ 			//window.location="login.jsp" 
+           Response.Redirect("login.jsp");
+        }else{
+        	alert("*******************");
+        	var data = {};
+        	
+        	var myDate = new Date();
+            //获取当前年
+            var year=myDate.getFullYear();
+            //获取当前月
+            var month=myDate.getMonth()+1;
+            //获取当前日
+            var date=myDate.getDate();
+            var h=myDate.getHours();       //获取当前小时数(0-23)
+            var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+            if(m<10) m = '0' + m;
+            var s=myDate.getSeconds();
+            if(s<10) s = '0' + s;
+            var time=year+'-'+month+"-"+date+" "+h+':'+m+":"+s;
+            
+            var comment = $("#comment").val();
+            data.time = time;
+    		data.newsid = v;
+    		date.username = username;
+    		data.comment = comment;
+        }
+		
+	}
+ 
+ </script>       
+        
+        
+       
+</body>
 </html>

@@ -35,10 +35,10 @@ public class LoginFilter implements Filter {
 			return;
 		}
 		System.out.println("进来了吗？");
-		if(httpRequest.getSession().getAttribute("LoginedUser") == null){
+		/*if(httpRequest.getSession().getAttribute("LoginedUser") == null){
 			request.setAttribute("msg", "请先登录！");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
-		}
+		}*/
 		//正常业务必须执行 过滤器链的doFilter
 		chain.doFilter(request, response);
 	}
