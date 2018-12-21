@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSON;
+import com.yc.bean.News;
 import com.yc.bean.Page;
 import com.yc.bean.PageData;
 import com.yc.bean.Repair;
@@ -63,13 +64,11 @@ public class CRepairServlet extends HttpServlet {
 	private void query(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("===================================");
-		Page page = BeanUtils.asBean(request, Page.class);
 		Repair repair = BeanUtils.asBean(request, Repair.class);
-		System.out.println(page.getPage()+":"+page.getRows());
-		String res = JSON.toJSONString(rBiz.find(repair,page));
-		response.getWriter().append(res);
-		//request.setAttribute("repairList", rBiz.find(repair));
-		//request.getRequestDispatcher("ClientJsp/"+"Crepair.jsp").forward(request, response);		
+		String nPage = request.getParameter("nowPage");
+		int pageSize = 6;  //每页显示页数
+		request.setAttribute("repairList", rBiz.find(repair,nPage,pageSize));
+		request.getRequestDispatcher("ServerJsp/"+"Srepair.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

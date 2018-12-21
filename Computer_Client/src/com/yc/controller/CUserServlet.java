@@ -2,6 +2,8 @@ package com.yc.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,8 +13,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.alibaba.fastjson.JSON;
+import com.yc.bean.Comment;
 import com.yc.bean.User;
 import com.yc.biz.BizException;
 import com.yc.biz.UserBiz;
@@ -49,10 +53,56 @@ public class CUserServlet extends HttpServlet {
 			Register(request,response);
 		}else if("isCode2".equals(op)){
 			isCode2(request,response);
+		}else if("sendComment".equals(op)) {
+			sendComment(request,response);
+		}else if("findCommentByNews".equals(op)) {
+				findCommentByNews(request,response);
 		}
+
 	}
 
-	
+	/**
+	 * 根据新闻查找评论对象
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	private void findCommentByNews(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		Long newId = Long.parseLong(request.getParameter("newId"));
+		List<Comment> list = uBiz.findCommentByNews(newId);
+		request.setAttribute("commentList", list);
+		System.out.println("commentList:"+list);
+		request.getRequestDispatcher("/ClientJsp/newsshow.jsp").forward(request, response);
+	}
+
+	/**
+	 * 发送评论
+	 * @param request
+	 * @param response
+	 */
+	private void sendComment(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		User user = (User)session.getAttribute("LoginedUser"); //当前登录的用户
+		if(user == null) {
+			response.getWriter().append("notLogin");
+			return;
+		}
+		
+		Comment c = new Comment();  
+		c.setUserId(user.getId());  //把当前用户的id设置给评论对象
+		Timestamp timestamp = new Timestamp(new Date().getTime());//得到当前时间
+		c.setCommentTime(timestamp);
+		Long newsid = Long.parseLong(request.getParameter("newsId"));//获取当前要评论的新闻id
+		c.setNewsId(newsid);//设置新闻id
+		String content = request.getParameter("content");//获取评论的内容
+		c.setContent(content);
+		uBiz.insertComment(c);
+		response.getWriter().append("yes");
+		
+	}
+
 
 	
 

@@ -14,26 +14,26 @@
                             </a>
                         </div>
                         <div class="nav-item fl text-center trans">
-                            <a href="index.jsp"​ class='on trans'>首页</a>
+                            <a href="${base}/ClientJsp/index.jsp"​ class='on trans'>首页</a>
                         </div>
                          <div class="nav-item fl text-center trans">
-                            <a href="news.jsp"​>新闻动态</a>
+                            <a href="${base}/ClientJsp/news.jsp"​>新闻动态</a>
                         </div>
                         <div class="nav-item fl text-center trans">
-                            <a href="about.jsp"​>协会简介</a>
+                            <a href="${base}/ClientJsp/about.jsp"​>协会简介</a>
                         </div>
                         <div class="nav-item fl text-center trans">
-                            <a href="product.jsp"​>协会通知</a>
+                            <a href="${base}/ClientJsp/product.jsp"​>协会通知</a>
                         </div>
                         <div class="nav-item fl text-center trans">
-                            <a href="Crepair.jsp"​>网络保修</a>
+                            <a href="${base}/ClientJsp/Crepair.jsp"​>网络保修</a>
                         </div>
                         <div class="nav-item fl text-center trans">
-                            <a href="grade.jsp"​>成绩查询</a>
+                            <a href="${base}/ClientJsp/grade.jsp"​>成绩查询</a>
                         </div>
                        
                         <div class="nav-item fl text-center trans">
-                            <a href="contact.jsp"​>联系我们</a>
+                            <a href="${base}/ClientJsp/contact.jsp"​>联系我们</a>
                         </div>
                         <!--<div class="member show992 clean"> <a href="#"​ class="login member-btn fl content-box text-center trans"><i></i>登录</a> <a href="#"​ class="try member-btn fl content-box text-center trans">注册账号</a> </div>-->
                     </div>

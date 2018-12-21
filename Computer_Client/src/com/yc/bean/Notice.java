@@ -1,6 +1,6 @@
 package com.yc.bean;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 public class Notice implements java.io.Serializable{
 
@@ -8,38 +8,52 @@ public class Notice implements java.io.Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Long nId;
+	private Long Id;
 	private Long userId;
-	private Timestamp nTime;
-	private String ncontent;
-	public Long getnId() {
-		return nId;
+	private Date Time;
+	private String content;
+	private String address;
+	private String inform;
+	public String getInform() {
+		return inform;
 	}
-	public void setnId(Long nId) {
-		this.nId = nId;
+	public void setInform(String inform) {
+		this.inform = inform;
 	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
 	public Long getUserId() {
 		return userId;
 	}
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	public Timestamp getnTime() {
-		return nTime;
+	
+	public Long getId() {
+		return Id;
 	}
-	public void setnTime(Timestamp nTime) {
-		this.nTime = nTime;
+	public void setId(Long id) {
+		Id = id;
 	}
-	public String getNcontent() {
-		return ncontent;
+	
+	public Date getTime() {
+		return Time;
 	}
-	public void setNcontent(String ncontent) {
-		this.ncontent = ncontent;
+	public void setTime(Date time) {
+		Time = time;
 	}
-	@Override
-	public String toString() {
-		return "Notice [nId=" + nId + ", userId=" + userId + ", nTime=" + nTime + ", ncontent=" + ncontent + "]";
+	public String getContent() {
+		return content;
 	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	
 	
 	
 }

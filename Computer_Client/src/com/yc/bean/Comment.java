@@ -9,23 +9,30 @@ public class Comment implements java.io.Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	//请求的参数
-	private Long cId;
-	private Timestamp cTime;
+	private Long commentId;
+	private Timestamp commentTime;
 	private Long userId;
 	private Long newsId;
 	private String content;
-	private Long count;
-	public Long getcId() {
-		return cId;
+	private User user;
+	private News news;
+	
+	@Override
+	public String toString() {
+		return "Comment [commentId=" + commentId + ", commentTime=" + commentTime + ", userId=" + userId + ", newsId="
+				+ newsId + ", content=" + content + ", user=" + user + ", news=" + news + "]";
 	}
-	public void setcId(Long cId) {
-		this.cId = cId;
+	public Long getCommentId() {
+		return commentId;
 	}
-	public Timestamp getcTime() {
-		return cTime;
+	public void setCommentId(Long commentId) {
+		this.commentId = commentId;
 	}
-	public void setcTime(Timestamp cTime) {
-		this.cTime = cTime;
+	public Timestamp getCommentTime() {
+		return commentTime;
+	}
+	public void setCommentTime(Timestamp commentTime) {
+		this.commentTime = commentTime;
 	}
 	public Long getUserId() {
 		return userId;
@@ -45,17 +52,19 @@ public class Comment implements java.io.Serializable{
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Long getCount() {
-		return count;
+	public User getUser() {
+		return user;
 	}
-	public void setCount(Long count) {
-		this.count = count;
+	public void setUser(User user) {
+		this.user = user;
 	}
-	@Override
-	public String toString() {
-		return "Comment [cId=" + cId + ", cTime=" + cTime + ", userId=" + userId + ", newsId=" + newsId + ", content="
-				+ content + ", count=" + count + "]";
+	public News getNews() {
+		return news;
 	}
+	public void setNews(News news) {
+		this.news = news;
+	}
+	
 	
 	
 	

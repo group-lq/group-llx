@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<input type="hidden" name="content" id="editor_txt">
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>通知</title>
+<title>Validation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -20,6 +19,7 @@
  <!-- js-->
 <script src="${base}/js/Server/jquery-1.11.1.min.js"></script>
 <script src="${base}/js/Server/modernizr.custom.js"></script>
+ <!--//js-->
 <!--webfonts-->
 <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//webfonts--> 
@@ -30,16 +30,18 @@
 		 new WOW().init();
 	</script>
 <!--//end-animate-->
-<!--skycons-icons-->
-<script src="${base}/js/Server/skycons.js"></script>
-<!--//skycons-icons-->
-<!--circlechart-->
-<script src="${base}/js/Server/jquery.circlechart.js"></script>
-<!--circlechart-->
 <!-- Metis Menu -->
 <script src="${base}/js/Server/metisMenu.min.js"></script>
 <script src="${base}/js/Server/custom.js"></script>
 <link href="${base}/css/Server/custom.css" rel="stylesheet">
+<style type="text/css">
+		.logined{
+			cursor:pointer;
+		}
+		#d1{
+			font-weight: bold;
+		}
+	</style>
 <!--//Metis Menu -->
 </head> 
 <body class="cbp-spmenu-push">
@@ -48,17 +50,45 @@
 		<!-- main content start-->
 		<div id="page-wrapper">
 			<div class="main-page">
-				<div class="elements">
-						<div id="editor"> <p>欢迎使用通知管理</p> </div> <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！--> 
-						<div class="clearfix"> </div>	
-						<div class="col-md-12">
-								<input type="submit" name="submit" value="提交" style="margin-left: 400px;" > 
-						</div> 
+				<div class="forms validation">
+					<h3 class="title1">计协认证管理 :</h3>
+					<div class="form-three widget-shadow">
+						<h4 style="margin-left: 2%"><span class="logined" onclick="replaced()" id="d1">手&nbsp;机</span>|<span id="d2" class="logined" onclick="replaced1()">邮&nbsp;箱</span> </h4>
+					</div>
+					<div class="row" id="tel">
+						<div class="col-md-6 validation-grids widget-shadow" data-example-id="basic-forms"> 
+							<div class="form-title">
+								<h4>手机发送认证码 :</h4>
+							</div>
+							<div class="form-body" >
+								<form data-toggle="validator">
+									<div class="form-group">
+										<input type="text" class="form-control"  placeholder="请输入手机号码" >
+									</div>
+									<input type="submit" value="发送"class="btn btn-primary disabled" >
+								</form>
+							</div>
+						</div>
+					</div>
 					
-					<div class="clearfix"> </div>
+					<div class="row" style="display:none;" id="email">
+						<div class="col-md-6 validation-grids widget-shadow" data-example-id="basic-forms"> 
+							<div class="form-title">
+								<h4>邮箱发送认证码 :</h4>
+							</div>
+							<div class="form-body" >
+								<form data-toggle="validator">
+									<div class="form-group">
+										<input type="text" class="form-control"  placeholder="请输入邮箱" >
+									</div>
+									<input type="submit" value="发送"class="btn btn-primary disabled" >
+								</form>
+							</div>
+						</div>
+					
+					</div>
+					
 				</div>
-				
-				
 			</div>
 		</div>
 		<jsp:include page="/public/Server/footer.jsp"></jsp:include>
@@ -66,6 +96,20 @@
 	<!-- Classie -->
 		<script src="${base}/js/Server/classie.js"></script>
 		<script>
+		function replaced(){
+			$("#hid").val("Clogin");
+			 $("#d1").css("font-weight","bold");
+			 $("#d2").css({"font-weight":"normal"});
+			 $("#tel").css("display","block");
+			 $("#email").css("display","none");
+		}
+		function replaced1(){
+			$("#hid").val("login");
+			$("#d2").css("font-weight","bold");
+			$("#d1").css({"font-weight":"normal"});
+			 $("#email").css("display","block");
+			  $("#tel").css("display","none");
+		}
 			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
 				showLeftPush = document.getElementById( 'showLeftPush' ),
 				body = document.body;
@@ -88,20 +132,9 @@
 	<script src="${base}/js/Server/scripts.js"></script>
 	<!--//scrolling js-->
 	<!-- Bootstrap Core JavaScript -->
-   <script src="${base}/js/Server/bootstrap.js"> </script>
-   <div class="bs-example widget-shadow"> 
-    <script type="text/javascript" src="${ base}/js/Server/wangEditor.js"></script> <script type="text/javascript">
-						        var E = window.wangEditor
-						        var editor = new E('#editor')
-						        editor.create()
-						        document.getElementById('btn1').addEventListener('click', function () {
-						        // 读取 html
-						        var editor_txt=editor.txt.html();
-						        document.getElementById('editor_txt').value=editor_txt;
-						    }, false)       
-	</script>
-	</div>
-							
-	
+	<script src="${base}/js/Server/bootstrap.js"> </script>
+	<!--validator js-->
+	<script src="${base}/js/Server/validator.min.js"></script>
+	<!--//validator js-->
 </body>
 </html>

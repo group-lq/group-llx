@@ -1361,8 +1361,8 @@ section#tables  p {
     margin-top: 2em;
 }
 .form-three{
-    margin-top:2em;
-    padding: 2em;
+    margin-top:0.5em;
+    padding: 0.5em;
 }
 /* --  general forms  -- */
 .form-control1, .form-control_2.input-sm{
@@ -2896,7 +2896,7 @@ h3.title1 {
     margin-right: 0.5em;
 }
 .form-three {
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 .validation-grids {
     width: 100%;
@@ -3916,7 +3916,7 @@ h4.title3 {
     margin-left: 4em;
 }
 .form-three {
-    padding: 1em;
+    padding: 0.5em;
 }
 .forms label {
     font-size: 0.9em;

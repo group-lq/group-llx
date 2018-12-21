@@ -225,8 +225,8 @@ new WOW().init({
    			//date.page=$("#rep").datagrid('getPager').data("pagination").options.pageNumber;
    			
    			$.post("../crepair.s?op=add",date,
-   					function(date){
-   				alert(date);
+   					function(data){
+   				alert(data);
    			});
    		});      
          function doSearch(value,name){

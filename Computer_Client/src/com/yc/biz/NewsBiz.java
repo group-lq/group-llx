@@ -52,7 +52,6 @@ public class NewsBiz {
 		
 		if(news.getTitle() == null && news.getDecription() == null){
 			String sql1 = "select * from news limit "+start+","+end;
-			System.out.println();
 			return DBHelper.select(sql1, News.class, params);
 		}
 		String sql = "select * from news where 1=1";
@@ -63,7 +62,7 @@ public class NewsBiz {
 		if(news.getDecription() != null && ! news.getDecription().trim().isEmpty()){
 			sql += " and decription like ?";
 			params.add("%"+news.getDecription()+"% limit"+start+","+end);
-		}		
+		}
 		return DBHelper.select(sql, News.class, params);
 	}
 	

@@ -15,16 +15,7 @@
 <script type="text/javascript" src="${base}/js/login/jquery-1.8.3-min.js"></script>
   <script src="${base}/js/Client/jquery-1.9.1.min.js"></script>
   
-  <script>
-	addEventListener("load", function () {
-		setTimeout(hideURLbar, 0);
-	}, false);
-
-	function hideURLbar() {
-		window.scrollTo(0, 1);
-	}
-	
-</script>
+ 
   
 </head>
 <body>
@@ -96,6 +87,14 @@
   <br>
   <br>
   <script type="text/javascript">
+	addEventListener("load", function () {
+		setTimeout(hideURLbar, 0);
+	}, false);
+
+	function hideURLbar() {
+		window.scrollTo(0, 1);
+	}
+	
   $(function(){
 	  $(".Code").on("blur",function(){
 		  var name = $(this).attr("name");

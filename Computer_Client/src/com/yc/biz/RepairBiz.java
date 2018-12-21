@@ -4,8 +4,11 @@ package com.yc.biz;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
+import com.yc.bean.News;
 import com.yc.bean.Page;
 import com.yc.bean.PageData;
 import com.yc.bean.Repair;
@@ -32,19 +35,50 @@ public class RepairBiz {
 				repair.getDescription(),repair.getStatus(),repair.getTime());		
 	}
 
-	public PageData find(Repair repair,Page page) {
-		int start =(page.getPage()-1)*page.getRows() ;
-		int end =page.getRows() ;
-		String sql = "select * from repair where 1=1";
-		ArrayList<Object> params = new ArrayList<Object>();
+	public Object find(Repair repair ,String nPage,int pageSize) {//nPage 取值可能 1,beforePage,afterPage,totlePage
+		int totalSize=0; //总记录数
+		int totalPage=0;//总页数
+		int nowPage=1;//当前页数
+		int start=0;//查询位置的起始页
+		int end=0;//结束页
+		String sql2 = "select * from repair";
+		ArrayList<Object> params = new ArrayList<Object>(); 
+		List<Map<String, Object>> msp = DBHelper.select(sql2);
+		//总记录数
+		totalSize = msp.size();
+		//总页数
+		 if(totalSize % pageSize == 0){
+			totalPage = totalSize / pageSize;
+		}else{
+			totalPage = totalSize / pageSize + 1;
+		}
+		if(nPage == null || "".equals(nPage)){
+			nowPage=1;
+		}else if("1".equals(nPage)){
+			nowPage = Integer.valueOf(nPage);
+		}else if("beforePage".equals(nPage)){
+			if(nowPage == 1){
+				nowPage = 1;
+			}else{
+				nowPage -=  1 ;
+			}
+		}
+		if("afterPage".equals(nPage)){
+			if(nowPage == totalPage){
+				nowPage = totalPage;
+			}else{
+				nowPage +=  1 ;
+			}
+			
+		}else if("totlePage".equals(nPage)){
+			nowPage = totalPage;
+		}
+		start = (nowPage - 1)*pageSize;
+		end = pageSize;
+		String sql = "select r.rid,u.username,u.tel,r.time,r.address,r.description,r.staff,r.`status` from user u join repair r on u.id = r.userid where 1=1";
 		if(repair.getRid() == null && repair.getStaff() == null) {
-			sql = "select * from repair limit ?,?";
-			System.out.println(DBHelper.select(sql,start,end));
-			PageData pageData = new PageData();
-			pageData.setRows(DBHelper.select(sql,start,end));
-			sql = "select count(1) cnt from repair";
-			pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
-			return pageData;
+			String sql1 = "select r.rid,u.username,u.tel,r.time,r.address,r.description,r.staff,r.`status` from user u join repair r on u.id = r.userid  limit "+start+","+end;
+			return DBHelper.select(sql1, params);
 		}
 		if(repair.getRid() != null && ! repair.getRid().trim().isEmpty()){
 			sql += " and rid like ? limit "+start+","+end+" ";
@@ -53,12 +87,8 @@ public class RepairBiz {
 		if(repair.getStaff() != null && ! repair.getStaff().trim().isEmpty()){
 			sql += " and staff like ? limit "+start+","+end+" ";
 			params.add("%"+repair.getStaff()+"%");
-		}
-		PageData pageData = new PageData();
-		pageData.setRows(DBHelper.select(sql,params));
-		sql = "select count(1) cnt from repair";
-		pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
-		return pageData;
+		}		
+		return DBHelper.select(sql, params);
 	}
 
 	public Repair findByOne(String id) {
@@ -84,5 +114,12 @@ public class RepairBiz {
 		pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
 		return pageData;
 	}
+
+	public Object findStaff(Repair repair) {
+		String sql = "select count(*) cnt from(select * from repair where staff is null)a";
+		return DBHelper.uniqueValue(sql, "cnt");
+	}
+
+	
 
 }

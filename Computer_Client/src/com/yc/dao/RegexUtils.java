@@ -31,7 +31,7 @@ public class RegexUtils {
     public static boolean checkMobileNumber(User user){
         boolean flag = false;
         try{
-                Pattern regex = Pattern.compile("^[1](([3][0-9])|([4][5,7,9])|([5][4,6,9])|([6][6])|([7][3,5,6,7,8])|([8][0-9])|([9][8,9]))[0-9]{8}$");
+                Pattern regex = Pattern.compile("^[1](([3][0-9])|([4][5,7,9])|([5][4,5,6,9])|([6][6])|([7][3,5,6,7,8])|([8][0-9])|([9][8,9]))[0-9]{8}$");
                 Matcher matcher = regex.matcher(user.getTel());
                 flag = matcher.matches();
             }catch(Exception e){

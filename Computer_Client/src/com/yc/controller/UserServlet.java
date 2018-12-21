@@ -47,6 +47,8 @@ public class UserServlet extends HttpServlet {
 				save(request,response);
 			}else if("query1".equals(op)){
 				query1(request,response);
+			}else if("query2".equals(op)){
+				query2(request,response);
 			}else if("pic".equals(op)){
 				showPic(request,response);
 			}else if("checkTel".equals(op)){
@@ -203,6 +205,13 @@ public class UserServlet extends HttpServlet {
 			User user = BeanUtils.asBean(request, User.class);
 			request.setAttribute("directorList", uBiz.findDirector(user));
 			request.getRequestDispatcher("ServerJsp"+"/Srepair.jsp").forward(request, response);
+		}
+		private void query2(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException {
+			//request.setCharacterEncoding("utf-8");
+			User user = BeanUtils.asBean(request, User.class);
+			request.setAttribute("directorList", uBiz.findDirector(user));
+			request.getRequestDispatcher("ServerJsp"+"/notice.jsp").forward(request, response);
 		}
 
 

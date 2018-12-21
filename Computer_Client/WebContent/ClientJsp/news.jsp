@@ -6,10 +6,14 @@
 	response.setCharacterEncoding("utf-8");
 	response.setHeader("Content-type", "text/html;charset=UTF-8");	
 		if(request.getAttribute("newsList") == null){
+			
 			request.getRequestDispatcher("../cnews.s?op=query").forward(request, response);
 		}
 	%>
-<!DOCTYPE html>
+<%-- 	<c:if test="${empty newsList }">
+		<jsp:forward page="/cnews.s?op=query" />
+	</c:if>
+ --%><!DOCTYPE html>
 <html>
     
     <head>

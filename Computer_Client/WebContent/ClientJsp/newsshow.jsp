@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	<%
-		System.out.println(request.getAttribute("newsList"));
-	%>
+	
 <!DOCTYPE html>
 <html>
     
@@ -66,6 +64,9 @@
             })
         </script>
     </head> 
+    <c:if test="${empty commentList }">
+    	<jsp:forward page="/cuser.s?op=findCommentByNews&newId=${news.newsid }"></jsp:forward>
+    </c:if>
     <body>
       <jsp:include page="/public/Client/head.jsp"></jsp:include>
         <div id="header-blank" class="show992">
@@ -129,10 +130,36 @@
 					<hr>
 <span style="font-size: 20px;margin-left: 280px;">请留下你想说的话吧</span>
 <div class="commentAll">
-	<div>
-		<textarea style="width:450px;height:50px" name="content" id="comment"></textarea>
-		<input type="button" value="评论" style="font-family: fantasy; width: 50px;height: 20px" onclick="comment()" >
-	</div>
+	
+	<div class="reviewArea clearfix">
+        <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" id="contentText"></textarea>
+        <input type="button" value="评论" class="plBtn" id="comment1">
+    </div>
+    <div class="comment-show" id="comment-show">
+    	<c:forEach items="${commentList }" var="comment">
+	        <div class="comment-show-con clearfix">
+	        <div class="comment-show-con-img pull-left">
+	        	<img src="<c:url value='${comment.user.pic }' />" alt="">
+	        </div> 
+	        <div class="comment-show-con-list pull-left clearfix">
+		        <div class="pl-text clearfix"> 
+			        <a href="#" class="comment-size-name">${comment.user.username } : </a>
+			        <span class="my-pl-con">&nbsp; ${comment.content } </span>
+		        </div> 
+		        <div class="date-dz"> 
+			        <span class="date-dz-left pull-left comment-time">${comment.commentTime }</span>
+			        <div class="date-dz-right pull-right comment-pl-block"> </span> 
+				        <a href="javascript:;" class="date-dz-z pull-left">
+				      	  <i class="date-dz-z-click-red"></i>赞 (<i class="z-num">666</i>)
+				        </a> 
+			        </div> 
+		        </div>
+		        <div class="hf-list-con">
+		        </div>
+	          </div>
+	          </div>
+          </c:forEach>
+    </div>
 </div>
 
         <jsp:include page="/public/Client/botton.jsp"></jsp:include>
@@ -140,6 +167,25 @@
         <script src="${base}/js/Client/website.js"></script>
         
  <script type="text/javascript">
+  $("#comment1").on("click",function(){
+     var content = $("#contentText").val();//时间 内容 评论人 新闻id
+  
+     var data={ 
+    		 op : "sendComment",
+    		 newsId : "${news.newsid}",
+    		 content : content
+    		 };
+     $.post("<c:url value='/cuser.s' />",data,function(data){
+    	 if(data === "notLogin"){
+    		 alert("你还没有登录，请先登录");
+    		 location.href = "<c:url value='/Nlogin.jsp' />";
+    	 }else{
+    		 history.go(0);
+    	 } 
+    	
+     });
+     
+	}); 
  function parseUrl(){
      var url=location.href;
      var i=url.indexOf('?');
@@ -156,41 +202,7 @@
      return arr2[ta[0]];
  }
 var v = parseUrl();//解析所有参数
-//alert(v);
 
- 	function comment() {
- 		alert("*******************");
- 		String username = (String)session.getAttribute("username");
- 		if (username == null){
- 			alert("您还未登陆，请先登陆"); 
- 			//window.location="login.jsp" 
-           Response.Redirect("login.jsp");
-        }else{
-        	alert("*******************");
-        	var data = {};
-        	
-        	var myDate = new Date();
-            //获取当前年
-            var year=myDate.getFullYear();
-            //获取当前月
-            var month=myDate.getMonth()+1;
-            //获取当前日
-            var date=myDate.getDate();
-            var h=myDate.getHours();       //获取当前小时数(0-23)
-            var m=myDate.getMinutes();     //获取当前分钟数(0-59)
-            if(m<10) m = '0' + m;
-            var s=myDate.getSeconds();
-            if(s<10) s = '0' + s;
-            var time=year+'-'+month+"-"+date+" "+h+':'+m+":"+s;
-            
-            var comment = $("#comment").val();
-            data.time = time;
-    		data.newsid = v;
-    		date.username = username;
-    		data.comment = comment;
-        }
-		
-	}
  
  </script>       
         

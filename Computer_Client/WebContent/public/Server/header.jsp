@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
 <div class="main-content">
 		<!--left-fixed -navigation-->
 		<div class=" sidebar" role="navigation">
@@ -37,7 +39,7 @@
 							<!-- /nav-second-level -->
 						</li>
 						<li>
-							<a href="widgets.jsp"><i class="fa fa-th-large nav_icon"></i>通知 <span class="nav-badge-btm">08</span></a>
+							<a href="notice.jsp"><i class="fa fa-th-large nav_icon"></i>会议通知 <span class="nav-badge-btm">08</span></a>
 						</li>
 						<li>
 							<a href="#"><i class="fa fa-envelope nav_icon"></i>邮件<span class="fa arrow"></span></a>
@@ -55,13 +57,13 @@
 							<a href="Srepair.jsp"><i class="fa fa-table nav_icon"></i>网络报修<span class="nav-badge">05</span></a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-check-square-o nav_icon"></i>用户管理<span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-check-square-o nav_icon"></i>管理用户<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="forms.jsp">添加用户 <span class="nav-badge-btm">07</span></a>
+									<a href="forms.jsp">用户管理<span class="nav-badge-btm">07</span></a>
 								</li>
 								<li>
-									<a href="validation.jsp">验证</a>
+									<a href="attestation.jsp">认证管理</a>
 								</li>
 							</ul>
 							<!-- //nav-second-level -->
@@ -97,7 +99,7 @@
 		<div class="sticky-header header-section ">
 			<div class="header-left">
 				<!--toggle button start-->
-				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
+				<button id="showLeftPush" ><i class="fa fa-bars"></i></button>
 				<!--toggle button end-->
 				<!--logo -->
 				<div class="logo">
@@ -171,17 +173,18 @@
 									</div>
 								</li>
 								<li><a href="#">
-									<div class="user_img"><img src="${base}/images/Server/2.png" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet</p>
-									<p><span>一小时前</span></p>
+									<div class="task-info">
+										<span class="task-desc">数据库更新</span><span class="percentage">40%</span>
+										<div class="clearfix"></div>	
 									</div>
-								  <div class="clearfix"></div>	
-								 </a></li>
+									<div class="progress progress-striped active">
+										<div class="bar yellow" style="width:40%;"></div>
+									</div>
+								</a></li>
 								 <li class="odd"><a href="#">
 									<div class="user_img"><img src="${base}/images/Server/1.png" alt=""></div>
 								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
+									<p>Lorem ipsum dolor amet</p>
 									<p><span>一小时前</span></p>
 									</div>
 								   <div class="clearfix"></div>	
@@ -211,7 +214,7 @@
 								</li>
 								<li><a href="#">
 									<div class="task-info">
-										<span class="task-desc">数据库更新</span><span class="percentage">40%</span>
+										<span class="task-desc">维修人员</span><span class="percentage"><c:if test="${! empty repairInformList}">${repairInformList.cnt}</c:if></span>
 										<div class="clearfix"></div>	
 									</div>
 									<div class="progress progress-striped active">

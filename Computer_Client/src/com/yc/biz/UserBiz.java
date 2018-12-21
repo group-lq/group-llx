@@ -3,6 +3,8 @@ package com.yc.biz;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.yc.bean.Comment;
+import com.yc.bean.News;
 import com.yc.bean.User;
 import com.yc.dao.DBHelper;
 import com.yc.dao.RegexUtils;
@@ -125,5 +127,42 @@ DBHelper dbhelper = new DBHelper();
 		String sql = "insert into user values(?,?,?,?)";
 		return DBHelper.insert(sql, user.getUsername(),user.getPwd(),user.getEmail(),user.getTel());
 	}
+
+	public Object findById(User user) {
+		String sql = "select id from user where username = ?";
+		return DBHelper.uniqueValue(sql, "id", user.getUsername());
+	}
+	
+	
+	/**
+	 * 添加评论  
+	 * @param c
+	 */
+	public List<List<Object>> insertComment(Comment c) {
+		String sql = "insert into comment values(?,?,?,?,?)";
+		return DBHelper.insert(sql,c.getCommentId(),c.getCommentTime(),c.getUserId(),c.getNewsId(),c.getContent());
+	}
+
+	/**
+	 * 根据新闻id查找评论内容
+	 * @param newId
+	 * @return
+	 */
+	public List<Comment> findCommentByNews(Long newId) {
+		String sql = "select * from comment where newsid=?";
+		List<Comment> cList = DBHelper.select(sql,Comment.class, newId);  //查到了所有的评论
+		for(Comment c1 : cList) {
+			sql = "select * from user where id=?";
+			User user = DBHelper.uniqueObject(sql, User.class, c1.getUserId());
+			c1.setUser(user);
+			
+			sql = "select * from news where newsid=?";
+			News news = DBHelper.uniqueObject(sql, News.class, c1.getNewsId());
+			c1.setNews(news);
+		}
+		return cList;
+	}
+
+	
 
 }
