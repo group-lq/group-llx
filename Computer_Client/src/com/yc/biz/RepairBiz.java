@@ -121,5 +121,42 @@ public class RepairBiz {
 	}
 
 	
+	public PageData find1(Repair repair,Page page) {
+			int start =(page.getPage()-1)*page.getRows() ;
+			int end =page.getRows() ;
+			String sql = "select * from repair where 1=1";
+			ArrayList<Object> params = new ArrayList<Object>();
+			if(repair.getRid() == null && repair.getStaff() == null) {
+				sql = "select * from repair limit ?,?";
+				System.out.println(DBHelper.select(sql,start,end));
+				PageData pageData = new PageData();
+				pageData.setRows(DBHelper.select(sql,start,end));
+				sql = "select count(1) cnt from repair";
+				pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
+				return pageData;
+			}
+			if(repair.getRid() != null && ! repair.getRid().trim().isEmpty()){
+				sql += " and rid like ? limit "+start+","+end+" ";
+				params.add("%"+repair.getRid()+"%");
+			}
+			if(repair.getStaff() != null && ! repair.getStaff().trim().isEmpty()){
+				sql += " and staff like ? limit "+start+","+end+" ";
+				params.add("%"+repair.getStaff()+"%");
+			}
+			PageData pageData = new PageData();
+			pageData.setRows(DBHelper.select(sql,params));
+			sql = "select count(1) cnt from repair";
+			pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
+			return pageData;
+		}
+
+	public List<Map<String, Object>> findNewRepair(User user) {
+		 String sql = "select r.rid,u.username,r.address,r.description,r.staff,r.`status`,r.time from repair r join user u on r.userid=u.id where r.`status` not in ('待回复') and u.username = ?" ;
+		 return DBHelper.select(sql, user.getUsername());		
+	}
+
+	
+
+	
 
 }

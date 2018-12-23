@@ -73,7 +73,7 @@ public class CUserServlet extends HttpServlet {
 		Long newId = Long.parseLong(request.getParameter("newId"));
 		List<Comment> list = uBiz.findCommentByNews(newId);
 		request.setAttribute("commentList", list);
-		System.out.println("commentList:"+list);
+		System.out.println(request.getAttribute("commentList"));
 		request.getRequestDispatcher("/ClientJsp/newsshow.jsp").forward(request, response);
 	}
 
@@ -131,10 +131,27 @@ public class CUserServlet extends HttpServlet {
 	private void Register(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
 		User user = BeanUtils.asBean(request, User.class);
-		List<List<Object>> list = uBiz.addUser(user);
-		if(list != null ) {
-			request.getRequestDispatcher("register1.jsp").forward(request, response);
+		String tel1 = request.getParameter("tel1");
+		String repwd = request.getParameter("repwd");
+		if("".equals(tel1)) {
+			List<List<Object>> list = uBiz.addUser(user,repwd);
+			if(list != null ) {
+				response.sendRedirect("register1.jsp");
+			}else {
+				request.setAttribute("registerMsg", "系统繁忙,请稍后再试!");
+				request.getRequestDispatcher("register.jsp").forward(request, response);
+			}
+		}else {
+			try {
+				uBiz.update(user,tel1);
+				response.sendRedirect("register1.jsp");
+			} catch (BizException e) {
+				e.printStackTrace();
+				request.setAttribute("checkTelmsg", e.getMessage());
+				request.getRequestDispatcher("register.jsp").forward(request, response);
+			}
 		}
+		
 	}
 	private void showRetPwdMsg(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{

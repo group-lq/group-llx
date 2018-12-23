@@ -39,8 +39,6 @@ public class UserServlet extends HttpServlet {
 				login(request,response,op);
 			}else if("query".equals(op)){
 				query(request,response);
-			}else if("add".equals(op)){
-				add(request,response);
 			}else if("find".equals(op)){
 				find(request,response);
 			}else if("save".equals(op)){
@@ -59,9 +57,22 @@ public class UserServlet extends HttpServlet {
 				showNameMsg(request,response,op);
 			}else if("modify".equals(op)){
 				 modify(request,response,op);
-			}
+			}else if("LoginOut".equals(op)){
+				LoginOut(request,response);
+			}/*else if("add".equals(op)){
+				add(request,response);
+			}*/
 		}
 	   
+		private void LoginOut(HttpServletRequest request, HttpServletResponse response) 
+				throws ServletException, IOException{
+			
+			request.getSession().removeAttribute("LoginedUser");
+			
+			response.sendRedirect("ServerJsp/index.jsp");
+			
+		}
+
 		/*private void show(HttpServletRequest request, HttpServletResponse response) 
 				throws ServletException, IOException {
 			String account = request.getParameter("username");

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
+ <%@ page autoFlush="true" buffer="1094kb"%><!-- 缓冲区 -->
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><!DOCTYPE html>
 <html>
     
     <head>
@@ -145,8 +145,14 @@
         </fieldset>
         </div>
          <jsp:include page="/public/Client/botton.jsp"></jsp:include>
-          <jsp:include page="/public/Client/follow.jsp"></jsp:include>
+         <c:if test="${! empty LoginedUser}">
+				 <c:if test="${empty InfromMes}">
+				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.RequestURI}"></jsp:forward>
+				 </c:if>
+              <jsp:include page="/public/Client/follow.jsp"></jsp:include>
+               </c:if>
         <script src="${base}/js/Client/website.js">
+        </script>
         </script>
     </body>
     

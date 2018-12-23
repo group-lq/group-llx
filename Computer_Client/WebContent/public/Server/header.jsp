@@ -12,7 +12,7 @@
 							<a href="index.jsp"><i class="fa fa-home nav_icon"></i>仪表板</a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-cogs nav_icon"></i>文章管理<span class="nav-badge">12</span> <span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-cogs nav_icon"></i>文章管理<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
 									<a href="${base}/ServerJsp/grids.jsp">添加文章</a>
@@ -30,7 +30,7 @@
 							<a href="#"><i class="fa fa-book nav_icon"></i>评论管理<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="general.jsp">热门评论<span class="nav-badge-btm">08</span></a>
+									<a href="general.jsp">热门评论</a>
 								</li>
 								<li>
 									<a href="typography.jsp">关键字</a>
@@ -45,7 +45,7 @@
 							<a href="#"><i class="fa fa-envelope nav_icon"></i>邮件<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="inbox.jsp">写邮件 <span class="nav-badge-btm">05</span></a>
+									<a href="inbox.jsp">写邮件</a>
 								</li>
 								<li>
 									<a href="compose.jsp">收邮件</a>
@@ -54,7 +54,7 @@
 							<!-- //nav-second-level -->
 						</li>
 						<li>
-							<a href="Srepair.jsp"><i class="fa fa-table nav_icon"></i>网络报修<span class="nav-badge">05</span></a>
+							<a href="Srepair.jsp"><i class="fa fa-table nav_icon"></i>网络报修</a>
 						</li>
 						<li>
 							<a href="#"><i class="fa fa-check-square-o nav_icon"></i>管理用户<span class="fa arrow"></span></a>
@@ -68,25 +68,7 @@
 							</ul>
 							<!-- //nav-second-level -->
 						</li>
-						<li>
-							<a href="#"><i class="fa fa-file-text-o nav_icon"></i>Pages<span class="nav-badge-btm">02</span><span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level collapse">
-								<li>
-									<a href="login.jsp">登录</a>
-								</li>
-								<li>
-									<a href="signup.jsp">注册</a>
-								</li>
-								<li>
-									<a href="blank-page.jsp">空白页</a>
-								</li>
-							</ul>
-							<!-- //nav-second-level -->
-						</li>
-						<li>
-							<a href="charts.jsp" class="chart-nav"><i class="fa fa-bar-chart nav_icon"></i>图表 <span class="nav-badge-btm pull-right">new</span></a>
-							<p></p>
-						</li>
+						
 						
 					</ul>
 					<div class="clearfix"> </div>
@@ -212,15 +194,15 @@
 										<h3>你有8个挂起的任务</h3>
 									</div>
 								</li>
-								<li><a href="#">
+								<%-- <li><a href="#">
 									<div class="task-info">
-										<span class="task-desc">维修人员</span><span class="percentage"><c:if test="${! empty repairInformList}">${repairInformList.cnt}</c:if></span>
+										<c:if test="${! empty ServerMsg}"><span class="task-desc">维修未处理</span><span class="percentage">${ServerMsg.cnt}</span></c:if>
 										<div class="clearfix"></div>	
 									</div>
 									<div class="progress progress-striped active">
-										<div class="bar yellow" style="width:40%;"></div>
+										<div class="bar yellow" style="width:${ServerMsg.cnt};"></div>
 									</div>
-								</a></li>
+								</a></li> --%>
 								<li><a href="#">
 									<div class="task-info">
 										<span class="task-desc">仪表板完成</span><span class="percentage">90%</span>
@@ -250,7 +232,7 @@
 								</a></li>
 								<li>
 									<div class="notification_bottom">
-										<a href="#">查看所有待处理任务</a>
+										<a href="javascript:void(0)">查看所有待处理任务</a>
 									</div> 
 								</li>
 							</ul>
@@ -277,7 +259,7 @@
 							<ul class="dropdown-menu drp-mnu">
 								<li> <a href="#"><i class="fa fa-cog"></i> 设置</a> </li> 
 								<li> <a href="#"><i class="fa fa-user"></i> 轮廓</a> </li> 
-								<li> <a href="#"><i class="fa fa-sign-out"></i> 登出</a> </li>
+								<li> <a href="${base}/user.s?op=LoginOut"><i class="fa fa-sign-out"></i> 登出</a> </li>
 							</ul>
 						</li>
 					</ul>

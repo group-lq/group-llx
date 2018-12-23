@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -61,11 +62,17 @@
 								<h4>手机发送认证码 :</h4>
 							</div>
 							<div class="form-body" >
-								<form data-toggle="validator">
+								<form data-toggle="validator" action="${base}/mail.s" method="post">
+								<input type="hidden" name="op" value="sendRTel">
 									<div class="form-group">
-										<input type="text" class="form-control"  placeholder="请输入手机号码" >
+										<input type="text" class="form-control"  placeholder="请输入手机号码" name="tel">
 									</div>
-									<input type="submit" value="发送"class="btn btn-primary disabled" >
+									<c:if test="${! empty msg}">
+										<script type="text/javascript">
+											alert('${msg}');
+										</script>
+									</c:if>
+									<input type="submit" value="发送"class="btn btn-primary disabled" id="btn1">
 								</form>
 							</div>
 						</div>
@@ -79,9 +86,8 @@
 							<div class="form-body" >
 								<form data-toggle="validator">
 									<div class="form-group">
-										<input type="text" class="form-control"  placeholder="请输入邮箱" >
+										功能还未实现
 									</div>
-									<input type="submit" value="发送"class="btn btn-primary disabled" >
 								</form>
 							</div>
 						</div>
@@ -92,7 +98,6 @@
 			</div>
 		</div>
 		<jsp:include page="/public/Server/footer.jsp"></jsp:include>
-	</div>
 	<!-- Classie -->
 		<script src="${base}/js/Server/classie.js"></script>
 		<script>

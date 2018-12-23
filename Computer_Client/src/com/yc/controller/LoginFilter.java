@@ -35,7 +35,7 @@ public void destroy() {
 		request.setAttribute("base", httpRequest.getContextPath());
 		
 
-		/*if(path.endsWith("user.s") || path.endsWith("Nlogin.jsp")){
+		if(path.endsWith("user.s") || path.endsWith("Nlogin.jsp")){
 			chain.doFilter(request, response);
 			return;
 		}
@@ -45,7 +45,7 @@ public void destroy() {
 			request.setAttribute("msg", "请先登录！");
 			request.getRequestDispatcher("../Nlogin.jsp").forward(request, response);
 			return;
-		}*/
+		}
 		//正常业务必须执行 过滤器链的doFilter
 
 		chain.doFilter(request, response);

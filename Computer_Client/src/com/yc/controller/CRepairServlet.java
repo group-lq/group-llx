@@ -34,9 +34,24 @@ public class CRepairServlet extends HttpServlet {
 			query(request,response);
 		}else if("show".equals(op)){
 			show(request,response);
+		}else if("query1".equals(op)){
+			query1(request,response);
 		}		
 	}
 	
+	private void query1(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("===================================");
+		Page page = BeanUtils.asBean(request, Page.class);
+		Repair repair = BeanUtils.asBean(request, Repair.class);
+		System.out.println(page.getPage()+":"+page.getRows());
+		String res = JSON.toJSONString(rBiz.find1(repair,page));
+		response.getWriter().append(res);
+		//request.setAttribute("repairList", rBiz.find(repair));
+		//request.getRequestDispatcher("ClientJsp/"+"Crepair.jsp").forward(request, response);		
+	}
+
+
 	private void show(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException {
 		Page page = BeanUtils.asBean(request, Page.class);

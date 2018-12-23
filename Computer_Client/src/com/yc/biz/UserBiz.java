@@ -1,5 +1,6 @@
 package com.yc.biz;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,26 @@ DBHelper dbhelper = new DBHelper();
 		return DBHelper.uniqueObject(sql, User.class, username,userpwd);
 
 	}
+	public void update(User user, String tel) throws BizException {
+		String sql = "update  user set username = ?,pwd=?,email=?,enterTime=?"
+				+ ",type=? ,cost=? where tel = ?";
+		user = findByTel(user);
+		if(user.getTel() != tel){
+			throw new BizException("手机号码与认证手机不一致");
+		}
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		user.setCost("未交");
+		user.setType("会员");
+		DBHelper.update(sql, user.getUsername(),user.getPwd(),user.getEmail(),tel,t,user.getType(),user.getCost());
+	}
+	public List<List<Object>> addUser(User user,String repwd) {
+		String sql = "insert into user(username,tel,pwd,email,cost,enterTime,type) values(?,?,?,?,?,?,?)";
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		user.setCost("未交");
+		user.setType("会员");
+		return DBHelper.insert(sql,user.getUsername(),user.getTel(),user.getPwd()
+				,user.getEmail(),user.getCost(),t,user.getType());
+	}
 	
 	public void add(User user,String repwd) throws BizException{
 		
@@ -46,12 +67,14 @@ DBHelper dbhelper = new DBHelper();
 			
 			throw new BizException("密码与确认密码不一致");
 		}
-		String sql = "insert into user(name,account,tel,pwd) values(?,?,?,?)";
-		//Timestamp t = new Timestamp(System.currentTimeMillis());
+		String sql = "insert into user(username,tel,pwd,email,cost,enterTime,type) values(?,?,?,?,?,?,?)";
+		Timestamp t = new Timestamp(System.currentTimeMillis());
 		//String sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(t);
 		//user.setCreateDate(t);
-		DBHelper.insert(sql,user.getUsername(),user.getUsername(),user.getTel()
-				,user.getPwd());
+		user.setCost("未交");
+		user.setType("会员");
+		DBHelper.insert(sql,user.getUsername(),user.getTel(),user.getPwd()
+				,user.getEmail(),user.getCost(),t,user.getType());
 	}
 	/*public List<User> findAll() {
 		return DBHelper.select("select * from user", User.class);
@@ -102,7 +125,6 @@ DBHelper dbhelper = new DBHelper();
 
 	public User findByTel(User user)  {
 		String sql = "select * from user where tel =?";
-		
 		return DBHelper.uniqueObject(sql, User.class, user.getTel());
 	}
 
@@ -123,10 +145,7 @@ DBHelper dbhelper = new DBHelper();
 		return DBHelper.update(sql, user.getPwd(),username);
 	}
 
-	public List<List<Object>> addUser(User user) {
-		String sql = "insert into user values(?,?,?,?)";
-		return DBHelper.insert(sql, user.getUsername(),user.getPwd(),user.getEmail(),user.getTel());
-	}
+	
 
 	public Object findById(User user) {
 		String sql = "select id from user where username = ?";
@@ -162,6 +181,15 @@ DBHelper dbhelper = new DBHelper();
 		}
 		return cList;
 	}
+	public void addTel(User user, String random) {
+		String sql = "insert into user(tel,attestationcode,cost) value(?,?,?)";
+		user.setCost("已交");
+		DBHelper.insert(sql, user.getTel(),random,user.getCost());
+	}
+
+	
+
+	
 
 	
 

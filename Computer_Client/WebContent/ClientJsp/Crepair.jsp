@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<%-- <%
+ <%@ page autoFlush="true" buffer="1094kb"%><!-- 缓冲区 -->
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>	<%-- <%
 	request.setCharacterEncoding("utf-8");
 	response.setCharacterEncoding("utf-8");
 	response.setHeader("Content-type", "text/html;charset=UTF-8");	
 		if(request.getAttribute("repairList") == null){
-			request.getRequestDispatcher("../crepair.s?op=query").forward(request, response);
+			request.getRequestDispatcher("../crepair.s?op=query1").forward(request, response);
 		}
 	%> --%>
 <!DOCTYPE html>
@@ -90,10 +90,10 @@
 								<div data-options="name:'staff'">维修人员</div>
 							</div>	
 			        	</div>
-                    <table id="rep" toolbar="#tb"  class="easyui-datagrid"
+                    <table id="rep" toolbar="#tb"  class="easyui-datagrid" style="height: 500px;width: 100%"
                     data-options="pagination:true,
                     title:'阳光服务',
-                    url:'../crepair.s?op=query',
+                    url:'../crepair.s?op=query1',
                     singleSelect: true,
                     fitColumns:true,
                     rownumbers:true"
@@ -109,7 +109,6 @@
 			              </tr>
 			            </thead>
                      </table> 
-                    
 			            
 			            
 		          
@@ -201,9 +200,17 @@
     </form>
   </div>
 </div>
-   <%-- <script src="${base}/js/Client/website.js">
-        </script> --%>
- 
+
+ <jsp:include page="/public/Client/botton.jsp"></jsp:include>
+           	<c:if test="${! empty LoginedUser}">
+				 <c:if test="${empty InfromMes}">
+				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.RequestURI}"></jsp:forward>
+				 </c:if>
+              <jsp:include page="/public/Client/follow.jsp"></jsp:include>
+               </c:if>
+   <script src="${base}/js/Client/website.js">
+        </script>
+      
 <script type="text/javascript">
 
 jQuery(window).scrollTop(0);

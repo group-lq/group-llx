@@ -30,6 +30,7 @@
     <p>用户注册</p>
     <form action="${base}/cuser.s">
     <input name="op" value="register" type="hidden">
+    <input name="tel1" value="<c:if test="${! empty user1}">${user1}</c:if>" type="hidden" id="hidden1">
     	<ul class="reg_ul">
       <li>
           <span>用户名：</span>
@@ -95,7 +96,12 @@
 		window.scrollTo(0, 1);
 	}
 	
+	
   $(function(){
+	  var tel = null;
+		if("<c:if test='${! empty user1}'>${user1}</c:if>" != ""){
+			tel=$("#hidden1").val();
+		}
 	  $(".Code").on("blur",function(){
 		  var name = $(this).attr("name");
 			if(name == 'Code2'){
