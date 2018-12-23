@@ -68,6 +68,14 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-12">
+								<input type="text" class="form-control1" placeholder="简要描述" name="description">
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>	
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-12">
 								<textarea style="width: 795px;height: 200px" placeholder="正文" name="content"></textarea>
 							</div>
 							<div class="clearfix"> </div>

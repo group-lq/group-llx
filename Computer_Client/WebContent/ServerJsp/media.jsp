@@ -55,7 +55,6 @@
 				<div class="media">
 					<h3 class="title1">修改文章</h3>
 					<div class="bs-example5 widget-shadow" data-example-id="default-media">
-						<!-- <form action="../SArticleAdd.s" class="move" method="get"> -->
 						<form action="/Computer_Client/SArticleAdd.s" class="move" method="get">
 							<input type="hidden" name="op" value="query">
 							序列号：<input type="text" name="newsid">

@@ -134,16 +134,19 @@
 	<div class="reviewArea clearfix">
         <textarea class="content comment-input" placeholder="Please enter a comment&hellip;" id="contentText"></textarea>
         <input type="button" value="评论" class="plBtn" id="comment1">
+       
     </div>
-    <div class="comment-show" id="comment-show">
+    <div> <a href="javascript:void(0)" id="show">查看所有评论↓↓</a></div>
+    <div class="comment-show" id="comment-show" style="display: none;">
     	<c:forEach items="${commentList }" var="comment">
 	        <div class="comment-show-con clearfix">
 	        <div class="comment-show-con-img pull-left">
-	        	<img src="<c:url value='${comment.user.pic }' />" alt="">
+	        	<img src="${base }/images/Server/<c:url value='${comment.user.pic }' />" alt="">
 	        </div> 
 	        <div class="comment-show-con-list pull-left clearfix">
 		        <div class="pl-text clearfix"> 
 			        <a href="#" class="comment-size-name">${comment.user.username } : </a>
+			        <input type="hidden" name="commentId" value="${comment.commentId }">
 			        <span class="my-pl-con">&nbsp; ${comment.content } </span>
 		        </div> 
 		        <div class="date-dz"> 
@@ -167,6 +170,8 @@
         <script src="${base}/js/Client/website.js"></script>
         
  <script type="text/javascript">
+ 
+ 
   $("#comment1").on("click",function(){
      var content = $("#contentText").val();//时间 内容 评论人 新闻id
   
@@ -186,22 +191,22 @@
      });
      
 	}); 
- function parseUrl(){
-     var url=location.href;
-     var i=url.indexOf('?');
-     if(i==-1)return;
-     var querystr=url.substr(i+1);
-     
-     var arr1=querystr.split('&');
-     var arr2=new Object();
-     var ta =new Object();
-     for  (i in arr1){
-         ta=arr1[i].split('=');
-         arr2[ta[0]]=ta[1];
-     }
-     return arr2[ta[0]];
- }
-var v = parseUrl();//解析所有参数
+  
+ /* $("#comment-show").on("click",function(){
+	  show.style.display="block";
+  }); */
+  
+		
+		$("#show").on("click",function(){
+			var flag = $("#comment-show").is(":hidden");
+			if(flag){
+				$("#show").text("收起所有评论↑↑");
+				$("#comment-show").show();
+			}else{
+				$("#show").text("查看所有评论↓↓");
+				$("#comment-show").hide();
+			}
+		  });
 
  
  </script>       

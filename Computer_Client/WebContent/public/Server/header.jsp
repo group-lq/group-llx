@@ -39,7 +39,7 @@
 							<!-- /nav-second-level -->
 						</li>
 						<li>
-							<a href="notice.jsp"><i class="fa fa-th-large nav_icon"></i>会议通知 <span class="nav-badge-btm">08</span></a>
+							<a href="${base }/ServerJsp/notice.jsp"><i class="fa fa-th-large nav_icon"></i>会议通知 <span class="nav-badge-btm">08</span></a>
 						</li>
 						<li>
 							<a href="#"><i class="fa fa-envelope nav_icon"></i>邮件<span class="fa arrow"></span></a>

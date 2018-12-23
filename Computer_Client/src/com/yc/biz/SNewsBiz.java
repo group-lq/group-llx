@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.sun.org.apache.bcel.internal.generic.Select;
+import com.yc.bean.Comment;
 import com.yc.bean.News;
+import com.yc.bean.Reply;
+import com.yc.bean.User;
 import com.yc.dao.DBHelper;
 
 public class SNewsBiz {
@@ -91,8 +95,8 @@ public class SNewsBiz {
 		if(news.getContent() == null || news.getContent().trim().isEmpty()) {
 			throw new BizException("正文没有任何内容哦！");
 		}
-		String sql = " insert into news(title,author,content,time) values (?,?,?,?) ";
-		DBHelper.insert(sql,news.getTitle(),news.getAuthor(),content,now);
+		String sql = " insert into news(title,author,content,time,description) values (?,?,?,?,?) ";
+		DBHelper.insert(sql,news.getTitle(),news.getAuthor(),content,now,news.getDescription());
 	}
 
 	public void save(News news) {
@@ -113,4 +117,9 @@ public class SNewsBiz {
 	public News findByOne(String newsid) {
 		return DBHelper.uniqueObject("select * from news where newsid =?", News.class, newsid);
 	}
+	public void insertReply(Reply rep) {
+		String sql2 = "insert into reply values(?,?,?,?)";
+		DBHelper.insert(sql2,rep.getUserid(),rep.getReplyComment(),rep.getReplyTime(),rep.getCommentId());
+	}
+	
 }

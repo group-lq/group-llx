@@ -105,21 +105,23 @@
                     <div class="tutorial-list clean">
                 <c:forEach items="${newsList}" var="temp">
                         <div class='item wow fadeInUp fl'>
-                            <div class="date fl">
-                                <div class="day">
-                                   ${temp.time}
-                                </div>
-                            </div>
-                            <div class="info fl">
-                                <div class="name text-over">
-                                    <a href="${base}/cnews.s?op=find&newsid=${temp.newsid}"​ class="trans">
+                            
+                            <div>
+                                    <a href="${base}/cnews.s?op=find&newsid=${temp.newsid}"​ 
+                                    style="font-size: 20px;font-family: fantasy;font-style: inherit;">
                                        ${temp.title}
                                     </a>
-                                </div>
-                                <div class="brief over">
-                                    ${temp.decription}
-                                </div>
                             </div>
+                        
+                            <div class="day" style="font-size: 14px;font-style: italic;">
+                               ${temp.time}
+                            </div>
+                          
+                            <br>
+                            <div style="font-size: 20px;font-family: fantasy;">
+                                ${temp.description}
+                            </div>
+                           
                         </div>
                 </c:forEach>
                     </div>

@@ -91,11 +91,7 @@
         <div id="fieldset">
         	<fieldset >
         	<legend>国二成绩查询</legend>
-        	<!-- url http://localhost:8080/Computer_Client/ClientJsp/grade.jsp  -->
-        	<!-- http://localhost:8080/Computer_Client/ClientJsp/ -->
-        	<!-- http://localhost:8080/Computer_Client/ClientJsp/Grade.s   -->
-        	<!--http://localhost:8080/Computer_Client/Grade.s -->
-        	<%-- <form action="<%=request.getContextPath() %>/Grade.s"></form> --%>
+        	
         	<form action="../Grade.s"  method="post">
         	<input type="hidden" name="op" value="glogin">
         		<div>

@@ -13,7 +13,7 @@ public class News implements java.io.Serializable{
 	private String author;
 	private String content;
 	private String cfrom;
-	private String decription;
+	private String description;
 	private Long ncount;
 	public Long getNewsid() {
 		return newsid;
@@ -51,11 +51,11 @@ public class News implements java.io.Serializable{
 	public void setCfrom(String cfrom) {
 		this.cfrom = cfrom;
 	}
-	public String getDecription() {
-		return decription;
+	public String getDescription() {
+		return description;
 	}
-	public void setDecription(String decription) {
-		this.decription = decription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public Long getNcount() {
 		return ncount;
@@ -63,13 +63,13 @@ public class News implements java.io.Serializable{
 	public void setNcount(Long ncount) {
 		this.ncount = ncount;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	@Override
 	public String toString() {
 		return "News [newsid=" + newsid + ", title=" + title + ", time=" + time + ", author=" + author + ", content="
-				+ content + ", cfrom=" + cfrom + ", decription=" + decription + ", ncount=" + ncount + "]";
+				+ content + ", cfrom=" + cfrom + ", description=" + description + ", ncount=" + ncount + "]";
 	}
-	
-	
-	
 	
 }

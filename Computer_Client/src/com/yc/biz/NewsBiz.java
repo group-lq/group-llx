@@ -50,7 +50,7 @@ public class NewsBiz {
 		start = (nowPage - 1)*pageSize;
 		end = pageSize;
 		
-		if(news.getTitle() == null && news.getDecription() == null){
+		if(news.getTitle() == null && news.getDescription() == null){
 			String sql1 = "select * from news limit "+start+","+end;
 			return DBHelper.select(sql1, News.class, params);
 		}
@@ -59,9 +59,9 @@ public class NewsBiz {
 			sql += " and title like ?";
 			params.add("%"+news.getTitle()+"% limit"+start+","+end);
 		}
-		if(news.getDecription() != null && ! news.getDecription().trim().isEmpty()){
+		if(news.getDescription() != null && ! news.getDescription().trim().isEmpty()){
 			sql += " and decription like ?";
-			params.add("%"+news.getDecription()+"% limit"+start+","+end);
+			params.add("%"+news.getDescription()+"% limit"+start+","+end);
 		}
 		return DBHelper.select(sql, News.class, params);
 	}
@@ -83,9 +83,9 @@ public class NewsBiz {
 			sql += " and author like ?";
 			params.add("%"+news.getAuthor()+"% ");
 		}
-		if(news.getDecription() != null && ! news.getDecription().trim().isEmpty()){
+		if(news.getDescription() != null && ! news.getDescription().trim().isEmpty()){
 			sql += " and decription like ?";
-			params.add("%"+news.getDecription()+"% ");
+			params.add("%"+news.getDescription()+"% ");
 		}
 		if(news.getCfrom() != null && ! news.getCfrom().trim().isEmpty()){
 			sql += " and cfrom like ?";
