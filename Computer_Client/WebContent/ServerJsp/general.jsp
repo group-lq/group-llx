@@ -47,6 +47,7 @@
 		<!-- main content start-->
 		<div id="page-wrapper" class="main">
 			<div class="main-page general">
+
 				
 				<div class="panel-group tool-tips widget-shadow" id="accordion" role="tablist" aria-multiselectable="true">
 					<h4 class="title2"> 评论管理 :</h4>
@@ -89,9 +90,13 @@
 						<span><a href="general.jsp?nowPage=beforePage">上一页</a></span>
 						<span><a href="general.jsp?nowPage=afterPage">下一页</a></span>
 						<span><a href="general.jsp?nowPage=totalPage">末页</a></span>
+
 					</div>
 		        </div>
 				</div>
+				
+				
+				
 			</div>
 		</div>
 		<!-- 回复评论 -->

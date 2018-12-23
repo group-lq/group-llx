@@ -36,8 +36,23 @@ public class NoticeServlet extends HttpServlet {
 			find(request,response);
 		}else if("add".equals(op)){
 			add(request,response);
+		}else if("query1".equals(op)){
+			query1(request,response);
 		}
 	} 
+	
+	private void query1(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("===================================");
+		Page page = BeanUtils.asBean(request, Page.class);
+		Notice notice = BeanUtils.asBean(request, Notice.class);
+		System.out.println(page.getPage()+":"+page.getRows());
+		String res = JSON.toJSONString(nBiz.find1(notice,page));
+		response.getWriter().append(res);
+		//request.setAttribute("repairList", rBiz.find(repair));
+		//request.getRequestDispatcher("ClientJsp/"+"Crepair.jsp").forward(request, response);		
+	}
+	
 	private void add(HttpServletRequest request, HttpServletResponse response) 	
 			throws ServletException, IOException {
 		User user = BeanUtils.asBean(request, User.class);

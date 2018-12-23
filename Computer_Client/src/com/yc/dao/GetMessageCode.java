@@ -19,8 +19,8 @@ import java.util.Date;
  * 
  * @Title:GetMessageCode
  * @Description:发送验证码
- * @author:ヅ零碎de記憶ぷ
- * @Date 2018年7月4日 下午9:27:04
+ * @author:
+ * @Date 
  */
 public class GetMessageCode {
 	public static final String Query_URL = "https://api.miaodiyun.com/20150822/industrySMS/sendSMS";
@@ -32,9 +32,9 @@ public class GetMessageCode {
 	/**
 	 * 验证码通知短信
 	 */
-	public static void execute(User user,String code ){
+	public static void execute(User user ,String smsContent){
 		String tmpSmsContent = null;
-		String smsContent = "【源辰科技】尊敬的用户，您好，您的验证码为"+code+"，请于1分钟内正确输入，如非本人操作，请忽略此短信。";
+		
 	    try{
 	      tmpSmsContent = URLEncoder.encode(smsContent, "UTF-8");
 	    }catch(Exception e){

@@ -18,6 +18,7 @@ public class User implements java.io.Serializable{
 	private String pic;
 	private String email;
 	private String attestationCode;
+	private String cost;
 	public Long getId() {
 		return id;
 	}
@@ -77,6 +78,12 @@ public class User implements java.io.Serializable{
 	}
 	public void setAttestationCode(String attestationCode) {
 		this.attestationCode = attestationCode;
+	}
+	public String getCost() {
+		return cost;
+	}
+	public void setCost(String cost) {
+		this.cost = cost;
 	}
 	
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
  <header class="trans border-box  " >
             <div class="wrap clean relative">
                 <div id="logo" class="fl relative trans">
@@ -23,7 +24,7 @@
                             <a href="${base}/ClientJsp/about.jsp"​>协会简介</a>
                         </div>
                         <div class="nav-item fl text-center trans">
-                            <a href="${base}/ClientJsp/product.jsp"​>协会通知</a>
+                        	<a href="${base}/ClientJsp/inform.jsp"​ >协会通知</a>
                         </div>
                         <div class="nav-item fl text-center trans">
                             <a href="${base}/ClientJsp/Crepair.jsp"​>网络保修</a>
@@ -46,5 +47,5 @@
                     </a>
                 </div>
             </div>
-
         </header>
+        

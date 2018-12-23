@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import com.yc.bean.Comment;
 import com.yc.bean.Notice;
 import com.yc.bean.Page;
 import com.yc.bean.PageData;
@@ -103,5 +104,86 @@ public class NoticeBiz {
 				time);
 		
 	}
+
+	public PageData find1(Notice notice, Page page) {
+		int start =(page.getPage()-1)*page.getRows() ;
+		int end =page.getRows() ;
+		String sql = "select n.id,n.time,u.username,n.address,n.inform,n.content from user u join notice n on u.id=n.userid  where 1=1  " + 
+				" 1=1";
+		ArrayList<Object> params = new ArrayList<Object>();
+		if(notice.getTime() == null && notice.getAddress() == null && notice.getInform() == null) {
+			sql = "select n.id,n.time,u.username,n.address,n.inform,n.content from user u join notice n on u.id=n.userid  where time not in (select max(time) from notice) ORDER BY n.time desc limit " + 
+					" ?,?";
+			System.out.println(DBHelper.select(sql,start,end));
+			PageData pageData = new PageData();
+			pageData.setRows(DBHelper.select(sql,start,end));
+			sql = "select count(1) cnt from notice";
+			pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
+			return pageData;
+		}
+		if(notice.getTime() != null ){
+			
+			sql += " and n.time like ? and time not in (select max(time) from notice) ORDER BY n.time desc limit "+start+","+end+" ";
+			params.add("%"+notice.getTime()+"%");
+		}
+		if(notice.getInform() != null && ! notice.getInform().trim().isEmpty()){
+			sql += " and n.inform like ? time not in (select max(time) from notice) ORDER BY n.time desc limit "+start+","+end+" ";
+			params.add("%"+notice.getInform()+"%");
+		}
+		if(notice.getAddress() != null && ! notice.getAddress().trim().isEmpty()){
+			sql += " and u.userid like ? time not in (select max(time) from notice) ORDER BY n.time desc limit "+start+","+end+" ";
+			params.add("%"+notice.getAddress()+"%");
+		}	
+		PageData pageData = new PageData();
+		pageData.setRows(DBHelper.select(sql,params));
+		sql = "select count(1) cnt from notice";
+		pageData.setTotal(DBHelper.uniqueValue(sql, "cnt"));
+		return pageData;
+	}
+	
+	public Object findNum(Notice notice,Repair repair,Comment comment,User user) {
+		String sql = "select count(*) cnt from(select * from repair r join user u on r.userid=u.id where r.`status` not in ('待回复') and u.username = ? )a  ";  
+		String sql1 = "select count(*) cnt1 from notice where time in (select max(time) from notice)";
+		//String sql2 = "select count(*) cnt from(select * from notice where time in(select max(time) from notice))a";
+	
+		List<Map<String, Object>> list = DBHelper.select(sql,user.getUsername());
+		List<Map<String, Object>> list1 = DBHelper.select(sql1);
+		List<Map<String, Object>> list2 = new ArrayList<Map<String, Object>>();
+		for(Map<String, Object> map : list) {
+			list2.add(map);
+		}
+		for(Map<String, Object> map : list1) {
+			list2.add(map);
+		}
+		return list2;
+	}
+
+	public List<Map<String, Object>> findNewInform() {
+		String sql = "select *  from notice where time in (select max(time) from notice)";
+		return DBHelper.select(sql);
+	}
+
+	public int findServerNum(Notice notice, Repair repair, Comment comment, User user) {
+		String sql = "select count(*) cnt from(select * from repair r join user u on r.userid=u.id where r.`status`  in ('待回复'))a  ";  
+		//String sql1 = "select count(*) cnt1 from notice where time in (select max(time) from notice)";
+		//String sql2 = "select count(*) cnt from(select * from notice where time in(select max(time) from notice))a";
+		String sql1 = "select count(*) cnt from repair";
+		List<Map<String, Object>> list = DBHelper.select(sql);
+		List<Map<String, Object>> list1 = DBHelper.select(sql1);
+		int count = 0;
+		int len = 1;
+		for(Map<String, Object> map : list) {
+			for(Map.Entry<?, ?> entry : map.entrySet()) {
+				count = (int) entry.getValue();
+			}
+		}
+		for(Map<String, Object> map : list1) {
+			for(Map.Entry<?, ?> entry : map.entrySet()) {
+				len = (int) entry.getValue();
+			}
+		}
+		return len/count;
+	}
+	
 
 }

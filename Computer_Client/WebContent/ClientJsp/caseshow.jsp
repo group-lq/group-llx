@@ -102,6 +102,7 @@
            <jsp:include page="/public/Client/follow.jsp"></jsp:include>
         <script src="${base}/js/Client/website.js">
         </script>
+        </script>
     </body>
 
 </html>
