@@ -110,7 +110,7 @@
                     <div class="contact-area fr clean">
                         <div class="contact-info2 clean">
                             <div class="title wow fadeInUp">
-                                计算机与信息科学学院.计算机协会
+                        计算机协会
                             </div>
                             <div class="address wow fadeInUp">
                                 地点：湖南工学院信息楼
@@ -118,24 +118,24 @@
                             <div class="clean relative">
                                 <div class="qrcode fl clean relative wow fadeInUp">
                                     <div class="img fl fz0">
-                                        <img src="${base}/picture/erweima.png" alt="" class="max-w100">
+                                        <img src="" alt="" class="max-w100">
                                     </div>
                                     <div class="name fl nowrap">
                                         官方微信
                                         <br/>
-                                        公众号搜索“互联网”
+                                        公众号搜索“湖工计协”
                                     </div>
                                 </div>
                                 <div class="line absolute hide1300">
                                 </div>
                                 <div class="qrcode fr clean relative wow fadeInUp">
                                     <div class="img fl fz0">
-                                        <img src="${base}/picture/erweima.png" alt="" class="max-w100">
+                                        <img src="" alt="" class="max-w100">
                                     </div>
                                     <div class="name fl nowrap">
-                                        官方微博
+                                        官方QQ
                                         <br/>
-                                        搜索“互联网”
+                3245567278
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@
        <jsp:include page="/public/Client/botton.jsp"></jsp:include>
          <c:if test="${! empty LoginedUser}">
 				 <c:if test="${empty InfromMes}">
-				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.RequestURI}"></jsp:forward>
+				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.requestURL}"></jsp:forward>
 				 </c:if>
               <jsp:include page="/public/Client/follow.jsp"></jsp:include>
                </c:if> 

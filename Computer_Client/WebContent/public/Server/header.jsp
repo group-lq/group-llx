@@ -41,7 +41,7 @@
 						<li>
 							<a href="${base }/ServerJsp/notice.jsp"><i class="fa fa-th-large nav_icon"></i>会议通知 <span class="nav-badge-btm">08</span></a>
 						</li>
-						<li>
+						<!-- <li>
 							<a href="#"><i class="fa fa-envelope nav_icon"></i>邮件<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
@@ -51,8 +51,8 @@
 									<a href="compose.jsp">收邮件</a>
 								</li>
 							</ul>
-							<!-- //nav-second-level -->
-						</li>
+							//nav-second-level
+						</li> -->
 						<li>
 							<a href="Srepair.jsp"><i class="fa fa-table nav_icon"></i>网络报修</a>
 						</li>

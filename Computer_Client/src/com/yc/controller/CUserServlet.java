@@ -100,13 +100,8 @@ public class CUserServlet extends HttpServlet {
 		c.setContent(content);
 		uBiz.insertComment(c);
 		response.getWriter().append("yes");
-		
 	}
-
-
 	
-
-
 
 	private void isCode2(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{

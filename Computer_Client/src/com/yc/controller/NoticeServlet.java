@@ -38,9 +38,22 @@ public class NoticeServlet extends HttpServlet {
 			add(request,response);
 		}else if("query1".equals(op)){
 			query1(request,response);
+		}else if("findNoIndex".equals(op)){
+			findNoIndex(request,response);
 		}
 	} 
 	
+	
+
+	private void findNoIndex(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException{
+		Notice notice = BeanUtils.asBean(request, Notice.class);
+		request.setAttribute("noticePic", nBiz.findNoPic(notice));
+		System.out.println(nBiz.findNoPic(notice).toString());
+		
+		request.getRequestDispatcher("ClientJsp/index.jsp").forward(request, response);
+	}
+
 	private void query1(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("===================================");
@@ -93,7 +106,6 @@ public class NoticeServlet extends HttpServlet {
 		int pageSize = 6;  //每页显示页数
 		request.setAttribute("noticeList", nBiz.find(notice,nPage,pageSize,user));
 		request.getRequestDispatcher("ServerJsp/"+"notice.jsp").forward(request, response);
-		
 	}
 
 

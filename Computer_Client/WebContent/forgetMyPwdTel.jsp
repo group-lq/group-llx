@@ -95,7 +95,7 @@
 		        </dd>
 		        <div class="clears"></div>
 		       </dl>
-		       <div class="subtijiao"><input type="submit" value="提交" /></div> 
+		       <div class="subtijiao"><input type="submit" value="下一步" /></div> 
 		       
 		      </form>
 		   </div>

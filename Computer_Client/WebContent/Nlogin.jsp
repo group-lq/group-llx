@@ -95,7 +95,7 @@
 						</label>
 					</li>
 					<li>
-						<a href="forgetMyPwdTel.jsp">忘记密码?</a> 还没有账号?<a href="register.jsp">马上注册</a>
+						<a href="forgetMyPwdTel.jsp">忘记密码?</a> 还没有账号?<a href="attNLogin.jsp">马上注册</a>
 					</li>
 				</ul>
 			</div>

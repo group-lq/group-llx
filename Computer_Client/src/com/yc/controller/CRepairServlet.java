@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.alibaba.fastjson.JSON;
 import com.yc.bean.News;
@@ -36,9 +37,13 @@ public class CRepairServlet extends HttpServlet {
 			show(request,response);
 		}else if("query1".equals(op)){
 			query1(request,response);
+		}else if("sendRepair".equals(op)){
+			add(request,response);
 		}		
 	}
 	
+	
+
 	private void query1(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("===================================");
@@ -61,7 +66,12 @@ public class CRepairServlet extends HttpServlet {
 
 	private void add(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		User user = (User)request.getSession().getAttribute("LoginedUser");
+		HttpSession session = request.getSession();
+		User user = (User)session.getAttribute("LoginedUser"); //当前登录的用户
+		if(user == null) {
+			response.getWriter().append("notLogin");
+			return;
+		}
 		Repair repair = BeanUtils.asBean(request, Repair.class);
 		String msg = null;
 		try {

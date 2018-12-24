@@ -1,6 +1,9 @@
 package com.yc.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -34,18 +37,38 @@ public void destroy() {
 		Cookie [] cookies=httpRequest.getCookies();
 		request.setAttribute("base", httpRequest.getContextPath());
 		
-
-		if(path.endsWith("user.s") || path.endsWith("Nlogin.jsp")){
-			chain.doFilter(request, response);
-			return;
+		List<String> list = new ArrayList<String>();
+		list.add("user.s");
+		list.add("Nlogin.jsp");
+		list.add("forgetMyPwdTel.jsp");
+		list.add("forgetMyPwdTel1.jsp");
+		list.add("forgetMyPwdEmail.jsp");
+		list.add("forgetMyPwdEmail2.jsp");
+		list.add("forgetMyPwd2.jsp");
+		list.add("forgetMyPwd3.jsp");
+		list.add("register.jsp");
+		list.add("register1.jsp");
+		list.add("attNlogin.jsp");	
+		list.add("about.jsp");	
+		list.add("contact.jsp");	
+		list.add("Crepair.jsp");	
+		list.add("grade.jsp");
+		list.add("index.jsp");	
+		list.add("inform.jsp");	
+		list.add("news.jsp");
+		list.add("newsshow.jsp");	
+		/*for(int i=0;i<list.size();i++) {
+			if(path.endsWith(list.get(i))){
+				chain.doFilter(request, response);
+				return;
+			}
 		}
-		
 		if(httpRequest.getSession().getAttribute("LoginedUser") == null){
 			CookieUtil.readCookie(httpRequest, response, chain);
 			request.setAttribute("msg", "请先登录！");
 			request.getRequestDispatcher("../Nlogin.jsp").forward(request, response);
 			return;
-		}
+		}*/
 		//正常业务必须执行 过滤器链的doFilter
 
 		chain.doFilter(request, response);

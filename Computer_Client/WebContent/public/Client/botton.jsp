@@ -11,7 +11,7 @@
                             计算机协会
                         </div>
                         <div class="hotline wow fadeInUp">
-                            电话
+                            QQ:3245567278
                         </div>
                         <div class="address wow fadeInUp">
                             湖南省衡阳市珠晖区湖南工学院&nbsp;&nbsp;&nbsp;
@@ -32,7 +32,7 @@
                             </span>
                         </div>
                         <div class="text-center">
-                            <div class="item text-center inline-block wow fadeInUp">
+                            <div class="item text-center inline-block wow fadeInUp relative">
                                 <a href="#"​
                                 class="ico block trans qq" rel="nofollow">
                                     <i class="fa fa-qq middle trans" onClick="popService(service2);">
@@ -40,17 +40,17 @@
                                 </a>
              QQ
              					<div class="qrcode absolute trans">
-                                    <img src="${base}/picture/erweima.png" alt="" width="200" />
+                                    <img src="${base}/picture/qq.png" alt="" width="200" />
                                 </div>
                             </div>
-                            <div class="item text-center inline-block wow fadeInUp relative">
+                            <div class="item text-center inline-block wow fadeInUp ">
                                 <a href="#"​ class="ico block trans wechat" rel="nofollow">
                                     <i class="fa fa-weixin middle trans">
                                     </i>
                                 </a>
                                 微信
                                 <div class="qrcode absolute trans">
-                                    <img src="${base}/picture/erweima.png" alt="" width="200" />
+                                    <img src="" alt="" width="200" />
                                 </div>
                             </div>
                             <div class="item text-center inline-block wow fadeInUp">

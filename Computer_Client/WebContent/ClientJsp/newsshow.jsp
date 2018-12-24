@@ -171,16 +171,13 @@
         <jsp:include page="/public/Client/botton.jsp"></jsp:include>
        <c:if test="${! empty LoginedUser}">
 				 <c:if test="${empty InfromMes}">
-				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.RequestURI}"></jsp:forward>
+				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.requestURL}"></jsp:forward>
 				 </c:if>
               <jsp:include page="/public/Client/follow.jsp"></jsp:include>
                </c:if>
         <script src="${base}/js/Client/website.js"></script>
         
-        
  <script type="text/javascript">
- 
- 
   $("#comment1").on("click",function(){
      var content = $("#contentText").val();//时间 内容 评论人 新闻id
   

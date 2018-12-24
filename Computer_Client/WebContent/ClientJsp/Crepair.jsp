@@ -1,14 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
- <%@ page autoFlush="true" buffer="1094kb"%><!-- 缓冲区 -->
-	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>	<%-- <%
-	request.setCharacterEncoding("utf-8");
-	response.setCharacterEncoding("utf-8");
-	response.setHeader("Content-type", "text/html;charset=UTF-8");	
-		if(request.getAttribute("repairList") == null){
-			request.getRequestDispatcher("../crepair.s?op=query1").forward(request, response);
-		}
-	%> --%>
+<%@ page autoFlush="true" buffer="1094kb"%><!-- 缓冲区 -->
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	
 <!DOCTYPE html>
 <html>
     
@@ -201,14 +195,14 @@
   </div>
 </div>
 
- <jsp:include page="/public/Client/botton.jsp"></jsp:include>
+   <jsp:include page="/public/Client/botton.jsp"></jsp:include>
            	<c:if test="${! empty LoginedUser}">
 				 <c:if test="${empty InfromMes}">
-				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.RequestURI}"></jsp:forward>
+				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.requestURL}"></jsp:forward>
 				 </c:if>
               <jsp:include page="/public/Client/follow.jsp"></jsp:include>
-               </c:if>
-   <script src="${base}/js/Client/website.js">
+               </c:if>   
+       <script src="${base}/js/Client/website.js">
         </script>
       
 <script type="text/javascript">
@@ -225,16 +219,23 @@ new WOW().init({
              500);
       	});
          $("#btn").click(function(){
-   			var date = {};
-   			date.address = $("#address").val();
-   			date.description = $("#description").val();
-   			//date.rows=$("#rep").datagrid('getPager').data("pagination").options.pageSize;
-   			//date.page=$("#rep").datagrid('getPager').data("pagination").options.pageNumber;
-   			
-   			$.post("../crepair.s?op=add",date,
+   			var data = {};
+   			data.address = $("#address").val();
+   			data.description = $("#description").val();
+   			data.op ="sendRepair";
+   		 $.post("<c:url value='/crepair.s' />",data,function(data){
+   	    	 if(data === "notLogin"){
+   	    		 alert("你还没有登录，请先登录");
+   	    		 location.href = "<c:url value='/Nlogin.jsp' />";
+   	    	 }else{
+   	    		 history.go(0);
+   	    	 } 
+   	    	
+   	     });
+   			/* $.post("../crepair.s?op=add",date,
    					function(data){
    				alert(data);
-   			});
+   			}); */
    		});      
          function doSearch(value,name){
         	 	if(name == 'rid'){

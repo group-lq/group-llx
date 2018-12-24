@@ -142,7 +142,7 @@ public class NoticeBiz {
 	}
 	
 	public Object findNum(Notice notice,Repair repair,Comment comment,User user) {
-		String sql = "select count(*) cnt from(select * from repair r join user u on r.userid=u.id where r.`status` not in ('待回复') and u.username = ? )a  ";  
+		String sql = "select count(*) cnt from(select r.rid from repair r join user u on r.userid=u.id where r.`status` not in ('待回复') and u.username = ? )a  ";  
 		String sql1 = "select count(*) cnt1 from notice where time in (select max(time) from notice)";
 		//String sql2 = "select count(*) cnt from(select * from notice where time in(select max(time) from notice))a";
 	
@@ -183,6 +183,11 @@ public class NoticeBiz {
 			}
 		}
 		return len/count;
+	}
+
+	public Object findNoPic(Notice notice) {
+		String sql = "select * from notice  order by time desc limit 0,6";
+		return DBHelper.select(sql,Notice.class);
 	}
 	
 

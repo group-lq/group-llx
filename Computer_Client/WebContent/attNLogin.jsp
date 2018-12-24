@@ -64,7 +64,7 @@
 	<div class="sub-main-w3">
 		<form action="${base}/mail.s" method="post">
 		<input type="hidden" name="op" value="attesta" id="hid">
-			<h2><span class="logined" >手机认证</span>
+			<h2><span class="logined" >计协成员认证</span>
 				<i class="fas fa-level-down-alt"></i>
 			</h2>
 			<div class="form-style-agile" id="telCost">
@@ -80,7 +80,7 @@
 			<div class="wthree-text">
 				<ul>
 					<li>
-						没有认证码?<a href="register.jsp">马上认证</a>
+						没有认证码?<a href="register.jsp">无认证码注册</a>
 					</li>
 				</ul>
 			</div>

@@ -75,9 +75,6 @@
             </div>
             <div id="about" class="wrap">
                 <div class="clean">
-                    <div class="item fr fz0 text-center wow fadeInUp">
-                        <img src="${base}/picture/db39253b5d.jpg" alt="" class="max-w100">
-                    </div>
                     <div class="item about-brief fl border-box text-center wow fadeInUp">
                         <div class="about-title text-center">
                             <div class="title-0">
@@ -161,7 +158,7 @@
            <jsp:include page="/public/Client/botton.jsp"></jsp:include>
            <c:if test="${! empty LoginedUser}">
 				 <c:if test="${empty InfromMes}">
-				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.RequestURI}"></jsp:forward>
+				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.requestURL}"></jsp:forward>
 				 </c:if>
               <jsp:include page="/public/Client/follow.jsp"></jsp:include>
                </c:if> 

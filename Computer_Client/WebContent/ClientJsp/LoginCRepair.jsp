@@ -205,7 +205,7 @@
 </div>
 <c:if test="${! empty LoginedUser}">
 				 <c:if test="${empty InfromMes}">
-				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.RequestURI}"></jsp:forward>
+				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.requestURL}"></jsp:forward>
 				 </c:if>
               <jsp:include page="/public/Client/follow.jsp"></jsp:include>
                </c:if>

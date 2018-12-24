@@ -89,61 +89,19 @@
             </div>
         </div>
         <div id="fieldset">
-        	<fieldset >
-        	<legend>国二成绩查询</legend>
+        	<a href="http://cjcx.neea.edu.cn/html1/folder/1508/206-1.htm?sid=300"><img alt="" src="${base}/images/Client/二级.png"></a>
         	
-        	<form action="../Grade.s"  method="post">
-        	<input type="hidden" name="op" value="glogin">
-        		<div>
-        			<label id="title">考试科目：</label>
-       				<select  id="text project" name="subject">
-								<option value="14">14一级计算机基础及WPS Office应用</option>
-								<option value="15">15一级计算机基础及MS Office应用</option>
-								<option value="16">16一级计算机基础及Photoshop应用</option>
-								<option value="24">24二级C语言程序设计</option>
-								<option value="27">26二级VB语言程序设计</option>
-								<option value="27">27二级VFP数据库程序设计</option>
-								<option value="28">28二级JAVA语言程序设计</option>
-								<option value="29">29二级ACCESS数据库程序设计</option>
-								<option value="61">61二级C++语言程序设计</option>
-								<option value="63">63二级MySQL数据程序设计</option>
-								<option value="64">64二级Web程序设计</option>
-								<option value="65">65二级MS Office高级应用</option>
-								<option value="35">35三级网络技术</option>
-								<option value="36">36三级数据库技术</option>
-								<option value="value2">36三级数据库技术</option>
-								<option value="value2">36三级数据库技术</option>
-								<option value="37">37三级软件测试技术</option>
-								<option value="41">41四级网络工程师</option>
-								<option value="42">42四级数据库工程师</option>
-								<option value="43">43四级软件测试工程师</option>
-								<option value="44">44四级信息安全工程师</option>
-								<option value="45">45四级嵌入式系统开发工程师</option>
-							</select>
-       			</div>
-        		<div>
-        			<label id="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：</label>
-        			<input type="text" placeholder="请输入姓名" id="text" name="name">
-        		</div>	
-        		<div>
-        			<label id="title">请输入证件号码：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        			<input type="text" placeholder="请输入报考时的身份证件号码" id="text" style="width: 200px;height: 25px" name="idenno">
-        		</div>
-        		<div>
-        			<label id="title">验证码：</label>
-        			<input type="text" style="width: 100px;">
-        		</div>
-        		<div>
-        			<button id="submit" onclick="sel()" >查询成绩</button>
-        		</div>      
-        	</form>
-        
-        </fieldset>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
          <jsp:include page="/public/Client/botton.jsp"></jsp:include>
          <c:if test="${! empty LoginedUser}">
 				 <c:if test="${empty InfromMes}">
-				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.RequestURI}"></jsp:forward>
+				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.requestURL}"></jsp:forward>
 				 </c:if>
               <jsp:include page="/public/Client/follow.jsp"></jsp:include>
                </c:if>

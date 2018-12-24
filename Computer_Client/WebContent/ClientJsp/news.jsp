@@ -109,18 +109,18 @@
                             
                             <div>
                                     <a href="${base}/cnews.s?op=find&newsid=${temp.newsid}"​ 
-                                    style="font-size: 20px;font-family: fantasy;font-style: inherit;">
+                                    style="font-size: 20px;font-family: 微软雅黑;;font-style: inherit;">
                                        ${temp.title}
                                     </a>
                             </div>
                         
-                            <div class="day" style="font-size: 14px;font-style: italic;">
+                            <div class="day" style="font-size: 14px;font-family: 微软雅黑;">
                                ${temp.time}
                             </div>
                           
                             <br>
-                            <div style="font-size: 20px;font-family: fantasy;">
-                                ${temp.description}
+                            <div style="font-size: 20px;font-family: 微软雅黑;">
+                               <%--  ${temp.decription} --%>
                             </div>
                            
                         </div>
@@ -154,7 +154,7 @@
          <jsp:include page="/public/Client/botton.jsp"></jsp:include>
           <c:if test="${! empty LoginedUser}">
 				 <c:if test="${empty InfromMes}">
-				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.RequestURI}"></jsp:forward>
+				 <jsp:forward page="/mes.s?op=NoticeMes&JspName=${pageContext.request.requestURL}"></jsp:forward>
 				 </c:if>
               <jsp:include page="/public/Client/follow.jsp"></jsp:include>
                </c:if>
